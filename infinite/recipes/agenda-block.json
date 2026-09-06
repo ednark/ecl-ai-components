@@ -1,0 +1,26 @@
+{
+  "recipe": "agenda-block",
+  "title": "Agenda block",
+  "description": "The commission.europa.eu homepage agenda: date blocks beside event titles.",
+  "aliases": ["collection:agenda-block"],
+  "provenance": { "observed": "2026-09-06", "source": "https://commission.europa.eu/index_en", "method": "live-site observation" },
+  "components": [
+    { "order": 1, "component": "date-block", "variant": "default", "file": "date-block/default.html", "role": "data-display", "required": true, "reason": "Event date; one block per entry" },
+    { "order": 2, "component": "content-item", "variant": "default", "file": "content-item/default.html", "role": "data-display", "required": true, "reason": "Event title link and description — instantiate one per agenda row" }
+  ],
+  "nesting": "Each agenda row: date block (order 1) beside its content item (order 2)",
+  "validationOrder": [
+    "Date block and event title align per row",
+    "Event titles are real links to event pages",
+    "Dates readable as text in order"
+  ],
+  "a11yNotes": [
+    "Date blocks are supplementary — the event description should include the full date in text",
+    "Title links carry meaningful accessible names"
+  ],
+  "agentPromptSequence": [
+    "1. For each event, pair a date block with a content item row",
+    "2. Order entries chronologically",
+    "3. Keep the section heading ('Agenda') as an h2"
+  ]
+}
