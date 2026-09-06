@@ -181,8 +181,9 @@ function costDefaults(bytes, requiresJs) {
 
 // ─── Recipe membership ───────────────────────────────────────────────────────
 
-const recipeMembership = {
-  'banner': `.ecl-banner{padding:3rem 2rem;background:#f2f5f9;margin:-2rem -2rem 2rem}
+const recipeMembership = {};
+,
+'banner': `.ecl-banner{padding:3rem 2rem;background:#f2f5f9;margin:-2rem -2rem 2rem}
 .ecl-banner--image{background:#004494;background-size:cover;color:#fff}
 .ecl-banner--image .ecl-banner__title,.ecl-banner--image .ecl-banner__description{color:#fff}
 .ecl-banner__title{font-size:2.25rem;font-weight:700;margin:0 0 .5rem;color:#161616}
@@ -214,7 +215,6 @@ const recipeMembership = {
 .ecl-social-media-follow__list{list-style:none;margin:0;padding:0;display:flex;gap:1rem;flex-wrap:wrap}
 .ecl-social-media-follow__link{color:#004494;text-decoration:underline;font-weight:500}
 `
-};
 };
 try {
   const recipesDir = join(TILE_DIR, 'recipes');
