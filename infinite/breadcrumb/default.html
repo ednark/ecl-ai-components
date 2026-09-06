@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Europa Component Library breadcrumb demonstrating the default variant.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Breadcrumb (default)</title>
+<script type="application/json" id="ecl-agent-meta">
+{
+  "_schemaVersion": 2,
+  "discovery": {
+    "eclComponentType": "breadcrumb",
+    "eclClass": "ecl-breadcrumb",
+    "section": "navigation",
+    "variant": "default",
+    "requiresJs": "optional",
+    "interaction": [
+      "click",
+      "focus"
+    ],
+    "a11y": {
+      "wcag21AA": true,
+      "keyboardNav": true,
+      "screenReader": true,
+      "reducedMotion": true,
+      "forcedColors": true,
+      "ariaAttributes": true
+    },
+    "govCompliance": [
+      "EN 301 549",
+      "WCAG 2.1 AA",
+      "Directive (EU) 2016/2102"
+    ],
+    "tier": "curated",
+    "tags": [
+      "breadcrumb",
+      "navigation",
+      "hierarchy"
+    ],
+    "description": "Hierarchical breadcrumb trail with mobile collapsing.",
+    "compliance": {
+      "nistControls": [],
+      "en301549": true,
+      "wcag21AA": true,
+      "webAccessibilityDirective": true,
+      "piiHandling": "displays_only",
+      "auditTrailCompatible": false,
+      "dataMaskingCompatible": false
+    },
+    "mobileUX": {
+      "touchTargetSize": "44px",
+      "requiredMinSpacing": "8px",
+      "orientationLocked": false,
+      "fullscreenSafe": true
+    }
+  },
+  "selection": {
+    "useWhen": [
+      "Sites deeper than two levels",
+      "ECL collapses middle segments on mobile (JS)"
+    ],
+    "avoidWhen": [
+      "Top-level pages"
+    ]
+  },
+  "instruction": {
+    "agentPrompt": "Edit the trail links. The last segment carries aria-current='page' and is not a link. data-ecl-breadcrumb enables the JS collapse behaviour.",
+    "relatedComponents": [
+      "page-header",
+      "site-header",
+      "pagination"
+    ]
+  },
+  "coordination": {
+    "prerequisiteComponents": [],
+    "incompatibleWith": [],
+    "compositionCost": {
+      "costTier": "moderate",
+      "estimatedTokens": 123,
+      "renderingTimeMs": 35,
+      "recommendedModel": "haiku"
+    },
+    "compositionRecipes": [
+      "content-page"
+    ]
+  },
+  "constraints": {
+    "preserve": [
+      "nav[aria-label='Breadcrumb']",
+      "ecl-breadcrumb__container > __segment list structure",
+      "aria-current='page' on the last segment"
+    ],
+    "editable": [
+      "Trail links"
+    ],
+    "limitations": [
+      "Mobile collapse needs ECL JS (data-ecl-breadcrumb)"
+    ],
+    "portableInvariants": [
+      "Breadcrumb landmark labelled"
+    ]
+  },
+  "supportedTokenProfiles": [
+    "highContrast"
+  ],
+  "file": "breadcrumb/default.html",
+  "title": "Breadcrumb (default)",
+  "portability": {
+    "classMapping": {
+      "uswds": {
+        "base": "usa-breadcrumb"
+      }
+    }
+  }
+}
+</script>
+<style>
+body{font-family:Arial,Helvetica,sans-serif;font-size:1rem;line-height:1.5rem;color:#404040;padding:2rem;background:#fff;margin:0}
+.cap{position:fixed;bottom:12px;left:16px;font-size:11px;letter-spacing:.08em;color:#707070;text-transform:uppercase}
+a,.ecl-link{color:#004494;text-decoration:underline}
+:focus-visible{outline:3px solid #ffd617;outline-offset:1px;box-shadow:0 0 0 2px #404040}
+.ecl-visually-hidden{position:absolute!important;width:1px;height:1px;margin:0;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.ecl-form-label{display:block;font-weight:700;font-size:.875rem;margin-bottom:.5rem;color:#404040}
+.ecl-help-block{font-size:.875rem;color:#404040;margin:.25rem 0}
+.ecl-feedback-message{font-weight:700;font-size:.875rem;color:#cc0000;margin-top:.5rem}
+
+.ecl-breadcrumb{margin:1rem 0}
+.ecl-breadcrumb__container{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.25rem;font-size:.875rem}
+.ecl-breadcrumb__segment:not(:first-child):before{content:"›";margin-right:.25rem;color:#707070}
+.ecl-breadcrumb__link{color:#004491}
+.ecl-breadcrumb__segment[aria-current=page]{color:#404040}
+
+</style>
+</head>
+<body>
+<nav class="ecl-breadcrumb" aria-label="Breadcrumb" data-ecl-breadcrumb="true">
+  <ol class="ecl-breadcrumb__container">
+    <li class="ecl-breadcrumb__segment">
+      <a href="#" class="ecl-link ecl-link--standalone ecl-breadcrumb__link">Home</a>
+    </li>
+    <li class="ecl-breadcrumb__segment">
+      <a href="#" class="ecl-link ecl-link--standalone ecl-breadcrumb__link">Policies</a>
+    </li>
+    <li class="ecl-breadcrumb__segment" aria-current="page">Current page</li>
+  </ol>
+</nav>
+<div class="cap">breadcrumb default</div>
+</body>
+</html>

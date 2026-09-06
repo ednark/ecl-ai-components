@@ -1,0 +1,29 @@
+{
+  "recipe": "content-page",
+  "title": "Content page",
+  "description": "Official page chrome: site header, page header with title, site footer.",
+  "aliases": ["collection:content-page", "page-template"],
+  "components": [
+    { "order": 1, "component": "site-header", "variant": "default", "file": "site-header/default.html", "role": "page-chrome", "required": true, "reason": "EC/EU identity banner, language selector, site name" },
+    { "order": 2, "component": "page-header", "variant": "default", "file": "page-header/default.html", "role": "page-chrome", "required": true, "reason": "Carries the page h1, meta, and description" },
+    { "order": 3, "component": "breadcrumb", "variant": "default", "file": "breadcrumb/default.html", "role": "navigation", "required": false, "reason": "Usually inside the page header for deep pages" },
+    { "order": 4, "component": "site-footer", "variant": "default", "file": "site-footer/default.html", "role": "page-chrome", "required": true, "reason": "Commission contact and legal links; last element" }
+  ],
+  "nesting": "DOM order 1 → (2 with 3 inside) → <main> content → 4",
+  "validationOrder": [
+    "Single h1 lives in the page header",
+    "Breadcrumb last segment has aria-current='page' without a link",
+    "EU emblem usage follows Commission identity rules"
+  ],
+  "a11yNotes": [
+    "Logo alt text present and meaningful",
+    "Banner/contentinfo landmarks from header/footer",
+    "Language selector is essential for 24-language ECL sites"
+  ],
+  "agentPromptSequence": [
+    "1. Place the site header with logo and language selector",
+    "2. Add the page header carrying the h1",
+    "3. Breadcrumb inside the page header for deep pages",
+    "4. Wrap content in <main>, close with the site footer"
+  ]
+}

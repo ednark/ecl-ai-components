@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Europa Component Library form group demonstrating the error variant.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Form group (error)</title>
+<script type="application/json" id="ecl-agent-meta">
+{
+  "_schemaVersion": 2,
+  "discovery": {
+    "eclComponentType": "form-group",
+    "eclClass": "ecl-form-group",
+    "section": "forms",
+    "variant": "error",
+    "requiresJs": "no",
+    "interaction": [
+      "focus"
+    ],
+    "a11y": {
+      "wcag21AA": true,
+      "keyboardNav": true,
+      "screenReader": true,
+      "reducedMotion": true,
+      "forcedColors": true,
+      "ariaAttributes": true
+    },
+    "govCompliance": [
+      "EN 301 549",
+      "WCAG 2.1 AA",
+      "Directive (EU) 2016/2102"
+    ],
+    "tier": "curated",
+    "tags": [
+      "form",
+      "group",
+      "label",
+      "error",
+      "wrapper"
+    ],
+    "description": "Container for a form control with label, help block, and feedback message.",
+    "compliance": {
+      "nistControls": [],
+      "en301549": true,
+      "wcag21AA": true,
+      "webAccessibilityDirective": true,
+      "piiHandling": "none",
+      "auditTrailCompatible": false,
+      "dataMaskingCompatible": false
+    },
+    "mobileUX": {
+      "touchTargetSize": "44px",
+      "requiredMinSpacing": "8px",
+      "orientationLocked": false,
+      "fullscreenSafe": true
+    }
+  },
+  "selection": {
+    "useWhen": [
+      "Wrapping any form control with its label, help block, and feedback message",
+      "The prerequisite container every ECL field expects"
+    ],
+    "avoidWhen": [
+      "Styling inputs without labels — ECL forbids unlabelled fields"
+    ]
+  },
+  "instruction": {
+    "agentPrompt": "Keep the ecl-form-group wrapper; add ecl-form-group--error plus an ecl-feedback-message when the field fails validation.",
+    "relatedComponents": [
+      "text-input",
+      "notification"
+    ]
+  },
+  "coordination": {
+    "prerequisiteComponents": [],
+    "incompatibleWith": [],
+    "compositionCost": {
+      "costTier": "cheap",
+      "estimatedTokens": 97,
+      "renderingTimeMs": 15,
+      "recommendedModel": "haiku"
+    },
+    "compositionRecipes": [
+      "contact-form"
+    ]
+  },
+  "constraints": {
+    "preserve": [
+      ".ecl-form-group wrapper around label + control",
+      "Label 'for' attribute matching the input id",
+      "aria-describedby linking help/feedback ids to the control"
+    ],
+    "editable": [
+      "Label text",
+      "Help text",
+      "Feedback message text"
+    ],
+    "limitations": [
+      "The feedback message must stay inside the form group, after the control"
+    ],
+    "portableInvariants": [
+      "Label element associated via for/id",
+      "Help/feedback referenced by aria-describedby"
+    ]
+  },
+  "supportedTokenProfiles": [
+    "highContrast"
+  ],
+  "file": "form-group/error.html",
+  "title": "Form group (error)"
+}
+</script>
+<style>
+body{font-family:Arial,Helvetica,sans-serif;font-size:1rem;line-height:1.5rem;color:#404040;padding:2rem;background:#fff;margin:0}
+.cap{position:fixed;bottom:12px;left:16px;font-size:11px;letter-spacing:.08em;color:#707070;text-transform:uppercase}
+a,.ecl-link{color:#004494;text-decoration:underline}
+:focus-visible{outline:3px solid #ffd617;outline-offset:1px;box-shadow:0 0 0 2px #404040}
+.ecl-visually-hidden{position:absolute!important;width:1px;height:1px;margin:0;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.ecl-form-label{display:block;font-weight:700;font-size:.875rem;margin-bottom:.5rem;color:#404040}
+.ecl-help-block{font-size:.875rem;color:#404040;margin:.25rem 0}
+.ecl-feedback-message{font-weight:700;font-size:.875rem;color:#cc0000;margin-top:.5rem}
+
+.ecl-form-group{margin-bottom:1.25rem;max-width:30rem}
+.ecl-form-group--error{padding-left:.75rem;border-left:4px solid #cc0000}
+.ecl-text-input,.ecl-text-area,.ecl-select,.ecl-file-upload{font:inherit;display:block;width:100%;box-sizing:border-box;padding:.5rem .75rem;border:1px solid #404040;border-radius:.25rem;color:#161616;background:#fff}
+.ecl-text-input:focus,.ecl-text-area:focus,.ecl-select:focus,.ecl-file-upload:focus{outline:3px solid #ffd617}
+.ecl-text-input--error,.ecl-text-area--error,.ecl-select--error,.ecl-file-upload--error{border:2px solid #cc0000}
+.ecl-text-area{min-height:8rem}
+
+</style>
+</head>
+<body>
+<div class="ecl-form-group ecl-form-group--error">
+  <label class="ecl-form-label" for="fg-error">Email address</label>
+  <input type="text" id="fg-error" name="email" class="ecl-text-input ecl-text-input--error" value="" aria-describedby="fg-error-feedback" aria-invalid="true">
+  <p class="ecl-feedback-message" id="fg-error-feedback">The email address format is incorrect.</p>
+</div>
+<div class="cap">form-group error</div>
+</body>
+</html>

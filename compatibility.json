@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "source": { "designSystem": "Europa Component Library (ECL)", "version": "5.2", "registry": "ecl-ai-components" },
+  "_scope": "Family-level hints for translating ECL components to the USWDS, GOV.UK, and DSFR registries. structural entries are advisory only — never fabricate translations.",
+  "ecl-to-uswds": {
+    "target": { "designSystem": "U.S. Web Design System", "version": "3.13.0", "registry": "https://raw.githubusercontent.com/ednark/uswds-ai-components/main" },
+    "button": { "target_component": "button", "adaptation": "css-only", "classMap": { "ecl-button": "usa-button", "ecl-button--secondary": "usa-button usa-button--secondary" }, "mismatches": ["ECL ghost ≈ USWDS usa-button--outline"], "notes": "" },
+    "text-input": { "target_component": "text-input", "adaptation": "css-only", "classMap": { "ecl-text-input": "usa-input" }, "mismatches": ["ECL feedback-message ≈ USWDS error message with aria-describedby"], "notes": "" },
+    "select": { "target_component": "select", "adaptation": "css-only", "classMap": { "ecl-select": "usa-select" }, "mismatches": [], "notes": "" },
+    "notification": { "target_component": "alert", "adaptation": "css-only", "classMap": { "ecl-alert": "usa-alert", "ecl-alert--success": "usa-alert usa-alert--success", "ecl-alert--error": "usa-alert usa-alert--error", "ecl-alert--warning": "usa-alert usa-alert--warning", "ecl-alert--info": "usa-alert usa-alert--info" }, "mismatches": ["ECL icon is a sibling div; USWDS icon is background-image"], "notes": "" },
+    "table": { "target_component": "table", "adaptation": "css-only", "classMap": { "ecl-table": "usa-table" }, "mismatches": [], "notes": "" },
+    "breadcrumb": { "target_component": "breadcrumb", "adaptation": "css-only", "classMap": { "ecl-breadcrumb": "usa-breadcrumb" }, "mismatches": [], "notes": "" },
+    "tag": { "target_component": "tag", "adaptation": "css-only", "classMap": { "ecl-tag": "usa-tag" }, "mismatches": ["USWDS tags are not interactive"], "notes": "" }
+  },
+  "ecl-to-govuk": {
+    "target": { "designSystem": "GOV.UK Design System", "version": "5.x", "registry": "https://raw.githubusercontent.com/ednark/govuk-ai-components/main" },
+    "button": { "target_component": "button", "adaptation": "css-only", "classMap": { "ecl-button": "govuk-button", "ecl-button--secondary": "govuk-button govuk-button--secondary" }, "mismatches": ["ECL ghost ≈ govuk-link, not a button"], "notes": "" },
+    "text-input": { "target_component": "text-input", "adaptation": "css-only", "classMap": { "ecl-text-input": "govuk-input", "ecl-form-group": "govuk-form-group" }, "mismatches": ["ECL help-block nests outside label; GOV.UK hint is sibling div — same shape actually"], "notes": "" },
+    "notification": { "target_component": "notification-banner", "adaptation": "css-only", "classMap": { "ecl-alert": "govuk-notification-banner", "ecl-alert--success": "govuk-notification-banner govuk-notification-banner--success" }, "mismatches": ["GOV.UK banner has header bar; ECL alert title is inline", "GOV.UK has no info/warning banner variants"], "notes": "" },
+    "table": { "target_component": "table", "adaptation": "css-only", "classMap": { "ecl-table": "govuk-table" }, "mismatches": [], "notes": "" },
+    "breadcrumb": { "target_component": "breadcrumbs", "adaptation": "css-only", "classMap": { "ecl-breadcrumb": "govuk-breadcrumbs" }, "mismatches": [], "notes": "" },
+    "label": { "target_component": "tag", "adaptation": "css-only", "classMap": { "ecl-label": "govuk-tag" }, "mismatches": ["Severity mapping: high→govuk-tag--red, low→(default)"], "notes": "" }
+  },
+  "ecl-to-dsfr": {
+    "target": { "designSystem": "Système de Design de l'État (DSFR)", "version": "1.15", "registry": "https://raw.githubusercontent.com/ednark/dsfr-ai-components/main" },
+    "button": { "target_component": "button", "adaptation": "css-only", "classMap": { "ecl-button": "fr-btn", "ecl-button--secondary": "fr-btn fr-btn--secondary" }, "mismatches": ["ECL ghost ≈ fr-btn--tertiary"], "notes": "" },
+    "text-input": { "target_component": "input", "adaptation": "css-only", "classMap": { "ecl-text-input": "fr-input", "ecl-form-group": "fr-input-group" }, "mismatches": ["ECL feedback-message ≈ fr-error-text"], "notes": "" },
+    "notification": { "target_component": "alert", "adaptation": "css-only", "classMap": { "ecl-alert": "fr-alert", "ecl-alert--success": "fr-alert fr-alert--success", "ecl-alert--error": "fr-alert fr-alert--error", "ecl-alert--warning": "fr-alert fr-alert--warning", "ecl-alert--info": "fr-alert fr-alert--info" }, "mismatches": [], "notes": "Closest 1:1 pair across the three registries" },
+    "table": { "target_component": "table", "adaptation": "css-only", "classMap": { "ecl-table": "fr-table" }, "mismatches": [], "notes": "" },
+    "breadcrumb": { "target_component": "breadcrumb", "adaptation": "css-only", "classMap": { "ecl-breadcrumb": "fr-breadcrumb" }, "mismatches": ["DSFR mobile collapse uses button+collapse pair"], "notes": "" },
+    "highlight-box": { "target_component": "callout", "adaptation": "css-only", "classMap": { "ecl-highlight-box": "fr-callout" }, "mismatches": ["DSFR callout supports a title element; ECL box uses plain text"], "notes": "" }
+  }
+}

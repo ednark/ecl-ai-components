@@ -1,0 +1,23 @@
+{
+  "recipe": "confirmation-page",
+  "title": "Confirmation page",
+  "description": "Success notification with the outcome and a next-step action.",
+  "aliases": ["collection:confirmation-page"],
+  "components": [
+    { "order": 1, "component": "notification", "variant": "success", "file": "notification/success.html", "role": "feedback", "required": true, "reason": "role='status' success notification carrying the outcome" },
+    { "order": 2, "component": "button", "variant": "secondary", "file": "button/secondary.html", "role": "action", "required": false, "reason": "Next-step action (back to start, view request)" }
+  ],
+  "nesting": "Notification 1 at the top of main; button 2 below it",
+  "validationOrder": [
+    "One h1 per page stating the outcome",
+    "Reference numbers stay copyable text"
+  ],
+  "a11yNotes": [
+    "role='status' announces the confirmation politely",
+    "Notification title states the result, not just 'Success'"
+  ],
+  "agentPromptSequence": [
+    "1. Place the success notification at the top of main",
+    "2. Add the next-step secondary button"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "registry": "ecl-ai-components",
+  "designSystem": { "name": "Europa Component Library (ECL)", "version": "5.2", "url": "https://ec.europa.eu/component-library/" },
+  "versions": [
+    {
+      "version": "0.1.0",
+      "releaseDate": "2026-09-06",
+      "componentCount": 29,
+      "breakingChanges": [],
+      "addedCategories": ["discovery", "selection", "instruction", "coordination", "constraints", "portability"],
+      "addedFacets": ["eclComponentType", "section", "variant", "requiresJs", "interaction", "a11y", "govCompliance", "costTier", "prerequisites", "compositionRecipes", "piiHandling", "touchTargetSize", "supportedTokenProfiles"],
+      "migrationPath": "Initial release.",
+      "notes": "24 ECL component families; 5 recipes; compatibility maps ecl→uswds/govuk/dsfr; EC-branded tiles (EU variant derivable)"
+    }
+  ],
+  "designSystemVersions": [
+    { "version": "5.2", "status": "current", "notes": "Tiles target ECL v5 markup" }
+  ]
+}

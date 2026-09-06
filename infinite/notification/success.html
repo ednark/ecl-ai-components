@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Europa Component Library notification demonstrating the success variant.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Notification (success)</title>
+<script type="application/json" id="ecl-agent-meta">
+{
+  "_schemaVersion": 2,
+  "discovery": {
+    "eclComponentType": "notification",
+    "eclClass": "ecl-alert",
+    "section": "feedback",
+    "variant": "success",
+    "requiresJs": "optional",
+    "interaction": [
+      "focus"
+    ],
+    "a11y": {
+      "wcag21AA": true,
+      "keyboardNav": true,
+      "screenReader": true,
+      "reducedMotion": true,
+      "forcedColors": true,
+      "ariaAttributes": true
+    },
+    "govCompliance": [
+      "EN 301 549",
+      "WCAG 2.1 AA",
+      "Directive (EU) 2016/2102"
+    ],
+    "tier": "curated",
+    "tags": [
+      "notification",
+      "alert",
+      "info",
+      "success",
+      "error",
+      "warning"
+    ],
+    "description": "Info, success, error, and warning notifications (ecl-alert).",
+    "compliance": {
+      "nistControls": [],
+      "en301549": true,
+      "wcag21AA": true,
+      "webAccessibilityDirective": true,
+      "piiHandling": "displays_only",
+      "auditTrailCompatible": false,
+      "dataMaskingCompatible": false
+    },
+    "mobileUX": {
+      "touchTargetSize": "44px",
+      "requiredMinSpacing": "8px",
+      "orientationLocked": false,
+      "fullscreenSafe": true
+    }
+  },
+  "selection": {
+    "useWhen": [
+      "Page-level information, success, warning, or error messages",
+      "role='alert' variants announce to screen readers"
+    ],
+    "avoidWhen": [
+      "Field-level errors — use ecl-feedback-message in the form group"
+    ]
+  },
+  "instruction": {
+    "agentPrompt": "Variants: ecl-alert--info / --success / --error / --warning. role='alert' for error/warning, role='status' for info/success. The close button requires ECL JS.",
+    "relatedComponents": [
+      "label",
+      "highlight-box",
+      "form-group"
+    ]
+  },
+  "coordination": {
+    "prerequisiteComponents": [],
+    "incompatibleWith": [],
+    "compositionCost": {
+      "costTier": "moderate",
+      "estimatedTokens": 76,
+      "renderingTimeMs": 35,
+      "recommendedModel": "haiku"
+    },
+    "compositionRecipes": [
+      "confirmation-page"
+    ]
+  },
+  "constraints": {
+    "preserve": [
+      "ecl-alert__title and __description structure",
+      "role attribute matching the variant",
+      "ecl-alert__icon (type conveyed by icon + text)"
+    ],
+    "editable": [
+      "Title",
+      "Description",
+      "Variant class"
+    ],
+    "limitations": [
+      "Do not stack many notifications on one page"
+    ],
+    "portableInvariants": [
+      "Title/description structure intact"
+    ]
+  },
+  "supportedTokenProfiles": [
+    "highContrast"
+  ],
+  "file": "notification/success.html",
+  "title": "Notification (success)",
+  "portability": {
+    "classMapping": {
+      "uswds": {
+        "base": "usa-alert",
+        "info": "usa-alert usa-alert--info",
+        "success": "usa-alert usa-alert--success",
+        "error": "usa-alert usa-alert--error",
+        "warning": "usa-alert usa-alert--warning"
+      }
+    }
+  }
+}
+</script>
+<style>
+body{font-family:Arial,Helvetica,sans-serif;font-size:1rem;line-height:1.5rem;color:#404040;padding:2rem;background:#fff;margin:0}
+.cap{position:fixed;bottom:12px;left:16px;font-size:11px;letter-spacing:.08em;color:#707070;text-transform:uppercase}
+a,.ecl-link{color:#004494;text-decoration:underline}
+:focus-visible{outline:3px solid #ffd617;outline-offset:1px;box-shadow:0 0 0 2px #404040}
+.ecl-visually-hidden{position:absolute!important;width:1px;height:1px;margin:0;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.ecl-form-label{display:block;font-weight:700;font-size:.875rem;margin-bottom:.5rem;color:#404040}
+.ecl-help-block{font-size:.875rem;color:#404040;margin:.25rem 0}
+.ecl-feedback-message{font-weight:700;font-size:.875rem;color:#cc0000;margin-top:.5rem}
+
+.ecl-alert{display:flex;gap:1rem;padding:1rem 1.5rem;margin-bottom:1rem;border-left:6px solid #375da0;background:#eef3fb}
+.ecl-alert--success{border-left-color:#2e7d32;background:#eaf5ea}
+.ecl-alert--error{border-left-color:#cc0000;background:#fdeaea}
+.ecl-alert--warning{border-left-color:#e6a501;background:#fdf3e2}
+.ecl-alert__title{font-weight:700;margin:0 0 .25rem}
+.ecl-alert p{margin:0}
+
+</style>
+</head>
+<body>
+<div class="ecl-alert ecl-alert--success" role="status">
+  <div class="ecl-alert__icon ecl-icon ecl-icon--l ecl-icon--success"></div>
+  <div class="ecl-alert__content">
+    <p class="ecl-alert__title">Success</p>
+    <p class="ecl-alert__description">Your request has been submitted.</p>
+  </div>
+</div>
+<div class="cap">notification success</div>
+</body>
+</html>

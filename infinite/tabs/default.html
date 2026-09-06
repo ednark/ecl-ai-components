@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Europa Component Library tabs demonstrating the default variant.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tabs (default)</title>
+<script type="application/json" id="ecl-agent-meta">
+{
+  "_schemaVersion": 2,
+  "discovery": {
+    "eclComponentType": "tabs",
+    "eclClass": "ecl-tabs",
+    "section": "navigation",
+    "variant": "default",
+    "requiresJs": "required",
+    "interaction": [
+      "click",
+      "focus",
+      "keyboard"
+    ],
+    "a11y": {
+      "wcag21AA": true,
+      "keyboardNav": true,
+      "screenReader": true,
+      "reducedMotion": true,
+      "forcedColors": true,
+      "ariaAttributes": true
+    },
+    "govCompliance": [
+      "EN 301 549",
+      "WCAG 2.1 AA",
+      "Directive (EU) 2016/2102"
+    ],
+    "tier": "curated",
+    "tags": [
+      "tabs",
+      "content",
+      "views"
+    ],
+    "description": "Tabbed content panels with full ARIA wiring (ecl-tabs).",
+    "compliance": {
+      "nistControls": [],
+      "en301549": true,
+      "wcag21AA": true,
+      "webAccessibilityDirective": true,
+      "piiHandling": "displays_only",
+      "auditTrailCompatible": false,
+      "dataMaskingCompatible": false
+    },
+    "mobileUX": {
+      "touchTargetSize": "44px",
+      "requiredMinSpacing": "8px",
+      "orientationLocked": false,
+      "fullscreenSafe": true
+    }
+  },
+  "selection": {
+    "useWhen": [
+      "Switching between related views of the same data"
+    ],
+    "avoidWhen": [
+      "Content that must be visible or printable in full"
+    ]
+  },
+  "instruction": {
+    "agentPrompt": "Edit tab titles and panel content. role='tablist'/'tab'/'tabpanel' wiring and arrow-key navigation are ECL-JS-managed — keep ids and aria attributes paired.",
+    "relatedComponents": [
+      "expandable",
+      "accordion-none-ecl-has-expandable"
+    ]
+  },
+  "coordination": {
+    "prerequisiteComponents": [],
+    "incompatibleWith": [],
+    "compositionCost": {
+      "costTier": "moderate",
+      "estimatedTokens": 211,
+      "renderingTimeMs": 60,
+      "recommendedModel": "haiku"
+    }
+  },
+  "constraints": {
+    "preserve": [
+      "role='tablist'/'tab'/'tabpanel' structure",
+      "aria-selected + aria-controls pairing",
+      "ecl-tabs__panel--active state class"
+    ],
+    "editable": [
+      "Tab titles",
+      "Panel content"
+    ],
+    "limitations": [
+      "Hidden panels stay in the DOM — content must make sense stacked"
+    ],
+    "portableInvariants": [
+      "tab/tabpanel ARIA relationships intact"
+    ]
+  },
+  "supportedTokenProfiles": [
+    "highContrast"
+  ],
+  "file": "tabs/default.html",
+  "title": "Tabs (default)"
+}
+</script>
+<style>
+body{font-family:Arial,Helvetica,sans-serif;font-size:1rem;line-height:1.5rem;color:#404040;padding:2rem;background:#fff;margin:0}
+.cap{position:fixed;bottom:12px;left:16px;font-size:11px;letter-spacing:.08em;color:#707070;text-transform:uppercase}
+a,.ecl-link{color:#004494;text-decoration:underline}
+:focus-visible{outline:3px solid #ffd617;outline-offset:1px;box-shadow:0 0 0 2px #404040}
+.ecl-visually-hidden{position:absolute!important;width:1px;height:1px;margin:0;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.ecl-form-label{display:block;font-weight:700;font-size:.875rem;margin-bottom:.5rem;color:#404040}
+.ecl-help-block{font-size:.875rem;color:#404040;margin:.25rem 0}
+.ecl-feedback-message{font-weight:700;font-size:.875rem;color:#cc0000;margin-top:.5rem}
+
+.ecl-tabs__list{list-style:none;margin:0;padding:0;display:flex;gap:.25rem;border-bottom:1px solid #ddd}
+.ecl-tabs__tab{font:inherit;color:#004491;background:#f2f5f9;border:1px solid #ddd;border-bottom:0;padding:.5rem 1rem;cursor:pointer;text-decoration:underline;border-radius:.25rem .25rem 0 0}
+.ecl-tabs__tab--active{background:#fff;font-weight:700;border-bottom:1px solid #fff;margin-bottom:-1px;text-decoration:none}
+.ecl-tabs__panel{padding:1rem 0}
+
+</style>
+</head>
+<body>
+<div class="ecl-tabs" data-ecl-tabs="true">
+  <ul class="ecl-tabs__list" role="tablist">
+    <li role="presentation" class="ecl-tabs__item">
+      <button role="tab" id="tab-day" class="ecl-tabs__tab ecl-tabs__tab--active" aria-selected="true" aria-controls="panel-day">Past day</button>
+    </li>
+    <li role="presentation" class="ecl-tabs__item">
+      <button role="tab" id="tab-week" class="ecl-tabs__tab" aria-selected="false" aria-controls="panel-week" tabindex="-1">Past week</button>
+    </li>
+  </ul>
+  <section role="tabpanel" id="panel-day" class="ecl-tabs__panel ecl-tabs__panel--active" aria-labelledby="tab-day">
+    <p>3,964 applications received.</p>
+  </section>
+  <section role="tabpanel" id="panel-week" class="ecl-tabs__panel" aria-labelledby="tab-week" hidden>
+    <p>27,812 applications received.</p>
+  </section>
+</div>
+<div class="cap">tabs default</div>
+</body>
+</html>

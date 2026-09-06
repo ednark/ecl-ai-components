@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Europa Component Library expandable demonstrating the default variant.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Expandable (default)</title>
+<script type="application/json" id="ecl-agent-meta">
+{
+  "_schemaVersion": 2,
+  "discovery": {
+    "eclComponentType": "expandable",
+    "eclClass": "ecl-expandable",
+    "section": "feedback",
+    "variant": "default",
+    "requiresJs": "required",
+    "interaction": [
+      "click",
+      "keyboard"
+    ],
+    "a11y": {
+      "wcag21AA": true,
+      "keyboardNav": true,
+      "screenReader": true,
+      "reducedMotion": true,
+      "forcedColors": true,
+      "ariaAttributes": true
+    },
+    "govCompliance": [
+      "EN 301 549",
+      "WCAG 2.1 AA",
+      "Directive (EU) 2016/2102"
+    ],
+    "tier": "curated",
+    "tags": [
+      "expandable",
+      "disclosure",
+      "content"
+    ],
+    "description": "Toggle-disclosed content region (ecl-expandable).",
+    "compliance": {
+      "nistControls": [],
+      "en301549": true,
+      "wcag21AA": true,
+      "webAccessibilityDirective": true,
+      "piiHandling": "displays_only",
+      "auditTrailCompatible": false,
+      "dataMaskingCompatible": false
+    },
+    "mobileUX": {
+      "touchTargetSize": "44px",
+      "requiredMinSpacing": "8px",
+      "orientationLocked": false,
+      "fullscreenSafe": true
+    }
+  },
+  "selection": {
+    "useWhen": [
+      "Progressive disclosure of secondary content"
+    ],
+    "avoidWhen": [
+      "Critical information — keep it visible"
+    ]
+  },
+  "instruction": {
+    "agentPrompt": "The toggle button controls the ecl-expandable__content visibility — ECL JS manages aria-expanded and the --expanded class.",
+    "relatedComponents": [
+      "tabs",
+      "highlight-box"
+    ]
+  },
+  "coordination": {
+    "prerequisiteComponents": [],
+    "incompatibleWith": [],
+    "compositionCost": {
+      "costTier": "moderate",
+      "estimatedTokens": 118,
+      "renderingTimeMs": 60,
+      "recommendedModel": "haiku"
+    }
+  },
+  "constraints": {
+    "preserve": [
+      "ecl-expandable__toggle button with aria-expanded",
+      "ecl-expandable__content region"
+    ],
+    "editable": [
+      "Toggle label",
+      "Content"
+    ],
+    "limitations": [
+      "Content hidden by default — never essential information"
+    ],
+    "portableInvariants": [
+      "Button/region ARIA pairing intact"
+    ]
+  },
+  "supportedTokenProfiles": [
+    "highContrast"
+  ],
+  "file": "expandable/default.html",
+  "title": "Expandable (default)"
+}
+</script>
+<style>
+body{font-family:Arial,Helvetica,sans-serif;font-size:1rem;line-height:1.5rem;color:#404040;padding:2rem;background:#fff;margin:0}
+.cap{position:fixed;bottom:12px;left:16px;font-size:11px;letter-spacing:.08em;color:#707070;text-transform:uppercase}
+a,.ecl-link{color:#004494;text-decoration:underline}
+:focus-visible{outline:3px solid #ffd617;outline-offset:1px;box-shadow:0 0 0 2px #404040}
+.ecl-visually-hidden{position:absolute!important;width:1px;height:1px;margin:0;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.ecl-form-label{display:block;font-weight:700;font-size:.875rem;margin-bottom:.5rem;color:#404040}
+.ecl-help-block{font-size:.875rem;color:#404040;margin:.25rem 0}
+.ecl-feedback-message{font-weight:700;font-size:.875rem;color:#cc0000;margin-top:.5rem}
+
+.ecl-expandable{margin:1rem 0}
+.ecl-expandable__toggle{font:inherit;color:#004494;background:none;border:0;padding:0;text-decoration:underline;cursor:pointer}
+.ecl-expandable__content{padding:.75rem 0}
+
+</style>
+</head>
+<body>
+<div class="ecl-expandable" data-ecl-expandable="true">
+  <button class="ecl-button ecl-button--ghost ecl-expandable__toggle" aria-expanded="false" aria-controls="exp-content" data-ecl-expandable-toggle="true">
+    <span class="ecl-button__container"><span class="ecl-button__label">More information</span></span>
+  </button>
+  <div class="ecl-expandable__content" id="exp-content" hidden>
+    <p>Secondary information that most users will not need.</p>
+  </div>
+</div>
+<div class="cap">expandable default</div>
+</body>
+</html>

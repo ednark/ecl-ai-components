@@ -1,0 +1,26 @@
+{
+  "recipe": "news-listing",
+  "title": "News listing",
+  "description": "Tag filter row plus a grid of content cards.",
+  "aliases": ["collection:news-listing"],
+  "components": [
+    { "order": 1, "component": "tag", "variant": "default", "file": "tag/default.html", "role": "navigation", "required": false, "reason": "Keyword filter row (aria-pressed toggles)" },
+    { "order": 2, "component": "card", "variant": "default", "file": "card/default.html", "role": "data-display", "required": true, "reason": "One card per news item; title link is the accessible name" },
+    { "order": 3, "component": "pagination", "variant": "default", "file": "pagination/default.html", "role": "navigation", "required": false, "reason": "When the listing exceeds one page" }
+  ],
+  "nesting": "Tag row above the card grid; pagination below",
+  "validationOrder": [
+    "Each card has exactly one title link",
+    "Card meta (date, topic) present",
+    "Filter tags use aria-pressed state"
+  ],
+  "a11yNotes": [
+    "Card titles are the accessible names — keep them descriptive",
+    "Filter state must be conveyed textually (aria-pressed), not by styling alone"
+  ],
+  "agentPromptSequence": [
+    "1. Render the tag filter row",
+    "2. Build the card grid — one card per item",
+    "3. Add pagination when needed"
+  ]
+}

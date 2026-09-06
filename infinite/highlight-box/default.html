@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Europa Component Library highlight box demonstrating the default variant.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Highlight box (default)</title>
+<script type="application/json" id="ecl-agent-meta">
+{
+  "_schemaVersion": 2,
+  "discovery": {
+    "eclComponentType": "highlight-box",
+    "eclClass": "ecl-highlight-box",
+    "section": "feedback",
+    "variant": "default",
+    "requiresJs": "no",
+    "interaction": [],
+    "a11y": {
+      "wcag21AA": true,
+      "keyboardNav": false,
+      "screenReader": true,
+      "reducedMotion": true,
+      "forcedColors": true,
+      "ariaAttributes": true
+    },
+    "govCompliance": [
+      "EN 301 549",
+      "WCAG 2.1 AA",
+      "Directive (EU) 2016/2102"
+    ],
+    "tier": "curated",
+    "tags": [
+      "highlight",
+      "box",
+      "emphasis"
+    ],
+    "description": "Bordered emphasis box for key information (ecl-highlight-box).",
+    "compliance": {
+      "nistControls": [],
+      "en301549": true,
+      "wcag21AA": true,
+      "webAccessibilityDirective": true,
+      "piiHandling": "displays_only",
+      "auditTrailCompatible": false,
+      "dataMaskingCompatible": false
+    },
+    "mobileUX": {
+      "touchTargetSize": "n/a",
+      "requiredMinSpacing": "8px",
+      "orientationLocked": false,
+      "fullscreenSafe": true
+    }
+  },
+  "selection": {
+    "useWhen": [
+      "Emphasising key information in a bordered box"
+    ],
+    "avoidWhen": [
+      "Page-level alerts — use notification"
+    ]
+  },
+  "instruction": {
+    "agentPrompt": "Edit the text. fr-style variants: ecl-highlight-box--default / --filled. Titles inside use ecl-highlight-box__title.",
+    "relatedComponents": [
+      "notification",
+      "label"
+    ]
+  },
+  "coordination": {
+    "prerequisiteComponents": [],
+    "incompatibleWith": [],
+    "compositionCost": {
+      "costTier": "cheap",
+      "estimatedTokens": 33,
+      "renderingTimeMs": 15,
+      "recommendedModel": "haiku"
+    }
+  },
+  "constraints": {
+    "preserve": [
+      ".ecl-highlight-box wrapper"
+    ],
+    "editable": [
+      "Title",
+      "Text",
+      "Variant class"
+    ],
+    "limitations": [
+      "Reserve for genuinely key information"
+    ],
+    "portableInvariants": [
+      "Plain reading flow"
+    ]
+  },
+  "supportedTokenProfiles": [
+    "highContrast"
+  ],
+  "file": "highlight-box/default.html",
+  "title": "Highlight box (default)",
+  "portability": {
+    "classMapping": {
+      "uswds": {
+        "base": "usa-summary-box"
+      }
+    }
+  }
+}
+</script>
+<style>
+body{font-family:Arial,Helvetica,sans-serif;font-size:1rem;line-height:1.5rem;color:#404040;padding:2rem;background:#fff;margin:0}
+.cap{position:fixed;bottom:12px;left:16px;font-size:11px;letter-spacing:.08em;color:#707070;text-transform:uppercase}
+a,.ecl-link{color:#004494;text-decoration:underline}
+:focus-visible{outline:3px solid #ffd617;outline-offset:1px;box-shadow:0 0 0 2px #404040}
+.ecl-visually-hidden{position:absolute!important;width:1px;height:1px;margin:0;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.ecl-form-label{display:block;font-weight:700;font-size:.875rem;margin-bottom:.5rem;color:#404040}
+.ecl-help-block{font-size:.875rem;color:#404040;margin:.25rem 0}
+.ecl-feedback-message{font-weight:700;font-size:.875rem;color:#cc0000;margin-top:.5rem}
+
+.ecl-highlight-box{border:2px solid #004494;padding:1rem 1.5rem;margin:1rem 0}
+
+</style>
+</head>
+<body>
+<div class="ecl-highlight-box">
+  <p>If your application is successful, you will receive a letter within 10 working days.</p>
+</div>
+<div class="cap">highlight-box default</div>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Europa Component Library file upload demonstrating the default variant.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>File upload (default)</title>
+<script type="application/json" id="ecl-agent-meta">
+{
+  "_schemaVersion": 2,
+  "discovery": {
+    "eclComponentType": "file-upload",
+    "eclClass": "ecl-file-upload",
+    "section": "forms",
+    "variant": "default",
+    "requiresJs": "no",
+    "interaction": [
+      "focus",
+      "click",
+      "keyboard"
+    ],
+    "a11y": {
+      "wcag21AA": true,
+      "keyboardNav": true,
+      "screenReader": true,
+      "reducedMotion": true,
+      "forcedColors": true,
+      "ariaAttributes": true
+    },
+    "govCompliance": [
+      "EN 301 549",
+      "WCAG 2.1 AA",
+      "Directive (EU) 2016/2102"
+    ],
+    "tier": "curated",
+    "tags": [
+      "file",
+      "upload",
+      "form",
+      "document"
+    ],
+    "description": "File upload control with error state (ecl-file-upload).",
+    "compliance": {
+      "nistControls": [],
+      "en301549": true,
+      "wcag21AA": true,
+      "webAccessibilityDirective": true,
+      "piiHandling": "accepts_input",
+      "auditTrailCompatible": true,
+      "dataMaskingCompatible": false
+    },
+    "mobileUX": {
+      "touchTargetSize": "44px",
+      "requiredMinSpacing": "8px",
+      "orientationLocked": false,
+      "fullscreenSafe": true
+    }
+  },
+  "selection": {
+    "useWhen": [
+      "Uploading documents (evidence, attachments)"
+    ],
+    "avoidWhen": [
+      "Users may not have the file ready — allow saving progress"
+    ]
+  },
+  "instruction": {
+    "agentPrompt": "Edit the label. State accepted formats and size limits in the ecl-help-block. Error state: ecl-form-group--error + ecl-file-upload--error + ecl-feedback-message.",
+    "relatedComponents": [
+      "form-group"
+    ]
+  },
+  "coordination": {
+    "prerequisiteComponents": [
+      {
+        "name": "form-group",
+        "reason": "ECL file uploads sit inside an ecl-form-group carrying the label and feedback message"
+      }
+    ],
+    "incompatibleWith": [],
+    "compositionCost": {
+      "costTier": "cheap",
+      "estimatedTokens": 77,
+      "renderingTimeMs": 15,
+      "recommendedModel": "haiku"
+    }
+  },
+  "constraints": {
+    "preserve": [
+      ".ecl-file-upload class",
+      "ecl-form-group wrapper",
+      "Label association via for/id"
+    ],
+    "editable": [
+      "Label text",
+      "Help text",
+      "accept attribute"
+    ],
+    "limitations": [
+      "Native control — platform appearance varies"
+    ],
+    "portableInvariants": [
+      "Semantic <input type='file'>"
+    ]
+  },
+  "supportedTokenProfiles": [
+    "highContrast"
+  ],
+  "file": "file-upload/default.html",
+  "title": "File upload (default)",
+  "portability": {
+    "classMapping": {
+      "uswds": {
+        "base": "usa-file-input"
+      }
+    }
+  }
+}
+</script>
+<style>
+body{font-family:Arial,Helvetica,sans-serif;font-size:1rem;line-height:1.5rem;color:#404040;padding:2rem;background:#fff;margin:0}
+.cap{position:fixed;bottom:12px;left:16px;font-size:11px;letter-spacing:.08em;color:#707070;text-transform:uppercase}
+a,.ecl-link{color:#004494;text-decoration:underline}
+:focus-visible{outline:3px solid #ffd617;outline-offset:1px;box-shadow:0 0 0 2px #404040}
+.ecl-visually-hidden{position:absolute!important;width:1px;height:1px;margin:0;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.ecl-form-label{display:block;font-weight:700;font-size:.875rem;margin-bottom:.5rem;color:#404040}
+.ecl-help-block{font-size:.875rem;color:#404040;margin:.25rem 0}
+.ecl-feedback-message{font-weight:700;font-size:.875rem;color:#cc0000;margin-top:.5rem}
+
+.ecl-form-group{margin-bottom:1.25rem;max-width:30rem}
+.ecl-file-upload{font:inherit}
+.ecl-file-upload:focus{outline:3px solid #ffd617}
+
+</style>
+</head>
+<body>
+<div class="ecl-form-group">
+  <label class="ecl-form-label" for="fu-example">Upload evidence</label>
+  <p class="ecl-help-block" id="fu-example-help">PDF, PNG or JPG — 10 MB maximum</p>
+  <input type="file" id="fu-example" name="evidence" class="ecl-file-upload" aria-describedby="fu-example-help">
+</div>
+<div class="cap">file-upload default</div>
+</body>
+</html>

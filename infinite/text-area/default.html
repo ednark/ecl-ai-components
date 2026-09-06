@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Europa Component Library text area demonstrating the default variant.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Text area (default)</title>
+<script type="application/json" id="ecl-agent-meta">
+{
+  "_schemaVersion": 2,
+  "discovery": {
+    "eclComponentType": "text-area",
+    "eclClass": "ecl-text-area",
+    "section": "forms",
+    "variant": "default",
+    "requiresJs": "no",
+    "interaction": [
+      "type",
+      "focus"
+    ],
+    "a11y": {
+      "wcag21AA": true,
+      "keyboardNav": true,
+      "screenReader": true,
+      "reducedMotion": true,
+      "forcedColors": true,
+      "ariaAttributes": true
+    },
+    "govCompliance": [
+      "EN 301 549",
+      "WCAG 2.1 AA",
+      "Directive (EU) 2016/2102"
+    ],
+    "tier": "curated",
+    "tags": [
+      "textarea",
+      "multiline",
+      "form"
+    ],
+    "description": "Multi-line text input with label and error state (ecl-text-area).",
+    "compliance": {
+      "nistControls": [],
+      "en301549": true,
+      "wcag21AA": true,
+      "webAccessibilityDirective": true,
+      "piiHandling": "accepts_input",
+      "auditTrailCompatible": true,
+      "dataMaskingCompatible": false
+    },
+    "mobileUX": {
+      "touchTargetSize": "44px",
+      "requiredMinSpacing": "8px",
+      "orientationLocked": false,
+      "fullscreenSafe": true
+    }
+  },
+  "selection": {
+    "useWhen": [
+      "Longer free-text answers (descriptions, enquiries)"
+    ],
+    "avoidWhen": [
+      "Single-line values — use text-input"
+    ]
+  },
+  "instruction": {
+    "agentPrompt": "Adjust the rows attribute. Error state: ecl-form-group--error + ecl-text-area--error + linked ecl-feedback-message.",
+    "relatedComponents": [
+      "form-group",
+      "text-input"
+    ]
+  },
+  "coordination": {
+    "prerequisiteComponents": [
+      {
+        "name": "form-group",
+        "reason": "ECL text areas sit inside an ecl-form-group carrying the label and feedback message"
+      }
+    ],
+    "incompatibleWith": [],
+    "compositionCost": {
+      "costTier": "cheap",
+      "estimatedTokens": 48,
+      "renderingTimeMs": 15,
+      "recommendedModel": "haiku"
+    },
+    "compositionRecipes": [
+      "contact-form"
+    ]
+  },
+  "constraints": {
+    "preserve": [
+      ".ecl-text-area class",
+      "ecl-form-group wrapper",
+      "Label association via for/id"
+    ],
+    "editable": [
+      "Label text",
+      "rows attribute"
+    ],
+    "limitations": [
+      "Fixed height by rows"
+    ],
+    "portableInvariants": [
+      "Semantic <textarea> element"
+    ]
+  },
+  "supportedTokenProfiles": [
+    "highContrast"
+  ],
+  "file": "text-area/default.html",
+  "title": "Text area (default)",
+  "portability": {
+    "classMapping": {
+      "uswds": {
+        "base": "usa-textarea"
+      }
+    }
+  }
+}
+</script>
+<style>
+body{font-family:Arial,Helvetica,sans-serif;font-size:1rem;line-height:1.5rem;color:#404040;padding:2rem;background:#fff;margin:0}
+.cap{position:fixed;bottom:12px;left:16px;font-size:11px;letter-spacing:.08em;color:#707070;text-transform:uppercase}
+a,.ecl-link{color:#004494;text-decoration:underline}
+:focus-visible{outline:3px solid #ffd617;outline-offset:1px;box-shadow:0 0 0 2px #404040}
+.ecl-visually-hidden{position:absolute!important;width:1px;height:1px;margin:0;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.ecl-form-label{display:block;font-weight:700;font-size:.875rem;margin-bottom:.5rem;color:#404040}
+.ecl-help-block{font-size:.875rem;color:#404040;margin:.25rem 0}
+.ecl-feedback-message{font-weight:700;font-size:.875rem;color:#cc0000;margin-top:.5rem}
+
+.ecl-form-group{margin-bottom:1.25rem;max-width:30rem}
+.ecl-text-area{font:inherit;display:block;width:100%;box-sizing:border-box;padding:.5rem .75rem;border:1px solid #404040;border-radius:.25rem;min-height:8rem}
+.ecl-text-area:focus{outline:3px solid #ffd617}
+
+</style>
+</head>
+<body>
+<div class="ecl-form-group">
+  <label class="ecl-form-label" for="ta-example">Your enquiry</label>
+  <textarea id="ta-example" name="enquiry" rows="5" class="ecl-text-area"></textarea>
+</div>
+<div class="cap">text-area default</div>
+</body>
+</html>

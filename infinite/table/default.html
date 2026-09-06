@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Europa Component Library table demonstrating the default variant.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Table (default)</title>
+<script type="application/json" id="ecl-agent-meta">
+{
+  "_schemaVersion": 2,
+  "discovery": {
+    "eclComponentType": "table",
+    "eclClass": "ecl-table",
+    "section": "data-display",
+    "variant": "default",
+    "requiresJs": "no",
+    "interaction": [],
+    "a11y": {
+      "wcag21AA": true,
+      "keyboardNav": false,
+      "screenReader": true,
+      "reducedMotion": true,
+      "forcedColors": true,
+      "ariaAttributes": true
+    },
+    "govCompliance": [
+      "EN 301 549",
+      "WCAG 2.1 AA",
+      "Directive (EU) 2016/2102"
+    ],
+    "tier": "curated",
+    "tags": [
+      "table",
+      "data",
+      "numbers"
+    ],
+    "description": "Accessible data table with caption (ecl-table).",
+    "compliance": {
+      "nistControls": [],
+      "en301549": true,
+      "wcag21AA": true,
+      "webAccessibilityDirective": true,
+      "piiHandling": "displays_only",
+      "auditTrailCompatible": false,
+      "dataMaskingCompatible": false
+    },
+    "mobileUX": {
+      "touchTargetSize": "n/a",
+      "requiredMinSpacing": "8px",
+      "orientationLocked": false,
+      "fullscreenSafe": true
+    }
+  },
+  "selection": {
+    "useWhen": [
+      "Tabular data with a genuine row/column relationship"
+    ],
+    "avoidWhen": [
+      "Lists that could be markup lists"
+    ]
+  },
+  "instruction": {
+    "agentPrompt": "Edit headers and cells. Caption is required. Grouped headers and multi-level tables are supported — keep scope attributes.",
+    "relatedComponents": [
+      "pagination",
+      "search-form"
+    ]
+  },
+  "coordination": {
+    "prerequisiteComponents": [],
+    "incompatibleWith": [],
+    "compositionCost": {
+      "costTier": "cheap",
+      "estimatedTokens": 143,
+      "renderingTimeMs": 15,
+      "recommendedModel": "haiku"
+    },
+    "compositionRecipes": [
+      "search-results"
+    ]
+  },
+  "constraints": {
+    "preserve": [
+      "<caption> element (required)",
+      "scope='col'/'row' on header cells",
+      "ecl-table wrapper structure"
+    ],
+    "editable": [
+      "Caption text",
+      "Headers and cells"
+    ],
+    "limitations": [
+      "Wide tables need horizontal scroll handling"
+    ],
+    "portableInvariants": [
+      "Caption present",
+      "scope attributes on headers"
+    ]
+  },
+  "supportedTokenProfiles": [
+    "highContrast"
+  ],
+  "file": "table/default.html",
+  "title": "Table (default)",
+  "portability": {
+    "classMapping": {
+      "uswds": {
+        "base": "usa-table"
+      }
+    }
+  }
+}
+</script>
+<style>
+body{font-family:Arial,Helvetica,sans-serif;font-size:1rem;line-height:1.5rem;color:#404040;padding:2rem;background:#fff;margin:0}
+.cap{position:fixed;bottom:12px;left:16px;font-size:11px;letter-spacing:.08em;color:#707070;text-transform:uppercase}
+a,.ecl-link{color:#004494;text-decoration:underline}
+:focus-visible{outline:3px solid #ffd617;outline-offset:1px;box-shadow:0 0 0 2px #404040}
+.ecl-visually-hidden{position:absolute!important;width:1px;height:1px;margin:0;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.ecl-form-label{display:block;font-weight:700;font-size:.875rem;margin-bottom:.5rem;color:#404040}
+.ecl-help-block{font-size:.875rem;color:#404040;margin:.25rem 0}
+.ecl-feedback-message{font-weight:700;font-size:.875rem;color:#cc0000;margin-top:.5rem}
+
+.ecl-table table{width:100%;border-collapse:collapse;margin:1rem 0}
+.ecl-table__caption{font-weight:700;text-align:left;margin-bottom:.5rem}
+.ecl-table__header{text-align:left;font-weight:700;padding:.5rem .75rem;border-bottom:2px solid #404040}
+.ecl-table__cell{padding:.5rem .75rem;border-bottom:1px solid #ddd}
+
+</style>
+</head>
+<body>
+<div class="ecl-table">
+  <table class="ecl-table__table">
+    <caption class="ecl-table__caption">Dates and amounts</caption>
+    <thead class="ecl-table__head">
+      <tr class="ecl-table__row">
+        <th scope="col" class="ecl-table__header">Date</th>
+        <th scope="col" class="ecl-table__header">Amount</th>
+      </tr>
+    </thead>
+    <tbody class="ecl-table__body">
+      <tr class="ecl-table__row">
+        <td class="ecl-table__cell">First 6 weeks</td>
+        <td class="ecl-table__cell">€109.80 per week</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="cap">table default</div>
+</body>
+</html>

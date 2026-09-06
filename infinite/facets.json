@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "metadataSchemaVersion": 2,
+  "generatedBy": "_base/generate-index.mjs",
+  "total": 29,
+  "designSystem": "Europa Component Library (ECL) 5.2",
+  "facets": {
+    "eclComponentType": {
+      "breadcrumb": 1,
+      "button": 3,
+      "card": 1,
+      "checkbox": 1,
+      "expandable": 1,
+      "file": 1,
+      "file-upload": 1,
+      "form-group": 2,
+      "highlight-box": 1,
+      "inpage-navigation": 1,
+      "label": 1,
+      "notification": 3,
+      "page-header": 1,
+      "pagination": 1,
+      "radio": 1,
+      "search-form": 1,
+      "select": 1,
+      "site-footer": 1,
+      "site-header": 1,
+      "table": 1,
+      "tabs": 1,
+      "tag": 1,
+      "text-area": 1,
+      "text-input": 1
+    },
+    "section": {
+      "navigation": 7,
+      "forms": 12,
+      "data-display": 4,
+      "feedback": 6
+    },
+    "variant": {
+      "default": 22,
+      "ghost": 1,
+      "primary": 1,
+      "secondary": 1,
+      "error": 2,
+      "info": 1,
+      "success": 1
+    },
+    "requiresJs": {
+      "optional": 6,
+      "no": 21,
+      "required": 2
+    },
+    "interaction": {
+      "click": 17,
+      "focus": 23,
+      "keyboard": 8,
+      "type": 3,
+      "change": 1
+    },
+    "a11y": {
+      "wcag21AA": 29,
+      "keyboardNav": 25,
+      "screenReader": 29,
+      "reducedMotion": 29,
+      "forcedColors": 29,
+      "ariaAttributes": 29
+    },
+    "govCompliance": {
+      "EN 301 549": 29,
+      "WCAG 2.1 AA": 29,
+      "Directive (EU) 2016/2102": 29
+    },
+    "costTier": {
+      "moderate": 8,
+      "cheap": 21
+    },
+    "prerequisites": {
+      "form-group": 6
+    },
+    "compositionRecipes": {
+      "content-page": 4,
+      "confirmation-page": 6,
+      "contact-form": 7,
+      "news-listing": 3,
+      "search-results": 3
+    },
+    "piiHandling": {
+      "displays_only": 16,
+      "none": 6,
+      "accepts_input": 7
+    },
+    "touchTargetSize": {
+      "44px": 25,
+      "n/a": 4
+    },
+    "supportedTokenProfiles": {
+      "highContrast": 29
+    }
+  }
+}

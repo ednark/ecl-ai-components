@@ -1,0 +1,29 @@
+{
+  "recipe": "contact-form",
+  "title": "Contact form",
+  "description": "ECL contact form: form groups with labels and help text, textarea, submit button.",
+  "aliases": ["collection:contact-form"],
+  "components": [
+    { "order": 1, "component": "form-group", "variant": "default", "file": "form-group/default.html", "role": "root-container", "required": true, "reason": "Carries the label and help block — the prerequisite for every ECL field" },
+    { "order": 2, "component": "text-input", "variant": "default", "file": "text-input/default.html", "role": "input", "required": true, "reason": "Email address field inside the form group" },
+    { "order": 3, "component": "text-area", "variant": "default", "file": "text-area/default.html", "role": "input", "required": true, "reason": "Enquiry body" },
+    { "order": 4, "component": "button", "variant": "primary", "file": "button/primary.html", "role": "action", "required": true, "reason": "Submit — the only primary button on the page" }
+  ],
+  "nesting": "Components 2-3 sit inside form groups (component 1 pattern); component 4 follows",
+  "validationOrder": [
+    "Every field is inside an ecl-form-group with a for/id-linked label",
+    "Errors: ecl-form-group--error + ecl-text-input--error + ecl-feedback-message linked via aria-describedby",
+    "One h1 per page"
+  ],
+  "a11yNotes": [
+    "Help blocks linked via aria-describedby",
+    "aria-invalid='true' on failing fields",
+    "Error feedback text must match the notification wording when present"
+  ],
+  "agentPromptSequence": [
+    "1. Build one ecl-form-group per field with label + help block",
+    "2. Place the textarea group below the input group",
+    "3. Close with the primary submit button",
+    "4. On failure, switch groups to the error variant and link feedback messages"
+  ]
+}

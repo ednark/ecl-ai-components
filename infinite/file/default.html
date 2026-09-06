@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Europa Component Library file (download) demonstrating the default variant.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>File (download) (default)</title>
+<script type="application/json" id="ecl-agent-meta">
+{
+  "_schemaVersion": 2,
+  "discovery": {
+    "eclComponentType": "file",
+    "eclClass": "ecl-file",
+    "section": "data-display",
+    "variant": "default",
+    "requiresJs": "no",
+    "interaction": [
+      "click",
+      "focus"
+    ],
+    "a11y": {
+      "wcag21AA": true,
+      "keyboardNav": true,
+      "screenReader": true,
+      "reducedMotion": true,
+      "forcedColors": true,
+      "ariaAttributes": true
+    },
+    "govCompliance": [
+      "EN 301 549",
+      "WCAG 2.1 AA",
+      "Directive (EU) 2016/2102"
+    ],
+    "tier": "curated",
+    "tags": [
+      "download",
+      "file",
+      "document",
+      "pdf"
+    ],
+    "description": "File download item with format, size, and language metadata.",
+    "compliance": {
+      "nistControls": [],
+      "en301549": true,
+      "wcag21AA": true,
+      "webAccessibilityDirective": true,
+      "piiHandling": "none",
+      "auditTrailCompatible": false,
+      "dataMaskingCompatible": false
+    },
+    "mobileUX": {
+      "touchTargetSize": "44px",
+      "requiredMinSpacing": "8px",
+      "orientationLocked": false,
+      "fullscreenSafe": true
+    }
+  },
+  "selection": {
+    "useWhen": [
+      "Linking to downloadable documents with format, size, and language metadata"
+    ],
+    "avoidWhen": [
+      "Regular page links — use ecl-link"
+    ]
+  },
+  "instruction": {
+    "agentPrompt": "Edit the title and meta. ECL shows format, size, and language visibly — users must know before clicking. The download attribute is standard.",
+    "relatedComponents": [
+      "card"
+    ]
+  },
+  "coordination": {
+    "prerequisiteComponents": [],
+    "incompatibleWith": [],
+    "compositionCost": {
+      "costTier": "cheap",
+      "estimatedTokens": 86,
+      "renderingTimeMs": 15,
+      "recommendedModel": "haiku"
+    }
+  },
+  "constraints": {
+    "preserve": [
+      "ecl-file__title with ecl-link",
+      "ecl-file__meta (language, format, size) visible text",
+      "download attribute on the link"
+    ],
+    "editable": [
+      "Title",
+      "Meta text",
+      "href"
+    ],
+    "limitations": [
+      "Direct downloads only"
+    ],
+    "portableInvariants": [
+      "Format/size/language visible before download"
+    ]
+  },
+  "supportedTokenProfiles": [
+    "highContrast"
+  ],
+  "file": "file/default.html",
+  "title": "File (download) (default)",
+  "portability": {
+    "classMapping": {
+      "uswds": {
+        "base": "usa-collection__item"
+      }
+    }
+  }
+}
+</script>
+<style>
+body{font-family:Arial,Helvetica,sans-serif;font-size:1rem;line-height:1.5rem;color:#404040;padding:2rem;background:#fff;margin:0}
+.cap{position:fixed;bottom:12px;left:16px;font-size:11px;letter-spacing:.08em;color:#707070;text-transform:uppercase}
+a,.ecl-link{color:#004494;text-decoration:underline}
+:focus-visible{outline:3px solid #ffd617;outline-offset:1px;box-shadow:0 0 0 2px #404040}
+.ecl-visually-hidden{position:absolute!important;width:1px;height:1px;margin:0;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.ecl-form-label{display:block;font-weight:700;font-size:.875rem;margin-bottom:.5rem;color:#404040}
+.ecl-help-block{font-size:.875rem;color:#404040;margin:.25rem 0}
+.ecl-feedback-message{font-weight:700;font-size:.875rem;color:#cc0000;margin-top:.5rem}
+
+.ecl-file{margin:1rem 0;padding:.75rem 0;border-bottom:1px solid #ddd;max-width:30rem}
+.ecl-file__title{color:#004494;text-decoration:underline}
+.ecl-file__meta{font-size:.75rem;color:#707070;display:flex;gap:.75rem;margin-top:.25rem}
+
+</style>
+</head>
+<body>
+<div class="ecl-file">
+  <a href="#" class="ecl-link ecl-file__title" download>
+    <span class="ecl-file__title-label">Annual report 2025</span>
+  </a>
+  <div class="ecl-file__meta">
+    <span class="ecl-file__language">English</span>
+    <span class="ecl-file__type">PDF</span>
+    <span class="ecl-file__size">2.4 MB</span>
+  </div>
+</div>
+<div class="cap">file default</div>
+</body>
+</html>

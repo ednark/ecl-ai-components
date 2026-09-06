@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Europa Component Library tag demonstrating the default variant.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tag (default)</title>
+<script type="application/json" id="ecl-agent-meta">
+{
+  "_schemaVersion": 2,
+  "discovery": {
+    "eclComponentType": "tag",
+    "eclClass": "ecl-tag",
+    "section": "data-display",
+    "variant": "default",
+    "requiresJs": "no",
+    "interaction": [
+      "click"
+    ],
+    "a11y": {
+      "wcag21AA": true,
+      "keyboardNav": true,
+      "screenReader": true,
+      "reducedMotion": true,
+      "forcedColors": true,
+      "ariaAttributes": true
+    },
+    "govCompliance": [
+      "EN 301 549",
+      "WCAG 2.1 AA",
+      "Directive (EU) 2016/2102"
+    ],
+    "tier": "curated",
+    "tags": [
+      "tag",
+      "keyword",
+      "filter"
+    ],
+    "description": "Interactive or static keyword tags (ecl-tag).",
+    "compliance": {
+      "nistControls": [],
+      "en301549": true,
+      "wcag21AA": true,
+      "webAccessibilityDirective": true,
+      "piiHandling": "displays_only",
+      "auditTrailCompatible": false,
+      "dataMaskingCompatible": false
+    },
+    "mobileUX": {
+      "touchTargetSize": "44px",
+      "requiredMinSpacing": "8px",
+      "orientationLocked": false,
+      "fullscreenSafe": true
+    }
+  },
+  "selection": {
+    "useWhen": [
+      "Labelling and filtering content by keyword"
+    ],
+    "avoidWhen": [
+      "Status severity — use label",
+      "Static decoration"
+    ]
+  },
+  "instruction": {
+    "agentPrompt": "Interactive tags are <button class='ecl-tag'> (or <a>); static ones are <span>. Keep element semantics matching interactivity.",
+    "relatedComponents": [
+      "label",
+      "card"
+    ]
+  },
+  "coordination": {
+    "prerequisiteComponents": [],
+    "incompatibleWith": [],
+    "compositionCost": {
+      "costTier": "cheap",
+      "estimatedTokens": 51,
+      "renderingTimeMs": 15,
+      "recommendedModel": "haiku"
+    },
+    "compositionRecipes": [
+      "news-listing"
+    ]
+  },
+  "constraints": {
+    "preserve": [
+      ".ecl-tag class",
+      "Element type matches interactivity"
+    ],
+    "editable": [
+      "Label text"
+    ],
+    "limitations": [
+      "Static tags must not look clickable"
+    ],
+    "portableInvariants": [
+      "Element type matches interactivity"
+    ]
+  },
+  "supportedTokenProfiles": [
+    "highContrast"
+  ],
+  "file": "tag/default.html",
+  "title": "Tag (default)",
+  "portability": {
+    "classMapping": {
+      "uswds": {
+        "base": "usa-tag"
+      }
+    }
+  }
+}
+</script>
+<style>
+body{font-family:Arial,Helvetica,sans-serif;font-size:1rem;line-height:1.5rem;color:#404040;padding:2rem;background:#fff;margin:0}
+.cap{position:fixed;bottom:12px;left:16px;font-size:11px;letter-spacing:.08em;color:#707070;text-transform:uppercase}
+a,.ecl-link{color:#004494;text-decoration:underline}
+:focus-visible{outline:3px solid #ffd617;outline-offset:1px;box-shadow:0 0 0 2px #404040}
+.ecl-visually-hidden{position:absolute!important;width:1px;height:1px;margin:0;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.ecl-form-label{display:block;font-weight:700;font-size:.875rem;margin-bottom:.5rem;color:#404040}
+.ecl-help-block{font-size:.875rem;color:#404040;margin:.25rem 0}
+.ecl-feedback-message{font-weight:700;font-size:.875rem;color:#cc0000;margin-top:.5rem}
+
+.ecl-tag-group{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0}
+.ecl-tag{display:inline-block;padding:.25rem .75rem;border-radius:1rem;background:#f2f5f9;color:#004491;font-size:.875rem;border:1px solid #cfd8e5;text-decoration:none;font:inherit}
+button.ecl-tag,a.ecl-tag{cursor:pointer}
+button.ecl-tag[aria-pressed=true]{background:#004494;color:#fff;border-color:#004494}
+
+</style>
+</head>
+<body>
+<div class="ecl-tag-group">
+  <button class="ecl-tag" aria-pressed="false">Digital</button>
+  <button class="ecl-tag" aria-pressed="true">Economy</button>
+  <span class="ecl-tag">Environment</span>
+</div>
+<div class="cap">tag default</div>
+</body>
+</html>

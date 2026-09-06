@@ -1,0 +1,71 @@
+{
+  "name": "ecl-ai-components",
+  "description": "Europa Component Library (ECL) registry for AI coding agents. Self-contained, accessible European Commission / EU components with full adaptation and coordination metadata.",
+  "repo": "https://github.com/ednark/ecl-ai-components",
+  "base": "https://raw.githubusercontent.com/ednark/ecl-ai-components/main",
+  "count": 29,
+  "facetsUrl": "https://raw.githubusercontent.com/ednark/ecl-ai-components/main/infinite/facets.json",
+  "index": "https://raw.githubusercontent.com/ednark/ecl-ai-components/main/infinite/components.index.json",
+  "indexSchemaVersion": 1,
+  "metadataSchemaVersion": 2,
+  "tileFetchPattern": "https://raw.githubusercontent.com/ednark/ecl-ai-components/main/infinite/{file}",
+  "designSystem": {
+    "name": "Europa Component Library (ECL)",
+    "version": "5.2",
+    "url": "https://ec.europa.eu/component-library/"
+  },
+  "agentMetaId": "ecl-agent-meta",
+  "tileDir": "infinite",
+  "facets": [
+    "eclComponentType",
+    "section",
+    "variant",
+    "requiresJs",
+    "interaction",
+    "a11y",
+    "govCompliance",
+    "costTier",
+    "prerequisites",
+    "compositionRecipes",
+    "piiHandling",
+    "touchTargetSize",
+    "supportedTokenProfiles"
+  ],
+  "adaptationDetail": "embedded in each tile as <script type=\"application/json\" id=\"ecl-agent-meta\">",
+  "flow": [
+    "GET agents.json",
+    "GET facets.json",
+    "GET components.index.json",
+    "filter by facet in code",
+    "GET tile by file",
+    "read ecl-agent-meta block"
+  ],
+  "recipesUrl": "https://raw.githubusercontent.com/ednark/ecl-ai-components/main/infinite/recipes/index.json",
+  "versionsUrl": "https://raw.githubusercontent.com/ednark/ecl-ai-components/main/infinite/versions.json",
+  "compatibilityUrl": "https://raw.githubusercontent.com/ednark/ecl-ai-components/main/compatibility.json",
+  "compatibilityTargets": ["uswds", "govuk", "dsfr"],
+  "mcp": {
+    "enabled": true,
+    "server": "_base/mcp/server.mjs",
+    "transport": "stdio",
+    "tools": [
+      "search_components",
+      "get_component",
+      "list_facets",
+      "get_index",
+      "get_adapter",
+      "translate_component",
+      "get_recipe",
+      "query_compliance",
+      "get_versions"
+    ]
+  },
+  "tokenProfiles": {
+    "highContrast": {
+      "description": "forced-colors / high-contrast mode support (ECL is WCAG-checked)",
+      "tokenOverrides": { "border": "2px solid currentColor", "background": "transparent" }
+    }
+  },
+  "compatibilityPath": "compatibility.json",
+  "updated": "0.1.0"
+}

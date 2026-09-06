@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Europa Component Library button demonstrating the ghost variant.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Button (ghost)</title>
+<script type="application/json" id="ecl-agent-meta">
+{
+  "_schemaVersion": 2,
+  "discovery": {
+    "eclComponentType": "button",
+    "eclClass": "ecl-button",
+    "section": "forms",
+    "variant": "ghost",
+    "requiresJs": "no",
+    "interaction": [
+      "click",
+      "focus",
+      "keyboard"
+    ],
+    "a11y": {
+      "wcag21AA": true,
+      "keyboardNav": true,
+      "screenReader": true,
+      "reducedMotion": true,
+      "forcedColors": true,
+      "ariaAttributes": true
+    },
+    "govCompliance": [
+      "EN 301 549",
+      "WCAG 2.1 AA",
+      "Directive (EU) 2016/2102"
+    ],
+    "tier": "curated",
+    "tags": [
+      "button",
+      "submit",
+      "action",
+      "cta"
+    ],
+    "description": "Primary, secondary, and ghost buttons (ecl-button).",
+    "compliance": {
+      "nistControls": [],
+      "en301549": true,
+      "wcag21AA": true,
+      "webAccessibilityDirective": true,
+      "piiHandling": "none",
+      "auditTrailCompatible": false,
+      "dataMaskingCompatible": false
+    },
+    "mobileUX": {
+      "touchTargetSize": "44px",
+      "requiredMinSpacing": "8px",
+      "orientationLocked": false,
+      "fullscreenSafe": true
+    }
+  },
+  "selection": {
+    "useWhen": [
+      "Primary actions (ecl-button--primary), search submit (--call-to-action? use --primary for search)",
+      "Secondary actions via ecl-button--secondary; text-like actions via ecl-button--ghost"
+    ],
+    "avoidWhen": [
+      "Links between pages — use ecl-link",
+      "Multiple primary buttons per view"
+    ]
+  },
+  "instruction": {
+    "agentPrompt": "Edit the label inside ecl-button__label. Variants: ecl-button--primary / --secondary / --ghost. Keep the ecl-button__container > ecl-button__label structure — ECL icons render through it.",
+    "relatedComponents": [
+      "text-input",
+      "notification"
+    ]
+  },
+  "coordination": {
+    "prerequisiteComponents": [],
+    "incompatibleWith": [],
+    "compositionCost": {
+      "costTier": "cheap",
+      "estimatedTokens": 44,
+      "renderingTimeMs": 15,
+      "recommendedModel": "haiku"
+    },
+    "compositionRecipes": [
+      "confirmation-page",
+      "contact-form"
+    ]
+  },
+  "constraints": {
+    "preserve": [
+      ".ecl-button + .ecl-button__container > .ecl-button__label structure",
+      "type='submit' on form-submitting buttons"
+    ],
+    "editable": [
+      "Label text",
+      "Variant class",
+      "Icon (ecl-icon inside container)"
+    ],
+    "limitations": [
+      "One primary button per view",
+      "Ghost buttons read as links to users — use only for low-emphasis actions"
+    ],
+    "portableInvariants": [
+      "Semantic <button> or <a> root element",
+      "Accessible name preserved"
+    ]
+  },
+  "supportedTokenProfiles": [
+    "highContrast"
+  ],
+  "file": "button/ghost.html",
+  "title": "Button (ghost)",
+  "portability": {
+    "classMapping": {
+      "uswds": {
+        "base": "usa-button",
+        "secondary": "usa-button usa-button--secondary"
+      }
+    }
+  }
+}
+</script>
+<style>
+body{font-family:Arial,Helvetica,sans-serif;font-size:1rem;line-height:1.5rem;color:#404040;padding:2rem;background:#fff;margin:0}
+.cap{position:fixed;bottom:12px;left:16px;font-size:11px;letter-spacing:.08em;color:#707070;text-transform:uppercase}
+a,.ecl-link{color:#004494;text-decoration:underline}
+:focus-visible{outline:3px solid #ffd617;outline-offset:1px;box-shadow:0 0 0 2px #404040}
+.ecl-visually-hidden{position:absolute!important;width:1px;height:1px;margin:0;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.ecl-form-label{display:block;font-weight:700;font-size:.875rem;margin-bottom:.5rem;color:#404040}
+.ecl-help-block{font-size:.875rem;color:#404040;margin:.25rem 0}
+.ecl-feedback-message{font-weight:700;font-size:.875rem;color:#cc0000;margin-top:.5rem}
+
+.ecl-button{font:inherit;display:inline-block;padding:.5rem 1.25rem;border-radius:.25rem;border:1px solid #004494;background:#004494;color:#fff;cursor:pointer;text-decoration:none}
+.ecl-button:hover{background:#003776}
+.ecl-button--secondary{background:#fff;color:#004494}
+.ecl-button--secondary:hover{background:#eef3fb}
+.ecl-button--ghost{background:none;border-color:transparent;color:#004494;text-decoration:underline}
+.ecl-button__container{display:inline-flex;align-items:center;gap:.5rem}
+
+</style>
+</head>
+<body>
+<button class="ecl-button ecl-button--ghost" type="button">
+  <span class="ecl-button__container">
+    <span class="ecl-button__label">Ghost action</span>
+  </span>
+</button>
+<div class="cap">button ghost</div>
+</body>
+</html>

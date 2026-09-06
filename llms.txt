@@ -1,0 +1,64 @@
+> ECL AI Components — Plain-text agent protocol
+> Free to browse and download. Component markup and metadata are original works; ecl-* class names used under ECL terms (EUPL).
+> Home: https://github.com/ednark/ecl-ai-components
+> Base layer: https://github.com/ednark/ai-component-registry-spec (submodule at _base/)
+
+---
+
+## Overview
+
+Europa Component Library registry for AI coding agents building European Commission and EU institutional websites. 29 self-contained component tiles across 24 component families with categorized adaptation, coordination, and compliance metadata (EN 301 549, WCAG 2.1 AA, Directive (EU) 2016/2102). EC-branded; EU variant derivable. Localised into 24 EU languages — language selection is a site-header concern.
+
+## Machine manifest
+
+> https://raw.githubusercontent.com/ednark/ecl-ai-components/main/agents.json
+
+---
+
+## Quick start
+
+1. Filter vocab: GET https://raw.githubusercontent.com/ednark/ecl-ai-components/main/infinite/facets.json
+2. Discovery index (lean): GET https://raw.githubusercontent.com/ednark/ecl-ai-components/main/infinite/components.index.json
+3. Component source: GET https://raw.githubusercontent.com/ednark/ecl-ai-components/main/infinite/{file}
+4. Recipes: GET https://raw.githubusercontent.com/ednark/ecl-ai-components/main/infinite/recipes/index.json
+   (contact-form, confirmation-page, search-results, content-page, news-listing)
+5. Version history: GET https://raw.githubusercontent.com/ednark/ecl-ai-components/main/infinite/versions.json
+
+---
+
+## Facets
+
+- eclComponentType — button, text-input, select, notification, table, card, tag, etc.
+- section — forms, navigation, feedback, data-display
+- variant — component variant
+- requiresJs — no, optional, required
+- interaction — passive, click, focus, keyboard, type, change
+- govCompliance — EN 301 549, WCAG 2.1 AA, Directive (UE) 2016/2102
+- a11y — wcag21AA, keyboardNav, screenReader, reducedMotion, forcedColors, ariaAttributes
+- costTier — cheap, moderate, expensive
+- prerequisites — components to fetch first (ecl-form-group before fields)
+- compositionRecipes — recipes this component participates in
+- piiHandling — accepts_input, displays_only, none
+- touchTargetSize — 44px on interactive components
+- supportedTokenProfiles — highContrast
+
+---
+
+## ECL rules
+
+- Every field sits inside an ecl-form-group — fetch form-group first
+- Errors use ecl-feedback-message in the group — no page-level error summary
+- Buttons keep the ecl-button__container > ecl-button__label structure
+- Identity assets (EC/EU logo) follow Commission identity rules
+- 24 EU languages: keep text externalisable
+
+---
+
+## Output contract
+
+1. Reason — why this component over alternatives
+2. Selected components — file paths and titles
+3. ECL classes needed — exact ecl-* class names
+4. Constraint verification — preserve elements intact
+5. Remaining work — what the component does not cover
+6. Recommended next — what to retrieve next

@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Europa Component Library page header demonstrating the default variant.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page header (default)</title>
+<script type="application/json" id="ecl-agent-meta">
+{
+  "_schemaVersion": 2,
+  "discovery": {
+    "eclComponentType": "page-header",
+    "eclClass": "ecl-page-header",
+    "section": "navigation",
+    "variant": "default",
+    "requiresJs": "no",
+    "interaction": [],
+    "a11y": {
+      "wcag21AA": true,
+      "keyboardNav": false,
+      "screenReader": true,
+      "reducedMotion": true,
+      "forcedColors": true,
+      "ariaAttributes": true
+    },
+    "govCompliance": [
+      "EN 301 549",
+      "WCAG 2.1 AA",
+      "Directive (EU) 2016/2102"
+    ],
+    "tier": "curated",
+    "tags": [
+      "page-header",
+      "title",
+      "h1",
+      "layout"
+    ],
+    "description": "Page-level header with meta, title, and description.",
+    "compliance": {
+      "nistControls": [],
+      "en301549": true,
+      "wcag21AA": true,
+      "webAccessibilityDirective": true,
+      "piiHandling": "displays_only",
+      "auditTrailCompatible": false,
+      "dataMaskingCompatible": false
+    },
+    "mobileUX": {
+      "touchTargetSize": "n/a",
+      "requiredMinSpacing": "8px",
+      "orientationLocked": false,
+      "fullscreenSafe": true
+    }
+  },
+  "selection": {
+    "useWhen": [
+      "Top of every content page — breadcrumbs, meta, title, description"
+    ],
+    "avoidWhen": [
+      "Application-style pages without a title hierarchy"
+    ]
+  },
+  "instruction": {
+    "agentPrompt": "Edit the meta label, title (h1), and description. The breadcrumb typically lives inside the page header in ECL layouts.",
+    "relatedComponents": [
+      "site-header",
+      "breadcrumb",
+      "site-footer"
+    ]
+  },
+  "coordination": {
+    "prerequisiteComponents": [],
+    "incompatibleWith": [],
+    "compositionCost": {
+      "costTier": "cheap",
+      "estimatedTokens": 69,
+      "renderingTimeMs": 15,
+      "recommendedModel": "haiku"
+    },
+    "compositionRecipes": [
+      "content-page"
+    ]
+  },
+  "constraints": {
+    "preserve": [
+      "ecl-page-header structure with h1 title",
+      "One h1 per page — it lives here"
+    ],
+    "editable": [
+      "Meta text",
+      "Title",
+      "Description"
+    ],
+    "limitations": [
+      "Do not place interactive controls in the page header"
+    ],
+    "portableInvariants": [
+      "Single h1 per page"
+    ]
+  },
+  "supportedTokenProfiles": [
+    "highContrast"
+  ],
+  "file": "page-header/default.html",
+  "title": "Page header (default)"
+}
+</script>
+<style>
+body{font-family:Arial,Helvetica,sans-serif;font-size:1rem;line-height:1.5rem;color:#404040;padding:2rem;background:#fff;margin:0}
+.cap{position:fixed;bottom:12px;left:16px;font-size:11px;letter-spacing:.08em;color:#707070;text-transform:uppercase}
+a,.ecl-link{color:#004494;text-decoration:underline}
+:focus-visible{outline:3px solid #ffd617;outline-offset:1px;box-shadow:0 0 0 2px #404040}
+.ecl-visually-hidden{position:absolute!important;width:1px;height:1px;margin:0;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.ecl-form-label{display:block;font-weight:700;font-size:.875rem;margin-bottom:.5rem;color:#404040}
+.ecl-help-block{font-size:.875rem;color:#404040;margin:.25rem 0}
+.ecl-feedback-message{font-weight:700;font-size:.875rem;color:#cc0000;margin-top:.5rem}
+
+.ecl-page-header{border-bottom:1px solid #ddd;padding-bottom:1rem;margin-bottom:1.5rem}
+.ecl-page-header__meta{font-size:.875rem;color:#707070;margin:0 0 .5rem}
+.ecl-page-header__title{font-size:2rem;margin:0 0 .5rem;color:#161616}
+.ecl-page-header__description{margin:0;color:#404040}
+
+</style>
+</head>
+<body>
+<div class="ecl-page-header">
+  <div class="ecl-container">
+    <p class="ecl-page-header__meta">Home > Policies</p>
+    <h1 class="ecl-page-header__title">Page title</h1>
+    <p class="ecl-page-header__description">Short description of the page content.</p>
+  </div>
+</div>
+<div class="cap">page-header default</div>
+</body>
+</html>

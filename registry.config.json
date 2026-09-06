@@ -1,0 +1,72 @@
+{
+  "name": "ecl-ai-components",
+  "description": "Europa Component Library (ECL) registry for AI coding agents. Self-contained, accessible European Commission / EU components with full adaptation and coordination metadata.",
+  "repo": "https://github.com/ednark/ecl-ai-components",
+  "base": "https://raw.githubusercontent.com/ednark/ecl-ai-components/main",
+  "count": 34,
+  "facetsUrl": "https://raw.githubusercontent.com/ednark/ecl-ai-components/main/infinite/facets.json",
+  "index": "https://raw.githubusercontent.com/ednark/ecl-ai-components/main/infinite/components.index.json",
+  "indexSchemaVersion": 1,
+  "metadataSchemaVersion": 2,
+  "tileFetchPattern": "https://raw.githubusercontent.com/ednark/ecl-ai-components/main/infinite/{file}",
+  "designSystem": {
+    "name": "Europa Component Library (ECL)",
+    "version": "5.2",
+    "url": "https://ec.europa.eu/component-library/"
+  },
+  "agentMetaId": "ecl-agent-meta",
+  "tileDir": "infinite",
+  "facets": [
+    "eclComponentType",
+    "section",
+    "variant",
+    "requiresJs",
+    "interaction",
+    "a11y",
+    "govCompliance",
+    "costTier",
+    "prerequisites",
+    "compositionRecipes",
+    "piiHandling",
+    "touchTargetSize",
+    "supportedTokenProfiles"
+  ],
+  "metadataCategories": {
+    "discovery": "Facets for filtering in code (not sent to model)",
+    "selection": "useWhen/avoidWhen — helps choose the right component",
+    "instruction": "agentPrompt — direct guidance for adaptation",
+    "coordination": "prerequisites/incompatibleWith/compositionCost/agentPromptSequence — plan before composing",
+    "constraints": "preserve/editable/limitations/portableInvariants — hard boundaries on changes",
+    "portability": "classMapping for cross-registry class substitution"
+  },
+  "constraintPriority": [
+    "constraints.preserve (never modify)",
+    "constraints.limitations (respect)",
+    "instruction.agentPrompt (adapt within boundaries)",
+    "constraints.editable (prefer)"
+  ],
+  "mcp": {
+    "enabled": true,
+    "server": "_base/mcp/server.mjs",
+    "transport": "stdio",
+    "tools": [
+      "search_components",
+      "get_component",
+      "list_facets",
+      "get_index",
+      "get_adapter",
+      "translate_component",
+      "get_recipe",
+      "query_compliance",
+      "get_versions"
+    ]
+  },
+  "tokenProfiles": {
+    "highContrast": {
+      "description": "forced-colors / high-contrast mode support (ECL is WCAG-checked)",
+      "tokenOverrides": { "border": "2px solid currentColor", "background": "transparent" }
+    }
+  },
+  "compatibilityPath": "compatibility.json",
+  "updated": "0.1.0"
+}

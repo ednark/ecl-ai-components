@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Europa Component Library checkbox demonstrating the default variant.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Checkbox (default)</title>
+<script type="application/json" id="ecl-agent-meta">
+{
+  "_schemaVersion": 2,
+  "discovery": {
+    "eclComponentType": "checkbox",
+    "eclClass": "ecl-checkbox",
+    "section": "forms",
+    "variant": "default",
+    "requiresJs": "no",
+    "interaction": [
+      "focus",
+      "click",
+      "keyboard"
+    ],
+    "a11y": {
+      "wcag21AA": true,
+      "keyboardNav": true,
+      "screenReader": true,
+      "reducedMotion": true,
+      "forcedColors": true,
+      "ariaAttributes": true
+    },
+    "govCompliance": [
+      "EN 301 549",
+      "WCAG 2.1 AA",
+      "Directive (EU) 2016/2102"
+    ],
+    "tier": "curated",
+    "tags": [
+      "checkbox",
+      "multiple",
+      "form",
+      "options"
+    ],
+    "description": "Checkbox with custom box renderer (ecl-checkbox).",
+    "compliance": {
+      "nistControls": [],
+      "en301549": true,
+      "wcag21AA": true,
+      "webAccessibilityDirective": true,
+      "piiHandling": "accepts_input",
+      "auditTrailCompatible": true,
+      "dataMaskingCompatible": false
+    },
+    "mobileUX": {
+      "touchTargetSize": "44px",
+      "requiredMinSpacing": "8px",
+      "orientationLocked": false,
+      "fullscreenSafe": true
+    }
+  },
+  "selection": {
+    "useWhen": [
+      "Multiple selections including none",
+      "Single consent checkbox"
+    ],
+    "avoidWhen": [
+      "Exactly one choice — use radio"
+    ]
+  },
+  "instruction": {
+    "agentPrompt": "Edit the checkbox text. The ecl-checkbox__box span renders the custom box — keep it. Group errors use ecl-form-group--error + ecl-feedback-message.",
+    "relatedComponents": [
+      "radio",
+      "form-group"
+    ]
+  },
+  "coordination": {
+    "prerequisiteComponents": [
+      {
+        "name": "form-group",
+        "reason": "ECL checkboxes sit inside an ecl-form-group carrying the label and feedback message"
+      }
+    ],
+    "incompatibleWith": [],
+    "compositionCost": {
+      "costTier": "cheap",
+      "estimatedTokens": 77,
+      "renderingTimeMs": 15,
+      "recommendedModel": "haiku"
+    }
+  },
+  "constraints": {
+    "preserve": [
+      "ecl-checkbox__input on the input",
+      "ecl-checkbox__box span (custom box renderer)",
+      "Label wrapping input + ecl-checkbox__text"
+    ],
+    "editable": [
+      "Checkbox text",
+      "Option values"
+    ],
+    "limitations": [
+      "Do not pre-check consent boxes"
+    ],
+    "portableInvariants": [
+      "Real <input type='checkbox'> elements"
+    ]
+  },
+  "supportedTokenProfiles": [
+    "highContrast"
+  ],
+  "file": "checkbox/default.html",
+  "title": "Checkbox (default)",
+  "portability": {
+    "classMapping": {
+      "uswds": {
+        "base": "usa-checkbox__input",
+        "label": "usa-checkbox__label"
+      }
+    }
+  }
+}
+</script>
+<style>
+body{font-family:Arial,Helvetica,sans-serif;font-size:1rem;line-height:1.5rem;color:#404040;padding:2rem;background:#fff;margin:0}
+.cap{position:fixed;bottom:12px;left:16px;font-size:11px;letter-spacing:.08em;color:#707070;text-transform:uppercase}
+a,.ecl-link{color:#004494;text-decoration:underline}
+:focus-visible{outline:3px solid #ffd617;outline-offset:1px;box-shadow:0 0 0 2px #404040}
+.ecl-visually-hidden{position:absolute!important;width:1px;height:1px;margin:0;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.ecl-form-label{display:block;font-weight:700;font-size:.875rem;margin-bottom:.5rem;color:#404040}
+.ecl-help-block{font-size:.875rem;color:#404040;margin:.25rem 0}
+.ecl-feedback-message{font-weight:700;font-size:.875rem;color:#cc0000;margin-top:.5rem}
+
+.ecl-form-group{margin-bottom:1.25rem}
+.ecl-checkbox{display:block;position:relative;padding-left:2rem;cursor:pointer;margin-bottom:.5rem}
+.ecl-checkbox__input{position:absolute;opacity:0;width:20px;height:20px;margin:0}
+.ecl-checkbox__box{position:absolute;left:0;top:2px;width:18px;height:18px;border:2px solid #404040;border-radius:.15rem;background:#fff}
+.ecl-checkbox__input:checked+.ecl-checkbox__box{background:#004494;box-shadow:inset 0 0 0 2px #004494}
+.ecl-checkbox__input:checked+.ecl-checkbox__box:after{content:"✓";position:absolute;left:2px;top:-2px;color:#fff;font-weight:700}
+.ecl-checkbox__input:focus+.ecl-checkbox__box{outline:3px solid #ffd617}
+
+</style>
+</head>
+<body>
+<div class="ecl-form-group">
+  <label class="ecl-checkbox" for="cb-example">
+    <input type="checkbox" id="cb-example" name="consent" class="ecl-checkbox__input" />
+    <span class="ecl-checkbox__box"></span>
+    <span class="ecl-checkbox__text">I agree to the data protection terms</span>
+  </label>
+</div>
+<div class="cap">checkbox default</div>
+</body>
+</html>
