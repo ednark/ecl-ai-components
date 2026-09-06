@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "registry": "ecl-ai-components",
+  "note": "Session log of field research. Per-tile provenance lives in each tile's provenance block.",
+  "sessions": [
+    {
+      "date": "2026-09-06",
+      "source": "https://commission.europa.eu/index_en",
+      "title": "European Commission homepage (live-site observation)",
+      "method": "live-site observation",
+      "findings": [
+        "24-language selector panel — ecl-language-list added",
+        "Full-width hero banner with image + CTA — ecl-banner added (default + image variants)",
+        "News items with image/date/read-time — ecl-content-item added",
+        "Agenda date blocks — ecl-date-block added",
+        "\"Europe and you\" icon+link lists — ecl-list-illustration added",
+        "Social media follow links — ecl-social-media-follow added",
+        "Mega menu with FEATURED columns — complex/JS-heavy; noted as future candidate, not tiled"
+      ],
+      "tilesAdded": [
+        "banner/default",
+        "banner/image",
+        "date-block/default",
+        "content-item/default",
+        "list-illustration/default",
+        "language-list/default",
+        "social-media-follow/default"
+      ]
+    }
+  ]
+}

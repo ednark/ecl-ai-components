@@ -181,7 +181,41 @@ function costDefaults(bytes, requiresJs) {
 
 // ─── Recipe membership ───────────────────────────────────────────────────────
 
-const recipeMembership = {};
+const recipeMembership = {
+  'banner': `.ecl-banner{padding:3rem 2rem;background:#f2f5f9;margin:-2rem -2rem 2rem}
+.ecl-banner--image{background:#004494;background-size:cover;color:#fff}
+.ecl-banner--image .ecl-banner__title,.ecl-banner--image .ecl-banner__description{color:#fff}
+.ecl-banner__title{font-size:2.25rem;font-weight:700;margin:0 0 .5rem;color:#161616}
+.ecl-banner__description{margin:0 0 1rem}
+`,
+  'date-block': `.ecl-date-block{display:inline-flex;flex-direction:column;align-items:center;background:#004494;color:#fff;border-radius:.25rem;padding:.5rem 1rem;margin:0 1rem 0 0}
+.ecl-date-block__day{font-size:1.5rem;font-weight:700}
+.ecl-date-block__month,.ecl-date-block__year{font-size:.75rem;text-transform:uppercase}
+`,
+  'content-item': `.ecl-content-item{margin:1rem 0;max-width:36rem}
+.ecl-content-block{display:flex;gap:1rem}
+.ecl-content-block__image .ecl-image{width:10rem;height:auto;display:block}
+.ecl-content-block__title{font-size:1.125rem;margin:0 0 .25rem}
+.ecl-content-block__title a{color:#004494;text-decoration:underline}
+.ecl-content-block__description{margin:0 0 .25rem;color:#404040}
+.ecl-content-block__meta-item{font-size:.75rem;color:#707070;margin:0}
+`,
+  'list-illustration': `.ecl-list-illustration{list-style:none;margin:1rem 0;padding:0}
+.ecl-list-illustration__item{display:flex;align-items:center;gap:1rem;padding:.5rem 0;border-bottom:1px solid #eee}
+.ecl-list-illustration__image{width:3rem;height:3rem}
+`,
+  'language-list': `.ecl-language-list{background:#f2f5f9;padding:1rem}
+.ecl-language-list__list{list-style:none;margin:0;padding:0;columns:2;column-gap:2rem}
+.ecl-language-list__list li{margin:.25rem 0}
+.ecl-language-list__link{color:#004494;text-decoration:underline}
+.ecl-language-list__link[aria-current]{font-weight:700;text-decoration:none}
+`,
+  'social-media-follow': `.ecl-social-media-follow{background:#f2f5f9;padding:1rem;margin:1rem 0}
+.ecl-social-media-follow__list{list-style:none;margin:0;padding:0;display:flex;gap:1rem;flex-wrap:wrap}
+.ecl-social-media-follow__link{color:#004494;text-decoration:underline;font-weight:500}
+`
+};
+};
 try {
   const recipesDir = join(TILE_DIR, 'recipes');
   for (const item of readdirSync(recipesDir)) {
@@ -265,6 +299,7 @@ function buildMeta(component, variant, relPath, html) {
       portableInvariants: component.invariants,
     },
     supportedTokenProfiles: ['highContrast'],
+    ...(component.provenance && { provenance: component.provenance }),
     file: relPath,
     title: `${component.name} (${variant})`,
   };

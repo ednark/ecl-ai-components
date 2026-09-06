@@ -3,7 +3,7 @@
   "description": "Europa Component Library (ECL) registry for AI coding agents. Self-contained, accessible European Commission / EU components with full adaptation and coordination metadata.",
   "repo": "https://github.com/ednark/ecl-ai-components",
   "base": "https://raw.githubusercontent.com/ednark/ecl-ai-components/main",
-  "count": 29,
+  "count": 36,
   "facetsUrl": "https://raw.githubusercontent.com/ednark/ecl-ai-components/main/infinite/facets.json",
   "index": "https://raw.githubusercontent.com/ednark/ecl-ai-components/main/infinite/components.index.json",
   "indexSchemaVersion": 1,

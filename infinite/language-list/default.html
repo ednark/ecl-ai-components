@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Europa Component Library language list demonstrating the default variant.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Language list (default)</title>
+<script type="application/json" id="ecl-agent-meta">
+{
+  "_schemaVersion": 2,
+  "discovery": {
+    "eclComponentType": "language-list",
+    "eclClass": "ecl-language-list",
+    "section": "navigation",
+    "variant": "default",
+    "requiresJs": "optional",
+    "interaction": [
+      "click",
+      "focus"
+    ],
+    "a11y": {
+      "wcag21AA": true,
+      "keyboardNav": true,
+      "screenReader": true,
+      "reducedMotion": true,
+      "forcedColors": true,
+      "ariaAttributes": true
+    },
+    "govCompliance": [
+      "EN 301 549",
+      "WCAG 2.1 AA",
+      "Directive (EU) 2016/2102"
+    ],
+    "tier": "curated",
+    "tags": [
+      "language",
+      "multilingual",
+      "selector",
+      "24-languages"
+    ],
+    "description": "24-official-language selection list (ecl-language-list).",
+    "compliance": {
+      "nistControls": [],
+      "en301549": true,
+      "wcag21AA": true,
+      "webAccessibilityDirective": true,
+      "piiHandling": "none",
+      "auditTrailCompatible": false,
+      "dataMaskingCompatible": false
+    },
+    "mobileUX": {
+      "touchTargetSize": "44px",
+      "requiredMinSpacing": "8px",
+      "orientationLocked": false,
+      "fullscreenSafe": true
+    }
+  },
+  "selection": {
+    "useWhen": [
+      "Selecting one of the 24 official EU languages",
+      "Splash pages and the site-header selector panel"
+    ],
+    "avoidWhen": [
+      "Single-language sites"
+    ]
+  },
+  "instruction": {
+    "agentPrompt": "Each link carries lang and hreflang attributes matching its target language. The current language is not a link (aria-current). Link text is the language's own name in its own script.",
+    "relatedComponents": [
+      "site-header"
+    ]
+  },
+  "coordination": {
+    "prerequisiteComponents": [],
+    "incompatibleWith": [],
+    "compositionCost": {
+      "costTier": "moderate",
+      "estimatedTokens": 181,
+      "renderingTimeMs": 35,
+      "recommendedModel": "haiku"
+    }
+  },
+  "constraints": {
+    "preserve": [
+      "lang + hreflang attributes on every language link",
+      "Language names in their own language/script",
+      "aria-current on the active language"
+    ],
+    "editable": [
+      "Languages included",
+      "Target URLs"
+    ],
+    "limitations": [
+      "All 24 official languages expected on EC/EU sites — omitting one needs a documented reason"
+    ],
+    "portableInvariants": [
+      "lang/hreflang attributes preserved",
+      "Current language marked"
+    ]
+  },
+  "supportedTokenProfiles": [
+    "highContrast"
+  ],
+  "file": "language-list/default.html",
+  "title": "Language list (default)"
+}
+</script>
+<style>
+body{font-family:Arial,Helvetica,sans-serif;font-size:1rem;line-height:1.5rem;color:#404040;padding:2rem;background:#fff;margin:0}
+.cap{position:fixed;bottom:12px;left:16px;font-size:11px;letter-spacing:.08em;color:#707070;text-transform:uppercase}
+a,.ecl-link{color:#004494;text-decoration:underline}
+:focus-visible{outline:3px solid #ffd617;outline-offset:1px;box-shadow:0 0 0 2px #404040}
+.ecl-visually-hidden{position:absolute!important;width:1px;height:1px;margin:0;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.ecl-form-label{display:block;font-weight:700;font-size:.875rem;margin-bottom:.5rem;color:#404040}
+.ecl-help-block{font-size:.875rem;color:#404040;margin:.25rem 0}
+.ecl-feedback-message{font-weight:700;font-size:.875rem;color:#cc0000;margin-top:.5rem}
+
+
+</style>
+</head>
+<body>
+<div class="ecl-language-list">
+  <div class="ecl-container">
+    <ul class="ecl-language-list__list">
+      <li><a href="#" lang="en" hreflang="en" class="ecl-language-list__link" aria-current="true">English</a></li>
+      <li><a href="#" lang="fr" hreflang="fr" class="ecl-language-list__link">français</a></li>
+      <li><a href="#" lang="de" hreflang="de" class="ecl-language-list__link">Deutsch</a></li>
+      <li><a href="#" lang="es" hreflang="es" class="ecl-language-list__link">español</a></li>
+      <li><a href="#" lang="nl" hreflang="nl" class="ecl-language-list__link">Nederlands</a></li>
+      <li><a href="#" lang="pl" hreflang="pl" class="ecl-language-list__link">polski</a></li>
+    </ul>
+  </div>
+</div>
+<div class="cap">language-list default</div>
+</body>
+</html>

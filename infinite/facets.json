@@ -2,14 +2,17 @@
   "schemaVersion": 1,
   "metadataSchemaVersion": 2,
   "generatedBy": "_base/generate-index.mjs",
-  "total": 29,
+  "total": 36,
   "designSystem": "Europa Component Library (ECL) 5.2",
   "facets": {
     "eclComponentType": {
+      "banner": 2,
       "breadcrumb": 1,
       "button": 3,
       "card": 1,
       "checkbox": 1,
+      "content-item": 1,
+      "date-block": 1,
       "expandable": 1,
       "file": 1,
       "file-upload": 1,
@@ -17,6 +20,8 @@
       "highlight-box": 1,
       "inpage-navigation": 1,
       "label": 1,
+      "language-list": 1,
+      "list-illustration": 1,
       "notification": 3,
       "page-header": 1,
       "pagination": 1,
@@ -25,6 +30,7 @@
       "select": 1,
       "site-footer": 1,
       "site-header": 1,
+      "social-media-follow": 1,
       "table": 1,
       "tabs": 1,
       "tag": 1,
@@ -32,13 +38,15 @@
       "text-input": 1
     },
     "section": {
-      "navigation": 7,
+      "layout": 2,
+      "navigation": 8,
       "forms": 12,
-      "data-display": 4,
-      "feedback": 6
+      "data-display": 7,
+      "feedback": 7
     },
     "variant": {
-      "default": 22,
+      "default": 28,
+      "image": 1,
       "ghost": 1,
       "primary": 1,
       "secondary": 1,
@@ -47,33 +55,33 @@
       "success": 1
     },
     "requiresJs": {
-      "optional": 6,
-      "no": 21,
+      "no": 27,
+      "optional": 7,
       "required": 2
     },
     "interaction": {
-      "click": 17,
-      "focus": 23,
+      "click": 23,
+      "focus": 29,
       "keyboard": 8,
       "type": 3,
       "change": 1
     },
     "a11y": {
-      "wcag21AA": 29,
-      "keyboardNav": 25,
-      "screenReader": 29,
-      "reducedMotion": 29,
-      "forcedColors": 29,
-      "ariaAttributes": 29
+      "wcag21AA": 36,
+      "keyboardNav": 31,
+      "screenReader": 36,
+      "reducedMotion": 36,
+      "forcedColors": 36,
+      "ariaAttributes": 36
     },
     "govCompliance": {
-      "EN 301 549": 29,
-      "WCAG 2.1 AA": 29,
-      "Directive (EU) 2016/2102": 29
+      "EN 301 549": 36,
+      "WCAG 2.1 AA": 36,
+      "Directive (EU) 2016/2102": 36
     },
     "costTier": {
-      "moderate": 8,
-      "cheap": 21
+      "cheap": 27,
+      "moderate": 9
     },
     "prerequisites": {
       "form-group": 6
@@ -86,16 +94,16 @@
       "search-results": 3
     },
     "piiHandling": {
-      "displays_only": 16,
-      "none": 6,
+      "displays_only": 21,
+      "none": 8,
       "accepts_input": 7
     },
     "touchTargetSize": {
-      "44px": 25,
-      "n/a": 4
+      "44px": 31,
+      "n/a": 5
     },
     "supportedTokenProfiles": {
-      "highContrast": 29
+      "highContrast": 36
     }
   }
 }

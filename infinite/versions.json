@@ -12,6 +12,17 @@
       "addedFacets": ["eclComponentType", "section", "variant", "requiresJs", "interaction", "a11y", "govCompliance", "costTier", "prerequisites", "compositionRecipes", "piiHandling", "touchTargetSize", "supportedTokenProfiles"],
       "migrationPath": "Initial release.",
       "notes": "24 ECL component families; 5 recipes; compatibility maps ecl→uswds/govuk/dsfr; EC-branded tiles (EU variant derivable)"
+    },
+    {
+      "version": "0.2.0",
+      "releaseDate": "2026-09-06",
+      "componentCount": 36,
+      "breakingChanges": [],
+      "addedCategories": ["provenance"],
+      "addedFacets": [],
+      "metadataChanges": ["provenance block on field-observed tiles"],
+      "migrationPath": "Fully additive.",
+      "notes": "Field-research pass (commission.europa.eu): banner, date-block, content-item, list-illustration, language-list, social-media-follow; provenance.json session log added"
     }
   ],
   "designSystemVersions": [

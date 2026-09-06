@@ -905,5 +905,230 @@ export const inventory = [
     <span class="ecl-file__size">2.4 MB</span>
   </div>
 </div>`,
+  },
+  {
+    dir: "banner",
+    name: "Banner (hero)",
+    cls: "ecl-banner",
+    section: "layout",
+    requiresJs: "no",
+    interaction: ["click", "focus"],
+    pii: "displays_only",
+    audit: false,
+    useWhen: ["Full-width hero at the top of landing pages (image + title + CTA)", "Campaign or priority promotion"],
+    avoidWhen: ["Regular content pages — use page-header", "More than one banner per page"],
+    agentPrompt: "Variants: default (plain) and ecl-banner--image with ecl-banner__image background. Keep the title/description/button hierarchy and the single primary CTA.",
+    preserve: ["ecl-banner structure with title/description", "Button uses ecl-button--primary or ecl-link"],
+    editable: ["Title", "Description", "CTA label and href", "Image variant"],
+    limitations: ["Image banners need sufficient text contrast over the image (overlay handles it)", "One banner per page"],
+    invariants: ["Title hierarchy: banner title is the page h1 on landing pages"],
+    related: ["page-header", "card", "button"],
+    tags: ["banner", "hero", "landing", "campaign", "image"],
+    description: "Full-width hero banner with title, description, and CTA (ecl-banner).",
+    provenance: { observed: "2026-09-06", source: "https://commission.europa.eu/index_en", method: "live-site observation" },
+    variants: [
+      {
+        file: "default", variant: "default",
+        desc: "Plain banner.",
+        markup: `<section class="ecl-banner">
+  <div class="ecl-banner__content">
+    <h1 class="ecl-banner__title">Dream big. Act now.</h1>
+    <p class="ecl-banner__description">Discover what the EU offers young people.</p>
+    <a href="#" class="ecl-button ecl-button--primary ecl-banner__button">
+      <span class="ecl-button__container"><span class="ecl-button__label">Learn more</span></span>
+    </a>
+  </div>
+</section>`
+      },
+      {
+        file: "image", variant: "image",
+        desc: "Image banner with overlay.",
+        markup: `<section class="ecl-banner ecl-banner--image">
+  <div class="ecl-banner__image" style="background-image:url('data:image/svg+xml,%3Csvg xmlns=\\'http://www.w3.org/2000/svg\\' width=\\'800\\' height=\\'300\\'%3E%3Crect width=\\'800\\' height=\\'300\\' fill=\\'%23004494\\'/%3E%3C/svg%3E')"></div>
+  <div class="ecl-banner__content">
+    <h1 class="ecl-banner__title">Dream big. Act now.</h1>
+    <p class="ecl-banner__description">Discover what the EU offers young people.</p>
+    <a href="#" class="ecl-button ecl-button--primary ecl-banner__button">
+      <span class="ecl-button__container"><span class="ecl-button__label">Learn more</span></span>
+    </a>
+  </div>
+</section>`
+      }
+    ]
+  },
+  {
+    dir: "date-block",
+    name: "Date block",
+    cls: "ecl-date-block",
+    section: "data-display",
+    requiresJs: "no",
+    interaction: [],
+    pii: "displays_only",
+    audit: false,
+    useWhen: ["Agenda and events listings — day/month/year blocks beside event titles"],
+    avoidWhen: ["Full tables of dates — use table"],
+    agentPrompt: "Set the day, month, and year spans. Combine with ecl-content-item for full agenda entries.",
+    preserve: ["ecl-date-block day/month/year span structure"],
+    editable: ["Day", "Month", "Year"],
+    limitations: ["Short month names only — full dates go in the accompanying content"],
+    invariants: ["Date remains readable as text"],
+    related: ["content-item", "table"],
+    tags: ["date", "block", "agenda", "event"],
+    description: "Compact day/month/year date block for agenda entries.",
+    provenance: { observed: "2026-09-06", source: "https://commission.europa.eu/index_en", method: "live-site observation" },
+    defaultMarkup: `<div class="ecl-date-block">
+  <span class="ecl-date-block__day">16</span>
+  <span class="ecl-date-block__month">Sep</span>
+  <span class="ecl-date-block__year">2026</span>
+</div>`
+  },
+  {
+    dir: "content-item",
+    name: "Content item",
+    cls: "ecl-content-item",
+    section: "data-display",
+    requiresJs: "no",
+    interaction: ["click", "focus"],
+    pii: "displays_only",
+    audit: false,
+    useWhen: ["News listings with image, date, title, and reading time", "The commission.europa.eu homepage news pattern"],
+    avoidWhen: ["Tabular data — use table"],
+    agentPrompt: "Structure: ecl-content-item > ecl-content-block with __image, __title (link), __description, __meta. Meta carries date and read time as separate lines.",
+    preserve: [
+      "ecl-content-block__title with ecl-link",
+      "Meta lines for date and read time",
+      "Image alt text when present"
+    ],
+    editable: ["Title", "Description", "Meta", "Image"],
+    limitations: ["One primary link per item"],
+    invariants: ["Single accessible name via the title link"],
+    related: ["card", "date-block", "tag"],
+    tags: ["content", "news", "item", "listing"],
+    description: "News/content listing item with image, meta, and title link.",
+    provenance: { observed: "2026-09-06", source: "https://commission.europa.eu/index_en", method: "live-site observation" },
+    defaultMarkup: `<article class="ecl-content-item">
+  <div class="ecl-content-block">
+    <div class="ecl-content-block__image">
+      <img class="ecl-image" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200'%3E%3Crect width='300' height='200' fill='%23e3e3fd'/%3E%3C/svg%3E" alt="">
+    </div>
+    <div class="ecl-content-block__info">
+      <h3 class="ecl-content-block__title">
+        <a href="#" class="ecl-link ecl-link--standalone">EU and NATO respond to Leipzig sabotage attempt</a>
+      </h3>
+      <p class="ecl-content-block__description">Short description of the news item.</p>
+      <div class="ecl-content-block__meta">
+        <p class="ecl-content-block__meta-item">2 September 2026</p>
+        <p class="ecl-content-block__meta-item">1 min read</p>
+      </div>
+    </div>
+  </div>
+</article>`
+  },
+  {
+    dir: "list-illustration",
+    name: "List with illustrations",
+    cls: "ecl-list-illustration",
+    section: "data-display",
+    requiresJs: "no",
+    interaction: ["click", "focus"],
+    pii: "displays_only",
+    audit: false,
+    useWhen: ["Icon + link quick-access lists (the commission.europa.eu 'Europe and you' block)"],
+    avoidWhen: ["Plain navigation — use menu"],
+    agentPrompt: "Each item is an illustration image plus a link. Images are decorative (alt='') when the link text carries the meaning.",
+    preserve: ["ecl-list-illustration__item structure", "Link text carries the meaning"],
+    editable: ["Illustrations", "Link text", "hrefs"],
+    limitations: ["Keep illustrations consistent in style and size"],
+    invariants: ["Link text meaningful without the illustration"],
+    related: ["card", "site-footer"],
+    tags: ["list", "illustration", "icons", "quick-access"],
+    description: "Illustrated quick-access link list (ecl-list-illustration).",
+    provenance: { observed: "2026-09-06", source: "https://commission.europa.eu/index_en", method: "live-site observation" },
+    defaultMarkup: `<ul class="ecl-list-illustration">
+  <li class="ecl-list-illustration__item">
+    <img class="ecl-list-illustration__image" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Ccircle cx='24' cy='24' r='22' fill='%23ffd617'/%3E%3C/svg%3E" alt="">
+    <a href="#" class="ecl-link ecl-link--standalone">Your Europe</a>
+  </li>
+  <li class="ecl-list-illustration__item">
+    <img class="ecl-list-illustration__image" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Ccircle cx='24' cy='24' r='22' fill='%23004494'/%3E%3C/svg%3E" alt="">
+    <a href="#" class="ecl-link ecl-link--standalone">Funding and tenders</a>
+  </li>
+</ul>`
+  },
+  {
+    dir: "language-list",
+    name: "Language list",
+    cls: "ecl-language-list",
+    section: "navigation",
+    requiresJs: "optional",
+    interaction: ["click", "focus"],
+    pii: "none",
+    audit: false,
+    useWhen: ["Selecting one of the 24 official EU languages", "Splash pages and the site-header selector panel"],
+    avoidWhen: ["Single-language sites"],
+    agentPrompt: "Each link carries lang and hreflang attributes matching its target language. The current language is not a link (aria-current). Link text is the language's own name in its own script.",
+    preserve: [
+      "lang + hreflang attributes on every language link",
+      "Language names in their own language/script",
+      "aria-current on the active language"
+    ],
+    editable: ["Languages included", "Target URLs"],
+    limitations: ["All 24 official languages expected on EC/EU sites — omitting one needs a documented reason"],
+    invariants: ["lang/hreflang attributes preserved", "Current language marked"],
+    related: ["site-header"],
+    tags: ["language", "multilingual", "selector", "24-languages"],
+    description: "24-official-language selection list (ecl-language-list).",
+    provenance: { observed: "2026-09-06", source: "https://commission.europa.eu/index_en", method: "live-site observation" },
+    defaultMarkup: `<div class="ecl-language-list">
+  <div class="ecl-container">
+    <ul class="ecl-language-list__list">
+      <li><a href="#" lang="en" hreflang="en" class="ecl-language-list__link" aria-current="true">English</a></li>
+      <li><a href="#" lang="fr" hreflang="fr" class="ecl-language-list__link">français</a></li>
+      <li><a href="#" lang="de" hreflang="de" class="ecl-language-list__link">Deutsch</a></li>
+      <li><a href="#" lang="es" hreflang="es" class="ecl-language-list__link">español</a></li>
+      <li><a href="#" lang="nl" hreflang="nl" class="ecl-language-list__link">Nederlands</a></li>
+      <li><a href="#" lang="pl" hreflang="pl" class="ecl-language-list__link">polski</a></li>
+    </ul>
+  </div>
+</div>`
+  },
+  {
+    dir: "social-media-follow",
+    name: "Social media follow",
+    cls: "ecl-social-media-follow",
+    section: "feedback",
+    requiresJs: "no",
+    interaction: ["click", "focus"],
+    pii: "none",
+    audit: false,
+    useWhen: ["Commission social-media channel links (homepage and footer)"],
+    avoidWhen: ["Individual share actions — those belong on content pages"],
+    agentPrompt: "Each link pairs an ecl-social-media-follow__icon with the network name as text. Keep visible network names — icons alone are not sufficient.",
+    preserve: [
+      "ecl-social-media-follow__list structure",
+      "Visible network names on links"
+    ],
+    editable: ["Networks list", "hrefs"],
+    limitations: ["Only official Commission channels"],
+    invariants: ["Accessible name per network"],
+    related: ["site-footer", "label"],
+    tags: ["social", "follow", "networks"],
+    description: "Social-media channel follow links with icons and names.",
+    provenance: { observed: "2026-09-06", source: "https://commission.europa.eu/index_en", method: "live-site observation" },
+    defaultMarkup: `<div class="ecl-social-media-follow">
+  <div class="ecl-container">
+    <ul class="ecl-social-media-follow__list">
+      <li class="ecl-social-media-follow__item">
+        <a class="ecl-link ecl-social-media-follow__link" href="#">Mastodon</a>
+      </li>
+      <li class="ecl-social-media-follow__item">
+        <a class="ecl-link ecl-social-media-follow__link" href="#">LinkedIn</a>
+      </li>
+      <li class="ecl-social-media-follow__item">
+        <a class="ecl-link ecl-social-media-follow__link" href="#">YouTube</a>
+      </li>
+    </ul>
+  </div>
+</div>`
   }
 ];

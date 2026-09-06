@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Europa Component Library list with illustrations demonstrating the default variant.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>List with illustrations (default)</title>
+<script type="application/json" id="ecl-agent-meta">
+{
+  "_schemaVersion": 2,
+  "discovery": {
+    "eclComponentType": "list-illustration",
+    "eclClass": "ecl-list-illustration",
+    "section": "data-display",
+    "variant": "default",
+    "requiresJs": "no",
+    "interaction": [
+      "click",
+      "focus"
+    ],
+    "a11y": {
+      "wcag21AA": true,
+      "keyboardNav": true,
+      "screenReader": true,
+      "reducedMotion": true,
+      "forcedColors": true,
+      "ariaAttributes": true
+    },
+    "govCompliance": [
+      "EN 301 549",
+      "WCAG 2.1 AA",
+      "Directive (EU) 2016/2102"
+    ],
+    "tier": "curated",
+    "tags": [
+      "list",
+      "illustration",
+      "icons",
+      "quick-access"
+    ],
+    "description": "Illustrated quick-access link list (ecl-list-illustration).",
+    "compliance": {
+      "nistControls": [],
+      "en301549": true,
+      "wcag21AA": true,
+      "webAccessibilityDirective": true,
+      "piiHandling": "displays_only",
+      "auditTrailCompatible": false,
+      "dataMaskingCompatible": false
+    },
+    "mobileUX": {
+      "touchTargetSize": "44px",
+      "requiredMinSpacing": "8px",
+      "orientationLocked": false,
+      "fullscreenSafe": true
+    }
+  },
+  "selection": {
+    "useWhen": [
+      "Icon + link quick-access lists (the commission.europa.eu 'Europe and you' block)"
+    ],
+    "avoidWhen": [
+      "Plain navigation — use menu"
+    ]
+  },
+  "instruction": {
+    "agentPrompt": "Each item is an illustration image plus a link. Images are decorative (alt='') when the link text carries the meaning.",
+    "relatedComponents": [
+      "card",
+      "site-footer"
+    ]
+  },
+  "coordination": {
+    "prerequisiteComponents": [],
+    "incompatibleWith": [],
+    "compositionCost": {
+      "costTier": "cheap",
+      "estimatedTokens": 178,
+      "renderingTimeMs": 15,
+      "recommendedModel": "haiku"
+    }
+  },
+  "constraints": {
+    "preserve": [
+      "ecl-list-illustration__item structure",
+      "Link text carries the meaning"
+    ],
+    "editable": [
+      "Illustrations",
+      "Link text",
+      "hrefs"
+    ],
+    "limitations": [
+      "Keep illustrations consistent in style and size"
+    ],
+    "portableInvariants": [
+      "Link text meaningful without the illustration"
+    ]
+  },
+  "supportedTokenProfiles": [
+    "highContrast"
+  ],
+  "file": "list-illustration/default.html",
+  "title": "List with illustrations (default)"
+}
+</script>
+<style>
+body{font-family:Arial,Helvetica,sans-serif;font-size:1rem;line-height:1.5rem;color:#404040;padding:2rem;background:#fff;margin:0}
+.cap{position:fixed;bottom:12px;left:16px;font-size:11px;letter-spacing:.08em;color:#707070;text-transform:uppercase}
+a,.ecl-link{color:#004494;text-decoration:underline}
+:focus-visible{outline:3px solid #ffd617;outline-offset:1px;box-shadow:0 0 0 2px #404040}
+.ecl-visually-hidden{position:absolute!important;width:1px;height:1px;margin:0;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.ecl-form-label{display:block;font-weight:700;font-size:.875rem;margin-bottom:.5rem;color:#404040}
+.ecl-help-block{font-size:.875rem;color:#404040;margin:.25rem 0}
+.ecl-feedback-message{font-weight:700;font-size:.875rem;color:#cc0000;margin-top:.5rem}
+
+
+</style>
+</head>
+<body>
+<ul class="ecl-list-illustration">
+  <li class="ecl-list-illustration__item">
+    <img class="ecl-list-illustration__image" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Ccircle cx='24' cy='24' r='22' fill='%23ffd617'/%3E%3C/svg%3E" alt="">
+    <a href="#" class="ecl-link ecl-link--standalone">Your Europe</a>
+  </li>
+  <li class="ecl-list-illustration__item">
+    <img class="ecl-list-illustration__image" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Ccircle cx='24' cy='24' r='22' fill='%23004494'/%3E%3C/svg%3E" alt="">
+    <a href="#" class="ecl-link ecl-link--standalone">Funding and tenders</a>
+  </li>
+</ul>
+<div class="cap">list-illustration default</div>
+</body>
+</html>

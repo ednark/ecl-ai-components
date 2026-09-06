@@ -3,15 +3,118 @@
   "metadataSchemaVersion": 2,
   "generatedBy": "_base/generate-index.mjs",
   "counts": {
-    "total": 29,
+    "total": 36,
     "bySection": {
-      "navigation": 7,
+      "layout": 2,
+      "navigation": 8,
       "forms": 12,
-      "data-display": 4,
-      "feedback": 6
+      "data-display": 7,
+      "feedback": 7
     }
   },
   "components": [
+    {
+      "file": "banner/default.html",
+      "title": "Banner (hero) (default)",
+      "_schemaVersion": 2,
+      "eclComponentType": "banner",
+      "eclClass": "ecl-banner",
+      "section": "layout",
+      "variant": "default",
+      "requiresJs": "no",
+      "interaction": [
+        "click",
+        "focus"
+      ],
+      "a11y": {
+        "wcag21AA": true,
+        "keyboardNav": true,
+        "screenReader": true,
+        "reducedMotion": true,
+        "forcedColors": true,
+        "ariaAttributes": true
+      },
+      "govCompliance": [
+        "EN 301 549",
+        "WCAG 2.1 AA",
+        "Directive (EU) 2016/2102"
+      ],
+      "tier": "curated",
+      "tags": [
+        "banner",
+        "hero",
+        "landing",
+        "campaign",
+        "image"
+      ],
+      "description": "Full-width hero banner with title, description, and CTA (ecl-banner).",
+      "piiHandling": "displays_only",
+      "auditTrailCompatible": false,
+      "nistControls": [],
+      "touchTargetSize": "44px",
+      "supportedTokenProfiles": [
+        "highContrast"
+      ],
+      "relatedComponents": [
+        "page-header",
+        "card",
+        "button"
+      ],
+      "prerequisites": [],
+      "incompatibleWith": [],
+      "costTier": "cheap"
+    },
+    {
+      "file": "banner/image.html",
+      "title": "Banner (hero) (image)",
+      "_schemaVersion": 2,
+      "eclComponentType": "banner",
+      "eclClass": "ecl-banner",
+      "section": "layout",
+      "variant": "image",
+      "requiresJs": "no",
+      "interaction": [
+        "click",
+        "focus"
+      ],
+      "a11y": {
+        "wcag21AA": true,
+        "keyboardNav": true,
+        "screenReader": true,
+        "reducedMotion": true,
+        "forcedColors": true,
+        "ariaAttributes": true
+      },
+      "govCompliance": [
+        "EN 301 549",
+        "WCAG 2.1 AA",
+        "Directive (EU) 2016/2102"
+      ],
+      "tier": "curated",
+      "tags": [
+        "banner",
+        "hero",
+        "landing",
+        "campaign",
+        "image"
+      ],
+      "description": "Full-width hero banner with title, description, and CTA (ecl-banner).",
+      "piiHandling": "displays_only",
+      "auditTrailCompatible": false,
+      "nistControls": [],
+      "touchTargetSize": "44px",
+      "supportedTokenProfiles": [
+        "highContrast"
+      ],
+      "relatedComponents": [
+        "page-header",
+        "card",
+        "button"
+      ],
+      "prerequisites": [],
+      "incompatibleWith": [],
+      "costTier": "cheap"
+    },
     {
       "file": "breadcrumb/default.html",
       "title": "Breadcrumb (default)",
@@ -327,6 +430,102 @@
       "prerequisites": [
         "form-group"
       ],
+      "incompatibleWith": [],
+      "costTier": "cheap"
+    },
+    {
+      "file": "content-item/default.html",
+      "title": "Content item (default)",
+      "_schemaVersion": 2,
+      "eclComponentType": "content-item",
+      "eclClass": "ecl-content-item",
+      "section": "data-display",
+      "variant": "default",
+      "requiresJs": "no",
+      "interaction": [
+        "click",
+        "focus"
+      ],
+      "a11y": {
+        "wcag21AA": true,
+        "keyboardNav": true,
+        "screenReader": true,
+        "reducedMotion": true,
+        "forcedColors": true,
+        "ariaAttributes": true
+      },
+      "govCompliance": [
+        "EN 301 549",
+        "WCAG 2.1 AA",
+        "Directive (EU) 2016/2102"
+      ],
+      "tier": "curated",
+      "tags": [
+        "content",
+        "news",
+        "item",
+        "listing"
+      ],
+      "description": "News/content listing item with image, meta, and title link.",
+      "piiHandling": "displays_only",
+      "auditTrailCompatible": false,
+      "nistControls": [],
+      "touchTargetSize": "44px",
+      "supportedTokenProfiles": [
+        "highContrast"
+      ],
+      "relatedComponents": [
+        "card",
+        "date-block",
+        "tag"
+      ],
+      "prerequisites": [],
+      "incompatibleWith": [],
+      "costTier": "cheap"
+    },
+    {
+      "file": "date-block/default.html",
+      "title": "Date block (default)",
+      "_schemaVersion": 2,
+      "eclComponentType": "date-block",
+      "eclClass": "ecl-date-block",
+      "section": "data-display",
+      "variant": "default",
+      "requiresJs": "no",
+      "interaction": [],
+      "a11y": {
+        "wcag21AA": true,
+        "keyboardNav": false,
+        "screenReader": true,
+        "reducedMotion": true,
+        "forcedColors": true,
+        "ariaAttributes": true
+      },
+      "govCompliance": [
+        "EN 301 549",
+        "WCAG 2.1 AA",
+        "Directive (EU) 2016/2102"
+      ],
+      "tier": "curated",
+      "tags": [
+        "date",
+        "block",
+        "agenda",
+        "event"
+      ],
+      "description": "Compact day/month/year date block for agenda entries.",
+      "piiHandling": "displays_only",
+      "auditTrailCompatible": false,
+      "nistControls": [],
+      "touchTargetSize": "n/a",
+      "supportedTokenProfiles": [
+        "highContrast"
+      ],
+      "relatedComponents": [
+        "content-item",
+        "table"
+      ],
+      "prerequisites": [],
       "incompatibleWith": [],
       "costTier": "cheap"
     },
@@ -715,6 +914,103 @@
       "relatedComponents": [
         "tag",
         "notification"
+      ],
+      "prerequisites": [],
+      "incompatibleWith": [],
+      "costTier": "cheap"
+    },
+    {
+      "file": "language-list/default.html",
+      "title": "Language list (default)",
+      "_schemaVersion": 2,
+      "eclComponentType": "language-list",
+      "eclClass": "ecl-language-list",
+      "section": "navigation",
+      "variant": "default",
+      "requiresJs": "optional",
+      "interaction": [
+        "click",
+        "focus"
+      ],
+      "a11y": {
+        "wcag21AA": true,
+        "keyboardNav": true,
+        "screenReader": true,
+        "reducedMotion": true,
+        "forcedColors": true,
+        "ariaAttributes": true
+      },
+      "govCompliance": [
+        "EN 301 549",
+        "WCAG 2.1 AA",
+        "Directive (EU) 2016/2102"
+      ],
+      "tier": "curated",
+      "tags": [
+        "language",
+        "multilingual",
+        "selector",
+        "24-languages"
+      ],
+      "description": "24-official-language selection list (ecl-language-list).",
+      "piiHandling": "none",
+      "auditTrailCompatible": false,
+      "nistControls": [],
+      "touchTargetSize": "44px",
+      "supportedTokenProfiles": [
+        "highContrast"
+      ],
+      "relatedComponents": [
+        "site-header"
+      ],
+      "prerequisites": [],
+      "incompatibleWith": [],
+      "costTier": "moderate"
+    },
+    {
+      "file": "list-illustration/default.html",
+      "title": "List with illustrations (default)",
+      "_schemaVersion": 2,
+      "eclComponentType": "list-illustration",
+      "eclClass": "ecl-list-illustration",
+      "section": "data-display",
+      "variant": "default",
+      "requiresJs": "no",
+      "interaction": [
+        "click",
+        "focus"
+      ],
+      "a11y": {
+        "wcag21AA": true,
+        "keyboardNav": true,
+        "screenReader": true,
+        "reducedMotion": true,
+        "forcedColors": true,
+        "ariaAttributes": true
+      },
+      "govCompliance": [
+        "EN 301 549",
+        "WCAG 2.1 AA",
+        "Directive (EU) 2016/2102"
+      ],
+      "tier": "curated",
+      "tags": [
+        "list",
+        "illustration",
+        "icons",
+        "quick-access"
+      ],
+      "description": "Illustrated quick-access link list (ecl-list-illustration).",
+      "piiHandling": "displays_only",
+      "auditTrailCompatible": false,
+      "nistControls": [],
+      "touchTargetSize": "44px",
+      "supportedTokenProfiles": [
+        "highContrast"
+      ],
+      "relatedComponents": [
+        "card",
+        "site-footer"
       ],
       "prerequisites": [],
       "incompatibleWith": [],
@@ -1244,6 +1540,54 @@
       "compositionRecipes": [
         "content-page"
       ]
+    },
+    {
+      "file": "social-media-follow/default.html",
+      "title": "Social media follow (default)",
+      "_schemaVersion": 2,
+      "eclComponentType": "social-media-follow",
+      "eclClass": "ecl-social-media-follow",
+      "section": "feedback",
+      "variant": "default",
+      "requiresJs": "no",
+      "interaction": [
+        "click",
+        "focus"
+      ],
+      "a11y": {
+        "wcag21AA": true,
+        "keyboardNav": true,
+        "screenReader": true,
+        "reducedMotion": true,
+        "forcedColors": true,
+        "ariaAttributes": true
+      },
+      "govCompliance": [
+        "EN 301 549",
+        "WCAG 2.1 AA",
+        "Directive (EU) 2016/2102"
+      ],
+      "tier": "curated",
+      "tags": [
+        "social",
+        "follow",
+        "networks"
+      ],
+      "description": "Social-media channel follow links with icons and names.",
+      "piiHandling": "none",
+      "auditTrailCompatible": false,
+      "nistControls": [],
+      "touchTargetSize": "44px",
+      "supportedTokenProfiles": [
+        "highContrast"
+      ],
+      "relatedComponents": [
+        "site-footer",
+        "label"
+      ],
+      "prerequisites": [],
+      "incompatibleWith": [],
+      "costTier": "cheap"
     },
     {
       "file": "table/default.html",
