@@ -50,6 +50,23 @@ Tiles are EC-branded; EU-branded variants are derivable by swapping identity ass
 
 CLI: `node _base/validate-registry.mjs` (lint), `--conformance .` (certification)
 
+
+## Quality gates and declared gaps
+
+Do not retrieve or deploy a component that:
+
+- Has `costTier: "expensive"` unless the task explicitly requires the richer behavior
+- Has `requiresJs: "required"` when the delivery context has no JavaScript
+- Whose `constraints.knownLimitations` block the delivery context
+- Implements a concept declared in `gaps` (registry.config.json) — use the gap's nearestAlternative; never invent component-style classes
+- Needs layout or typography classes outside the tiles — use `infinite/core-classes.json`
+
+Registry mandates that act as gates:
+
+- Content is localised into 24 EU languages — language selection lives in the site header
+- Check `govCompliance` (EN 301 549 / WCAG 2.1 AA / Directive (EU) 2016/2102)
+- EU emblem and EC logo are governed identity assets — never restyle
+
 ## Constraint Priority
 
 1. `constraints.preserve` — NEVER modify
