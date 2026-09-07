@@ -75,5 +75,25 @@
   "language": "en",
   "contentLanguages": [
     "24 official EU languages via site-header selector"
+  ],
+  "gaps": [
+    {
+      "concept": "mega-menu",
+      "status": "deferred",
+      "nearestAlternative": "site-header (nav links)",
+      "reason": "ECL mega menu with FEATURED columns is JS-heavy; observed live, deferred in the initial build"
+    },
+    {
+      "concept": "combobox",
+      "status": "deferred",
+      "nearestAlternative": "select",
+      "reason": "Not among the tiled ECL components"
+    },
+    {
+      "concept": "skiplinks",
+      "status": "deferred",
+      "nearestAlternative": "(page markup — embed above site-header)",
+      "reason": "EC/EU pages embed skip links in site markup; the header tile documents the requirement"
+    }
   ]
 }

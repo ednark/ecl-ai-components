@@ -5,8 +5,7 @@
 <meta name="description" content="Europa Component Library site header demonstrating the default variant.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Site header (default)</title>
-<script type="application/json" id="ecl-agent-meta">
-{
+<script type="application/json" id="ecl-agent-meta">{
   "_schemaVersion": 2,
   "discovery": {
     "eclComponentType": "site-header",
@@ -65,7 +64,7 @@
     ]
   },
   "instruction": {
-    "agentPrompt": "The EC/EU logo image is fixed identity — keep it. Edit the site name, language selector label, and search action. data-ecl-site-header enables JS menus.",
+    "agentPrompt": "The EC/EU logo image is fixed identity — keep it. Edit the site name, language selector label, and search action. data-ecl-site-header enables JS menus. Every page needs skip links before this header — the ECL registry has no skiplinks tile, so add them in site markup (EC/EU production pages embed them above the header).",
     "relatedComponents": [
       "site-footer",
       "breadcrumb",
@@ -99,7 +98,8 @@
     ],
     "limitations": [
       "EU emblem usage is governed by Commission identity rules — do not restyle the logo",
-      "Language selector and menus are JS-enhanced"
+      "Language selector and menus are JS-enhanced",
+      "Skip links are not part of this tile — add them in page markup above the header"
     ],
     "portableInvariants": [
       "Logo alt text present",
@@ -111,8 +111,7 @@
   ],
   "file": "site-header/default.html",
   "title": "Site header (default)"
-}
-</script>
+}</script>
 <style>
 body{font-family:Arial,Helvetica,sans-serif;font-size:1rem;line-height:1.5rem;color:#404040;padding:2rem;background:#fff;margin:0}
 .cap{position:fixed;bottom:12px;left:16px;font-size:11px;letter-spacing:.08em;color:#707070;text-transform:uppercase}

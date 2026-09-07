@@ -519,7 +519,7 @@ export const inventory = [
     audit: false,
     useWhen: ["Every page — EC/EU identity banner, language selector, search, navigation"],
     avoidWhen: ["Do not nest forms other than search inside the header"],
-    agentPrompt: "The EC/EU logo image is fixed identity — keep it. Edit the site name, language selector label, and search action. data-ecl-site-header enables JS menus.",
+    agentPrompt: "The EC/EU logo image is fixed identity — keep it. Edit the site name, language selector label, and search action. data-ecl-site-header enables JS menus. Every page needs skip links before this header — the ECL registry has no skiplinks tile, so add them in site markup (EC/EU production pages embed them above the header).",
     preserve: [
       "ecl-site-header__banner with the EC/EU logo link",
       "ecl-site-header__selector (language selector) structure",
