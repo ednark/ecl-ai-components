@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "registry": "ecl-ai-components",
+  "description": "Real, documented design-system classes that are NOT tiled components — the untiled core layer for page assembly. Consumed by cross-registry coverage checking.",
+  "categories": {
+    "layout": [
+      "ecl-container",
+      "ecl-grid",
+      "ecl-col"
+    ],
+    "typography": [],
+    "elements": [
+      "ecl-link",
+      "ecl-link--standalone",
+      "ecl-form-label",
+      "ecl-icon",
+      "ecl-image",
+      "ecl-menu",
+      "ecl-content-block",
+      "ecl-content-block__image",
+      "ecl-content-block__info",
+      "ecl-content-block__title",
+      "ecl-content-block__description",
+      "ecl-content-block__meta",
+      "ecl-content-block__meta-item",
+      "ecl-button__container",
+      "ecl-button__label"
+    ],
+    "states": []
+  }
+}

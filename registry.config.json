@@ -64,9 +64,16 @@
   "tokenProfiles": {
     "highContrast": {
       "description": "forced-colors / high-contrast mode support (ECL is WCAG-checked)",
-      "tokenOverrides": { "border": "2px solid currentColor", "background": "transparent" }
+      "tokenOverrides": {
+        "border": "2px solid currentColor",
+        "background": "transparent"
+      }
     }
   },
   "compatibilityPath": "compatibility.json",
-  "updated": "0.2.0"
+  "updated": "0.2.0",
+  "language": "en",
+  "contentLanguages": [
+    "24 official EU languages via site-header selector"
+  ]
 }
