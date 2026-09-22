@@ -15,6 +15,12 @@ Europa Component Library registry for AI coding agents building European Commiss
 
 ---
 
+## Appearance (resolved views)
+
+Tiles carry their component CSS inline. A generated resolved view sibling ({tile}.resolved.html) additionally carries computed geometry, colors, and typography inline for design tools and standalone preview. Index records expose the path as the resolvedView field.
+
+---
+
 ## Quick start
 
 1. Filter vocab: GET https://raw.githubusercontent.com/ednark/ecl-ai-components/main/infinite/facets.json
