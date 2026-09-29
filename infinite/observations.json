@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "note": "Field observations of sites extending or using ecl-ai-components components. Records about the ecosystem — never tiles. See _base/protocol.md Surface 7.",
+  "observations": [
+    {
+      "observed": "2026-09-29",
+      "site": "cordis.europa.eu",
+      "url": "https://cordis.europa.eu",
+      "family": "site-header",
+      "kind": "composition",
+      "extension": "ecl-site-header__language-selector (--2-col categories, close/login/search toggles)",
+      "note": "rich language-selector composition inside the site header — the ECL mega-menu-adjacent surface",
+      "source": "field-research/ds-survey campaign crawls (2026-09-29)"
+    },
+    {
+      "observed": "2026-09-29",
+      "site": "cordis.europa.eu",
+      "url": "https://cordis.europa.eu",
+      "family": "breadcrumb",
+      "kind": "other",
+      "extension": "ecl-breadcrumb__segment--ellipsis",
+      "note": "ellipsis segment variant observed live",
+      "source": "field-research/ds-survey campaign crawls (2026-09-29)"
+    },
+    {
+      "observed": "2026-09-29",
+      "site": "cordis.europa.eu",
+      "url": "https://cordis.europa.eu",
+      "family": "button",
+      "kind": "other",
+      "extension": "ecl-button--ghost / --icon-only / --tertiary",
+      "note": "button variants observed live; verify against ECL 5.2 CSS before tiling",
+      "source": "field-research/ds-survey campaign crawls (2026-09-29)"
+    }
+  ]
+}
