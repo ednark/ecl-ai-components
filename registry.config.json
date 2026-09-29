@@ -81,7 +81,8 @@
       "concept": "mega-menu",
       "status": "deferred",
       "nearestAlternative": "site-header (nav links)",
-      "reason": "ECL mega menu with FEATURED columns is JS-heavy; observed live, deferred in the initial build"
+      "reason": "ECL mega menu with FEATURED columns is JS-heavy; observed live, deferred in the initial build Doctrine confirmed: ECL documents Navigation menus (ecl-navigation-menus — horizontal menu, first 2 levels of site architecture); the mirror is queued.",
+      "source": "https://ec.europa.eu/component-library/v0.24.3/components/detail/ecl-navigation-menus/"
     },
     {
       "concept": "combobox",
