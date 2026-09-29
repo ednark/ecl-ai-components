@@ -3,7 +3,7 @@
   "metadataSchemaVersion": 2,
   "generatedBy": "_base/generate-index.mjs",
   "total": 36,
-  "designSystem": "Europa Component Library (ECL) 5.2",
+  "designSystem": "Europa Component Library (ECL) 5.2.0",
   "facets": {
     "eclComponentType": {
       "banner": 2,

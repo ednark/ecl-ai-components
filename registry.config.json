@@ -11,8 +11,9 @@
   "tileFetchPattern": "https://raw.githubusercontent.com/ednark/ecl-ai-components/main/infinite/{file}",
   "designSystem": {
     "name": "Europa Component Library (ECL)",
-    "version": "5.2",
-    "url": "https://ec.europa.eu/component-library/"
+    "version": "5.2.0",
+    "url": "https://ec.europa.eu/component-library/",
+    "notes": "Verified against @ecl/preset-eu@5.2.0 dist/styles/ecl-eu.css (build stamp 2026-08-20) — the only compiled bundle ECL ships; the 95 per-component packages (@ecl/*) ship SCSS only. npm latest preset is 5.3.1."
   },
   "agentMetaId": "ecl-agent-meta",
   "tileDir": "infinite",

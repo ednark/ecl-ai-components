@@ -5,12 +5,11 @@
 <meta name="description" content="Europa Component Library notification demonstrating the success variant.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Notification (success)</title>
-<script type="application/json" id="ecl-agent-meta">
-{
+<script type="application/json" id="ecl-agent-meta">{
   "_schemaVersion": 2,
   "discovery": {
     "eclComponentType": "notification",
-    "eclClass": "ecl-alert",
+    "eclClass": "ecl-notification",
     "section": "feedback",
     "variant": "success",
     "requiresJs": "optional",
@@ -39,7 +38,7 @@
       "error",
       "warning"
     ],
-    "description": "Info, success, error, and warning notifications (ecl-alert).",
+    "description": "Info, success, error, and warning notifications (ecl-notification).",
     "compliance": {
       "nistControls": [],
       "en301549": true,
@@ -66,7 +65,7 @@
     ]
   },
   "instruction": {
-    "agentPrompt": "Variants: ecl-alert--info / --success / --error / --warning. role='alert' for error/warning, role='status' for info/success. The close button requires ECL JS.",
+    "agentPrompt": "Variants: ecl-notification--info / --success / --error / --warning. role='alert' for error/warning, role='status' for info/success. The close button requires ECL JS.",
     "relatedComponents": [
       "label",
       "highlight-box",
@@ -88,9 +87,9 @@
   },
   "constraints": {
     "preserve": [
-      "ecl-alert__title and __description structure",
+      "ecl-notification__title and __description structure",
       "role attribute matching the variant",
-      "ecl-alert__icon (type conveyed by icon + text)"
+      "ecl-notification__icon (type conveyed by icon + text)"
     ],
     "editable": [
       "Title",
@@ -119,9 +118,14 @@
         "warning": "usa-alert usa-alert--warning"
       }
     }
+  },
+  "provenance": {
+    "observed": "2026-09-29",
+    "method": "design-system documentation",
+    "source": "ECL 5.2.0 notification component (@ecl/notification@5.2.0; selectors verified against @ecl/preset-eu@5.2.0 dist/styles/ecl-eu.css, build stamp 2026-08-20). The tile previously used the pre-5.x ecl-alert naming; ECL 5.x renamed the component to ecl-notification (1:1 element mapping).",
+    "designSystemVersion": "5.2.0"
   }
-}
-</script>
+}</script>
 <style>
 body{font-family:Arial,Helvetica,sans-serif;font-size:1rem;line-height:1.5rem;color:#404040;padding:2rem;background:#fff;margin:0}
 .cap{position:fixed;bottom:12px;left:16px;font-size:11px;letter-spacing:.08em;color:#707070;text-transform:uppercase}
@@ -132,21 +136,21 @@ a,.ecl-link{color:#004494;text-decoration:underline}
 .ecl-help-block{font-size:.875rem;color:#404040;margin:.25rem 0}
 .ecl-feedback-message{font-weight:700;font-size:.875rem;color:#cc0000;margin-top:.5rem}
 
-.ecl-alert{display:flex;gap:1rem;padding:1rem 1.5rem;margin-bottom:1rem;border-left:6px solid #375da0;background:#eef3fb}
-.ecl-alert--success{border-left-color:#2e7d32;background:#eaf5ea}
-.ecl-alert--error{border-left-color:#cc0000;background:#fdeaea}
-.ecl-alert--warning{border-left-color:#e6a501;background:#fdf3e2}
-.ecl-alert__title{font-weight:700;margin:0 0 .25rem}
-.ecl-alert p{margin:0}
+.ecl-notification{display:flex;gap:1rem;padding:1rem 1.5rem;margin-bottom:1rem;border-left:6px solid #375da0;background:#eef3fb}
+.ecl-notification--success{border-left-color:#2e7d32;background:#eaf5ea}
+.ecl-notification--error{border-left-color:#cc0000;background:#fdeaea}
+.ecl-notification--warning{border-left-color:#e6a501;background:#fdf3e2}
+.ecl-notification__title{font-weight:700;margin:0 0 .25rem}
+.ecl-notification p{margin:0}
 
 </style>
 </head>
 <body>
-<div class="ecl-alert ecl-alert--success" role="status">
-  <div class="ecl-alert__icon ecl-icon ecl-icon--l ecl-icon--success"></div>
-  <div class="ecl-alert__content">
-    <p class="ecl-alert__title">Success</p>
-    <p class="ecl-alert__description">Your request has been submitted.</p>
+<div class="ecl-notification ecl-notification--success" role="status">
+  <div class="ecl-notification__icon ecl-icon ecl-icon--l ecl-icon--success"></div>
+  <div class="ecl-notification__content">
+    <p class="ecl-notification__title">Success</p>
+    <p class="ecl-notification__description">Your request has been submitted.</p>
   </div>
 </div>
 <div class="cap">notification success</div>
