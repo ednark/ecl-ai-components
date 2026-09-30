@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "registry": "ecl-ai-components",
+  "description": "Machine-readable trust surface: what this registry claims, and how far that claim has been checked. A registry with drift or unstamped tiles is telling you where not to trust it.",
+  "designSystem": {
+    "name": "Europa Component Library (ECL)",
+    "pin": "5.3.1",
+    "package": "@ecl/preset-eu",
+    "groundTruth": "installed-package",
+    "verification": {
+      "markup": "package-css",
+      "styling": "package-css"
+    }
+  },
+  "classCheck": {
+    "enabled": true,
+    "prefixes": [
+      "ecl-"
+    ],
+    "allowlistSize": 21,
+    "categories": {
+      "canonicalUnstyled": 2,
+      "appLayer": 0,
+      "siteLayer": 0,
+      "extension": 0,
+      "drift": 19,
+      "compat": 0,
+      "registryInternal": 0,
+      "unclassified": 0
+    }
+  },
+  "stamps": {
+    "verified": 34,
+    "total": 36,
+    "percent": 94
+  },
+  "tiles": 36,
+  "families": 30,
+  "coreClasses": 18,
+  "observations": 11,
+  "convergenceWatchlist": 1,
+  "findings": {
+    "count": 4,
+    "lastDeepCheck": "2026-09-29",
+    "byResult": {
+      "broke": 2,
+      "recorded": 2
+    }
+  },
+  "conformance": "pass",
+  "generatedBy": "_base/generate-health.mjs",
+  "generatedAt": "2026-09-30"
+}

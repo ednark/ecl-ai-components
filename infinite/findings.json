@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "registry": "ecl-ai-components",
+  "note": "ECL registry epistemic record. See _base/findings-ledger.md. Backfilled from 2026-09-29/30 sessions; earlier evidence lives in the project workspace (workspace/docs/lessons-learned.md).",
+  "findings": [
+    {
+      "id": "F-001",
+      "date": "2026-09-29",
+      "kind": "deep-check",
+      "result": "broke",
+      "target": [
+        "18 tiles across 15 families"
+      ],
+      "changed": [
+        "registry: verification mechanism added (@ecl/preset-eu 5.3.1 exact pin, classCheck with a 40-entry drift register)",
+        "spec: deep-check.md written — the periodic tile-vs-design-system audit"
+      ],
+      "evidence": [
+        "@ecl/preset-eu@5.3.1 dist/styles/ecl-eu.css (build stamp 2026-08-20)",
+        "@ecl/preset-eu@5.3.1 (identical results, ruling out a version artifact)",
+        "ECL ships 95 component packages as SCSS; the preset is the only compiled bundle"
+      ],
+      "summary": "Half the registry predated ECL 5.x: 18 of 36 tiles used classes the pinned stylesheet does not define.",
+      "detail": "The verification target itself was a discovery problem — ECL is modular and ships no per-component CSS, so the preset bundle is the only mechanically checkable surface. Cross-checked against 5.3.1 to prove the drift was not a version artifact before making any claim about it."
+    },
+    {
+      "id": "F-002",
+      "date": "2026-09-30",
+      "kind": "rework",
+      "result": "broke",
+      "target": [
+        "card",
+        "banner",
+        "checkbox",
+        "radio",
+        "form-group/error",
+        "table",
+        "tag",
+        "search-form",
+        "pagination",
+        "tabs",
+        "content-item",
+        "file",
+        "site-footer",
+        "site-header"
+      ],
+      "changed": [
+        "registry: 15 tiles corrected against the 5.3.1 class inventory and the component .html.twig templates",
+        "registry: classCheck allowlist reduced 40 -> 20",
+        "registry: 33/36 tiles verified and stamped"
+      ],
+      "evidence": [
+        "@ecl/<component>@5.3.1/*.html.twig (templates ship even though the CSS does not)",
+        "@ecl/preset-eu@5.3.1 class inventory per family"
+      ],
+      "summary": "Fifteen pre-5.x tiles rebuilt on the real structures — including a card reduced to a single body and a tabs component that is a link list with no panels.",
+      "detail": "Notable corrections: ecl-tabs has no tab panels in 5.x (it is __item/__link/__toggle), ecl-checkbox__text is __label, the form-group has no error modifier (the error is ecl-text-input--invalid plus ecl-feedback-message), and ecl-pagination puts previous/next on the item, not the link. Three corrections of ours were caught by classCheck during this rework: two invented classes and one canonical-but-unstyled class."
+    },
+    {
+      "id": "F-003",
+      "date": "2026-09-30",
+      "kind": "observation",
+      "result": "recorded",
+      "target": [
+        "button/ghost",
+        "language-list"
+      ],
+      "changed": [
+        "spec: discovery.origin gained a third value, extension — a class in the design system namespace that it does not ship",
+        "registry: button/ghost and language-list labeled origin: extension, tier: observed",
+        "registry: expandable re-verified as canon after its demo toggle moved off the extension onto ecl-button--tertiary"
+      ],
+      "evidence": [
+        "ecl-button--ghost absent from @ecl/preset-eu 5.2.0 and 5.3.1",
+        "ecl-button--ghost present on cordis.europa.eu, data.europa.eu, digital-strategy.ec.europa.eu (observed 2026-09-29)",
+        "ecl-language-list exists only as a site-header sub-element in 5.3.1"
+      ],
+      "summary": "Two classes in real production use ship in no ECL release; they are kept and labeled, not dropped.",
+      "detail": "A third origin value exists so a community extension is carried and filterable without ever being mistaken for canon. Each extension tile names its canonical alternative (ecl-button--tertiary; the site-header language switcher), carries no version stamp — nothing in the pin to verify it against, which is itself the signal — and states the class must be confirmed to exist in the target project before use."
+    },
+    {
+      "id": "F-004",
+      "date": "2026-09-30",
+      "kind": "observation",
+      "result": "recorded",
+      "target": [
+        "observation surface"
+      ],
+      "changed": [
+        "registry: 11 observations recorded across two survey rounds",
+        "registry: ecl-mega-menu gap resolved with a citation and a tile candidate instead of a blind deferral"
+      ],
+      "evidence": [
+        "cordis.europa.eu (ECL-rich, 21 pages)",
+        "Commission DG sub-sites confirmed on ECL; standalone EU agencies and institutions are not (12 of 30 probed confirmed)"
+      ],
+      "summary": "Commission DG sub-sites run ECL; standalone EU agencies and institutions do not — a structural answer rather than a per-site one.",
+      "detail": "Also closed an L7 worklist item: ecl-mega-menu is canon in 5.3.1 and observed live on home-affairs.ec.europa.eu, so the deferred mega-menu gap could be resolved with evidence instead of left as JS-heavy-and-deferred."
+    }
+  ]
+}
