@@ -86,9 +86,11 @@
   },
   "constraints": {
     "preserve": [
-      "ecl-site-header__banner with the EC/EU logo link",
-      "ecl-site-header__selector (language selector) structure",
-      "Banner/identity image alt text"
+      "header.ecl-site-header[data-ecl-site-header]",
+      "div.ecl-site-header__banner > div.ecl-container (logo row)",
+      "div.ecl-site-header__header > div.ecl-site-header__inner",
+      "div.ecl-site-header__language > div.ecl-site-header__language-selector",
+      "ul.ecl-site-header__language-list > li.ecl-site-header__language-item > a.ecl-site-header__language-link (--active on the current language)"
     ],
     "editable": [
       "Site name",
@@ -112,7 +114,10 @@
   "file": "site-header/default.html",
   "title": "Site header (default)",
   "provenance": {
-    "source": ""
+    "observed": "2026-09-29",
+    "method": "design-system documentation",
+    "source": "ECL site-header component — ECL 5.3.1 (pinned @ecl/preset-eu@5.3.1, build stamp 2026-08-20) and the component .html.twig template in @ecl/<component>@5.3.1. The tile used two invented classes (ecl-site-header__selector, ecl-site-header__selector-link) and an ecl-site-header__content wrapper. 5.x exposes __header > __inner, and the language switcher is __language > __language-selector > __language-container > __language-list > __language-item > __language-link (with --active for the current language).. Corrected from pre-5.x ECL markup.",
+    "designSystemVersion": "5.3.1"
   }
 }</script>
 <style>
@@ -141,16 +146,30 @@ a,.ecl-link{color:#004494;text-decoration:underline}
   <div class="ecl-site-header__banner">
     <div class="ecl-container">
       <a href="#" class="ecl-site-header__logo-link" aria-label="European Commission">
-        <img class="ecl-site-header__logo-image" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='64'%3E%3Crect width='96' height='64' fill='%23004494'/%3E%3Ctext x='48' y='40' fill='%23ffd617' text-anchor='middle' font-size='16'%3EEC%3C/text%3E%3C/svg%3E" alt="European Commission logo">
+        <img class="ecl-site-header__logo-image" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='64'%3E%3Crect width='96' height='64' fill='%23e3e3fd'/%3E%3C/svg%3E" alt="">
       </a>
-      <div class="ecl-site-header__selector">
-        <a href="#" class="ecl-link ecl-link--standalone ecl-site-header__selector-link">English</a>
-      </div>
     </div>
   </div>
-  <div class="ecl-site-header__content">
-    <div class="ecl-container">
-      <p class="ecl-site-header__site-name">Commission and its priorities</p>
+  <div class="ecl-site-header__header">
+    <div class="ecl-container ecl-site-header__inner">
+      <div class="ecl-site-header__language">
+        <div class="ecl-site-header__language-selector">
+          <button class="ecl-site-header__language-link" aria-expanded="false" aria-controls="language-container">
+            <span class="ecl-site-header__language-icon"></span>
+            English
+          </button>
+          <div class="ecl-site-header__language-container" id="language-container">
+            <ul class="ecl-site-header__language-list">
+              <li class="ecl-site-header__language-item">
+                <a href="#" class="ecl-site-header__language-link ecl-site-header__language-link--active" hreflang="en" aria-current="true">English</a>
+              </li>
+              <li class="ecl-site-header__language-item">
+                <a href="#" class="ecl-site-header__language-link" hreflang="fr">Français</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </header>

@@ -85,8 +85,11 @@
   },
   "constraints": {
     "preserve": [
-      "ecl-banner structure with title/description",
-      "Button uses ecl-button--primary or ecl-link"
+      "div.ecl-banner",
+      "div.ecl-container",
+      "div.ecl-banner__content > div.ecl-banner__info",
+      "div.ecl-banner__title > span.ecl-banner__title-text",
+      "p.ecl-banner__description"
     ],
     "editable": [
       "Title",
@@ -108,7 +111,10 @@
   "file": "banner/default.html",
   "title": "Banner (hero) (default)",
   "provenance": {
-    "source": ""
+    "observed": "2026-09-29",
+    "method": "design-system documentation",
+    "source": "ECL banner component — ECL 5.3.1 (pinned @ecl/preset-eu@5.3.1, build stamp 2026-08-20) and the component .html.twig template in @ecl/<component>@5.3.1. The tile used ecl-banner__button, which does not exist in 5.x (the banner exposes __cta/__title-link for actions).. Corrected from pre-5.x ECL markup. Note: ecl-banner__title-text appears in the official banner.html.twig but carries no rules in the compiled stylesheet — canonical markup, unstyled by design.",
+    "designSystemVersion": "5.3.1"
   }
 }</script>
 <style>
@@ -125,15 +131,18 @@ a,.ecl-link{color:#004494;text-decoration:underline}
 </style>
 </head>
 <body>
-<section class="ecl-banner">
-  <div class="ecl-banner__content">
-    <h1 class="ecl-banner__title">Dream big. Act now.</h1>
-    <p class="ecl-banner__description">Discover what the EU offers young people.</p>
-    <a href="#" class="ecl-button ecl-button--primary ecl-banner__button">
-      <span class="ecl-button__container"><span class="ecl-button__label">Learn more</span></span>
-    </a>
+<div class="ecl-banner">
+  <div class="ecl-container">
+    <div class="ecl-banner__content">
+      <div class="ecl-banner__info">
+        <div class="ecl-banner__title">
+          <span class="ecl-banner__title-text">Bringing attention to a priority</span>
+        </div>
+        <p class="ecl-banner__description">Short description of the banner.</p>
+      </div>
+    </div>
   </div>
-</section>
+</div>
 <div class="cap">banner default</div>
 </body>
 </html>

@@ -81,15 +81,19 @@
   },
   "constraints": {
     "preserve": [
-      "role='tablist'/'tab'/'tabpanel' structure",
-      "aria-selected + aria-controls pairing",
-      "ecl-tabs__panel--active state class"
+      "div.ecl-tabs > div.ecl-tabs__container",
+      "div.ecl-tabs__list[role=tablist]",
+      "div.ecl-tabs__item per tab",
+      "a.ecl-tabs__link[role=tab][aria-selected]",
+      "ecl-tabs__toggle for the overflow on narrow viewports",
+      "ecl-tabs__container--left / --right for alignment"
     ],
     "editable": [
       "Tab titles",
       "Panel content"
     ],
     "limitations": [
+      "ECL 5.x tabs have no tab panels: the component is a list of links, not an ARIA tab widget. Content is a separate page region.",
       "Hidden panels stay in the DOM — content must make sense stacked"
     ],
     "portableInvariants": [
@@ -102,7 +106,10 @@
   "file": "tabs/default.html",
   "title": "Tabs (default)",
   "provenance": {
-    "source": ""
+    "observed": "2026-09-29",
+    "method": "design-system documentation",
+    "source": "ECL tabs component — ECL 5.3.1 (pinned @ecl/preset-eu@5.3.1, build stamp 2026-08-20) and the component .html.twig template in @ecl/<component>@5.3.1. The tile used the pre-5.x tab/panel structure (ecl-tabs__tab, __tab--active, __panel, __panel--active). ECL 5.x tabs are a link list — div.ecl-tabs__container > div.ecl-tabs__list > div.ecl-tabs__item > a.ecl-tabs__link, with __toggle/__dropdown for the overflow — there are no tab panels in the component.. Corrected from pre-5.x ECL markup.",
+    "designSystemVersion": "5.3.1"
   }
 }</script>
 <style>
@@ -123,21 +130,20 @@ a,.ecl-link{color:#004494;text-decoration:underline}
 </style>
 </head>
 <body>
-<div class="ecl-tabs" data-ecl-tabs="true">
-  <ul class="ecl-tabs__list" role="tablist">
-    <li role="presentation" class="ecl-tabs__item">
-      <button role="tab" id="tab-day" class="ecl-tabs__tab ecl-tabs__tab--active" aria-selected="true" aria-controls="panel-day">Past day</button>
-    </li>
-    <li role="presentation" class="ecl-tabs__item">
-      <button role="tab" id="tab-week" class="ecl-tabs__tab" aria-selected="false" aria-controls="panel-week" tabindex="-1">Past week</button>
-    </li>
-  </ul>
-  <section role="tabpanel" id="panel-day" class="ecl-tabs__panel ecl-tabs__panel--active" aria-labelledby="tab-day">
-    <p>3,964 applications received.</p>
-  </section>
-  <section role="tabpanel" id="panel-week" class="ecl-tabs__panel" aria-labelledby="tab-week" hidden>
-    <p>27,812 applications received.</p>
-  </section>
+<div class="ecl-tabs">
+  <div class="ecl-tabs__container">
+    <div class="ecl-tabs__list" role="tablist">
+      <div class="ecl-tabs__item">
+        <a href="#" class="ecl-tabs__link" role="tab" aria-selected="true">First</a>
+      </div>
+      <div class="ecl-tabs__item">
+        <a href="#" class="ecl-tabs__link" role="tab" aria-selected="false">Second</a>
+      </div>
+      <div class="ecl-tabs__item">
+        <a href="#" class="ecl-tabs__link" role="tab" aria-selected="false">Third</a>
+      </div>
+    </div>
+  </div>
 </div>
 <div class="cap">tabs default</div>
 </body>

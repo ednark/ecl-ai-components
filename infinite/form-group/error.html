@@ -85,9 +85,10 @@
   },
   "constraints": {
     "preserve": [
-      ".ecl-form-group wrapper around label + control",
-      "Label 'for' attribute matching the input id",
-      "aria-describedby linking help/feedback ids to the control"
+      "div.ecl-form-group (no error modifier exists)",
+      "input.ecl-text-input.ecl-text-input--invalid",
+      "aria-invalid=\"true\" + aria-describedby wiring",
+      "p.ecl-feedback-message for the error text"
     ],
     "editable": [
       "Label text",
@@ -108,7 +109,10 @@
   "file": "form-group/error.html",
   "title": "Form group (error)",
   "provenance": {
-    "source": ""
+    "observed": "2026-09-29",
+    "method": "design-system documentation",
+    "source": "ECL form-group and text-input components — ECL 5.3.1 (pinned @ecl/preset-eu@5.3.1, build stamp 2026-08-20) and the component .html.twig template in @ecl/<component>@5.3.1. The tile used ecl-form-group--error and ecl-text-input--error, neither of which exists in 5.x: ecl-form-group has no modifiers at all, and the error state is the input modifier ecl-text-input--invalid (with ecl-feedback-message for the message).. Corrected from pre-5.x ECL markup.",
+    "designSystemVersion": "5.3.1"
   }
 }</script>
 <style>
@@ -131,9 +135,9 @@ a,.ecl-link{color:#004494;text-decoration:underline}
 </style>
 </head>
 <body>
-<div class="ecl-form-group ecl-form-group--error">
+<div class="ecl-form-group">
   <label class="ecl-form-label" for="fg-error">Email address</label>
-  <input type="text" id="fg-error" name="email" class="ecl-text-input ecl-text-input--error" value="" aria-describedby="fg-error-feedback" aria-invalid="true">
+  <input type="text" id="fg-error" name="email" class="ecl-text-input ecl-text-input--invalid" value="" aria-describedby="fg-error-feedback" aria-invalid="true">
   <p class="ecl-feedback-message" id="fg-error-feedback">The email address format is incorrect.</p>
 </div>
 <div class="cap">form-group error</div>

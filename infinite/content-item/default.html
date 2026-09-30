@@ -9,7 +9,7 @@
   "_schemaVersion": 2,
   "discovery": {
     "eclComponentType": "content-item",
-    "eclClass": "ecl-content-item",
+    "eclClass": "ecl-content-block",
     "section": "data-display",
     "variant": "default",
     "requiresJs": "no",
@@ -83,9 +83,11 @@
   },
   "constraints": {
     "preserve": [
-      "ecl-content-block__title with ecl-link",
-      "Meta lines for date and read time",
-      "Image alt text when present"
+      "article.ecl-content-block (there is no ecl-content-item wrapper)",
+      "div.ecl-content-block__title",
+      "div.ecl-content-block__description",
+      "div.ecl-content-block__primary-meta-container > span.ecl-content-block__primary-meta-item",
+      "div.ecl-content-block__link-container for the action"
     ],
     "editable": [
       "Title",
@@ -106,7 +108,10 @@
   "file": "content-item/default.html",
   "title": "Content item (default)",
   "provenance": {
-    "source": ""
+    "observed": "2026-09-29",
+    "method": "design-system documentation",
+    "source": "ECL content-block component — ECL 5.3.1 (pinned @ecl/preset-eu@5.3.1, build stamp 2026-08-20) and the component .html.twig template in @ecl/<component>@5.3.1. The tile wrapped its content in a non-existent ecl-content-item and used five invented classes (ecl-content-block__image, ecl-image, __info, __meta, __meta-item). 5.x content blocks are the article itself, with __title, __description, __primary-meta-container/__primary-meta-item and __link-container.. Corrected from pre-5.x ECL markup.",
+    "designSystemVersion": "5.3.1"
   }
 }</script>
 <style>
@@ -123,21 +128,18 @@ a,.ecl-link{color:#004494;text-decoration:underline}
 </style>
 </head>
 <body>
-<article class="ecl-content-item">
-  <div class="ecl-content-block">
-    <div class="ecl-content-block__image">
-      <img class="ecl-image" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200'%3E%3Crect width='300' height='200' fill='%23e3e3fd'/%3E%3C/svg%3E" alt="">
-    </div>
-    <div class="ecl-content-block__info">
-      <h3 class="ecl-content-block__title">
-        <a href="#" class="ecl-link ecl-link--standalone">EU and NATO respond to Leipzig sabotage attempt</a>
-      </h3>
-      <p class="ecl-content-block__description">Short description of the news item.</p>
-      <div class="ecl-content-block__meta">
-        <p class="ecl-content-block__meta-item">2 September 2026</p>
-        <p class="ecl-content-block__meta-item">1 min read</p>
-      </div>
-    </div>
+<article class="ecl-content-block">
+  <div class="ecl-content-block__title">
+    <h3>European Commission adopts a new digital strategy</h3>
+  </div>
+  <div class="ecl-content-block__description">
+    <p>Short description of the content item.</p>
+  </div>
+  <div class="ecl-content-block__primary-meta-container">
+    <span class="ecl-content-block__primary-meta-item">2 March 2026</span>
+  </div>
+  <div class="ecl-content-block__link-container">
+    <a href="#" class="ecl-link ecl-link--standalone">Read more</a>
   </div>
 </article>
 <div class="cap">content-item default</div>

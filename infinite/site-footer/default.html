@@ -84,8 +84,11 @@
   },
   "constraints": {
     "preserve": [
-      "ecl-site-footer__title block ('European Commission')",
-      "footer landmark semantics"
+      "footer.ecl-site-footer > div.ecl-container",
+      "div.ecl-site-footer__main",
+      "section.ecl-site-footer__section with --site-info / --feedback",
+      "h2.ecl-site-footer__title (and ecl-site-footer__title--separator where used)",
+      "ul.ecl-site-footer__list > li.ecl-site-footer__list-item > a.ecl-site-footer__title-link"
     ],
     "editable": [
       "Link columns",
@@ -104,7 +107,10 @@
   "file": "site-footer/default.html",
   "title": "Site footer (default)",
   "provenance": {
-    "source": ""
+    "observed": "2026-09-29",
+    "method": "design-system documentation",
+    "source": "ECL site-footer component — ECL 5.3.1 (pinned @ecl/preset-eu@5.3.1, build stamp 2026-08-20) and the component .html.twig template in @ecl/<component>@5.3.1. The tile used two invented classes (ecl-site-footer__info, ecl-site-footer__info-line) and skipped the section structure. 5.x footers are div.ecl-site-footer__main > section.ecl-site-footer__section (with --site-info / --feedback) carrying a __title and a __list of __list-item / __title-link.. Corrected from pre-5.x ECL markup.",
+    "designSystemVersion": "5.3.1"
   }
 }</script>
 <style>
@@ -127,10 +133,18 @@ a,.ecl-link{color:#004494;text-decoration:underline}
 <body>
 <footer class="ecl-site-footer">
   <div class="ecl-container">
-    <div class="ecl-site-footer__title">European Commission</div>
-    <div class="ecl-site-footer__info">
-      <div class="ecl-site-footer__info-line">Contact the EU</div>
-      <div class="ecl-site-footer__info-line">Find a contact person</div>
+    <div class="ecl-site-footer__main">
+      <section class="ecl-site-footer__section ecl-site-footer__section--site-info">
+        <h2 class="ecl-site-footer__title">European Commission</h2>
+        <ul class="ecl-site-footer__list">
+          <li class="ecl-site-footer__list-item">
+            <a href="#" class="ecl-site-footer__title-link">Contact the EU</a>
+          </li>
+          <li class="ecl-site-footer__list-item">
+            <a href="#" class="ecl-site-footer__title-link">Find a contact person</a>
+          </li>
+        </ul>
+      </section>
     </div>
   </div>
 </footer>

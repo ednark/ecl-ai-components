@@ -446,7 +446,7 @@
       "title": "Content item (default)",
       "_schemaVersion": 2,
       "eclComponentType": "content-item",
-      "eclClass": "ecl-content-item",
+      "eclClass": "ecl-content-block",
       "section": "data-display",
       "variant": "default",
       "requiresJs": "no",

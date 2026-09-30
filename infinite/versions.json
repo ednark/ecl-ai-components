@@ -68,6 +68,21 @@
       "migrationPath": "Pin bump only: designSystem.package @ecl/preset-eu pinned to an exact 5.3.1 devDependency and declared to classCheck, so future ECL upgrades are detected mechanically. Re-fetch agents.json and facets.json.",
       "designSystemVersion": "5.3.1",
       "notes": "Event-driven upgrade per protocol.md runbook: class diff computed against both versions (1379 -> 1411 classes), 0 tiles affected by removals, 15 verified tiles re-stamped at 5.3.1, 43 drifted classes moved from invisible to a documented classCheck allowlist."
+    },
+    {
+      "version": "0.2.0",
+      "releaseDate": "2026-09-30",
+      "componentCount": 36,
+      "breakingChanges": [
+        "Pre-5.x drift corrected across 15 tiles; the tile families remain, but their markup now matches ECL 5.3.1."
+      ],
+      "addedFacets": [],
+      "metadataChanges": [
+        "classCheck allowlist reduced to 3 real entries (2 tiles with no ECL equivalent + 2 canonical-but-unstyled classes)"
+      ],
+      "migrationPath": "Re-fetch the 15 reworked tiles. Agents must not preserve the retired element classes (ecl-card__title, ecl-banner__button, ecl-checkbox__text, ecl-file__meta, ecl-pagination__link--previous, ecl-tabs__panel, etc.).",
+      "designSystemVersion": "5.3.1",
+      "notes": "Drift rework 2026-09-30, 15 tiles corrected against the ECL 5.3.1 class inventory and the component .html.twig templates: card (v5 is a single ecl-card__body), banner (no __button; documented variants only), checkbox/radio (__text -> __label), form-group/error (no form-group modifiers; error is ecl-text-input--invalid + ecl-feedback-message), table (no __table wrapper; div.ecl-table + ecl-table-responsive), tag (ecl-tag-group -> ecl-tag-set), search-form (__textfield -> __text-input, no wrapper), pagination (previous/next are ITEM modifiers), tabs (v5 is a link list — no panels), content-item (no wrapper class; content-block is the article), file (container/info/content structure), site-footer (section structure), site-header (__selector -> __language-selector; __content -> __header/__inner). 3 tiles remain unstamped pending a decision: button/ghost + expandable (ECL ships no ghost button variant) and language-list (a site-header sub-element, not a standalone component). Two classes are canonical-but-unstyled (in the templates, no CSS rules): ecl-banner__title-text, ecl-site-header__language-item."
     }
   ],
   "designSystemVersions": [
