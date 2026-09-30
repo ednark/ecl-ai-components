@@ -10,7 +10,7 @@
       "kind": "composition",
       "extension": "ecl-site-header__language-selector (--2-col categories, close/login/search toggles)",
       "note": "rich language-selector composition inside the site header — the ECL mega-menu-adjacent surface",
-      "source": "field-research/ds-survey campaign crawls (2026-09-29)"
+      "source": "live-site field observation (2026-09-29); the observed site and url are this entry's site/url fields"
     },
     {
       "observed": "2026-09-29",
@@ -20,7 +20,7 @@
       "kind": "other",
       "extension": "ecl-breadcrumb__segment--ellipsis",
       "note": "ellipsis segment variant observed live",
-      "source": "field-research/ds-survey campaign crawls (2026-09-29)"
+      "source": "live-site field observation (2026-09-29); the observed site and url are this entry's site/url fields"
     },
     {
       "observed": "2026-09-29",
@@ -30,7 +30,7 @@
       "kind": "other",
       "extension": "ecl-button--ghost / --icon-only / --tertiary",
       "note": "button variants observed live; verify against ECL 5.2 CSS before tiling",
-      "source": "field-research/ds-survey campaign crawls (2026-09-29)"
+      "source": "live-site field observation (2026-09-29); the observed site and url are this entry's site/url fields"
     },
     {
       "observed": "2026-09-29",
@@ -40,7 +40,7 @@
       "kind": "extension",
       "extension": "ecl-button--ghost",
       "note": "CONVERGENT (3 independent EU sites: cordis.europa.eu, data.europa.eu, digital-strategy.ec.europa.eu) but NOT defined in ECL 5.3.1 or 5.2.0 — the registry button/ghost tile is built on it",
-      "source": "field-research/ds-survey ecl-research-2026-09 (round 2)"
+      "source": "live-site field survey ecl-research-2026-09, round 2 (2026-09-29)"
     },
     {
       "observed": "2026-09-29",
@@ -50,7 +50,7 @@
       "kind": "extension",
       "extension": "ecl-button--ghost",
       "note": "second EU site this round; see data.europa.eu entry",
-      "source": "field-research/ds-survey ecl-research-2026-09 (round 2)"
+      "source": "live-site field survey ecl-research-2026-09, round 2 (2026-09-29)"
     },
     {
       "observed": "2026-09-29",
@@ -60,7 +60,7 @@
       "kind": "extension",
       "extension": "ecl-social-media-follow--horizontal / --left",
       "note": "not in ECL 5.3.1 preset",
-      "source": "field-research/ds-survey ecl-research-2026-09 (round 2)"
+      "source": "live-site field survey ecl-research-2026-09, round 2 (2026-09-29)"
     },
     {
       "observed": "2026-09-29",
@@ -70,7 +70,7 @@
       "kind": "extension",
       "extension": "ecl-card--learning-path",
       "note": "not in ECL 5.3.1 preset",
-      "source": "field-research/ds-survey ecl-research-2026-09 (round 2)"
+      "source": "live-site field survey ecl-research-2026-09, round 2 (2026-09-29)"
     },
     {
       "observed": "2026-09-29",
@@ -80,7 +80,7 @@
       "kind": "extension",
       "extension": "ecl-banner--box-bg-dark / --box-bg-light / --v-center / --v-bottom / --color-light / --font-weight-light",
       "note": "layout modifiers beyond the ECL 5.3.1 banner set (--full-width, --no-media, --font-weight-bold, --image)",
-      "source": "field-research/ds-survey ecl-research-2026-09 (round 2)"
+      "source": "live-site field survey ecl-research-2026-09, round 2 (2026-09-29)"
     },
     {
       "observed": "2026-09-29",
@@ -89,7 +89,7 @@
       "kind": "extension",
       "extension": "ecl-site-header-standardised / ecl-footer-standardised / ecl-site-header-with-logo-l",
       "note": "Commission site-local wrappers; not ECL components",
-      "source": "field-research/ds-survey ecl-research-2026-09 (round 2)"
+      "source": "live-site field survey ecl-research-2026-09, round 2 (2026-09-29)"
     },
     {
       "observed": "2026-09-29",
@@ -98,7 +98,7 @@
       "kind": "extension",
       "extension": "ecl-lang-select-page / ecl-contextual-navigation / ecl-exposed-form / ecl-icon-networks / ecl-icon-phosphor",
       "note": "Commission platform-local classes",
-      "source": "field-research/ds-survey ecl-research-2026-09 (round 2)"
+      "source": "live-site field survey ecl-research-2026-09, round 2 (2026-09-29)"
     },
     {
       "observed": "2026-09-29",
@@ -107,7 +107,7 @@
       "kind": "composition",
       "extension": "ecl-mega-menu composed in site-header",
       "note": "canon component (verified in 5.3.1) — resolves the L7 mega-menu deferral",
-      "source": "field-research/ds-survey ecl-research-2026-09 (round 2)"
+      "source": "live-site field survey ecl-research-2026-09, round 2 (2026-09-29)"
     }
   ]
 }
