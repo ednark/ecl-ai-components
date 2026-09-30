@@ -97,6 +97,7 @@
       "Variant class"
     ],
     "limitations": [
+      "Icon severity: do not add ecl-icon--error/info/success — they are not ECL classes; colour comes from the ecl-notification--<severity> modifier",
       "Do not stack many notifications on one page"
     ],
     "portableInvariants": [
@@ -122,8 +123,8 @@
   "provenance": {
     "observed": "2026-09-29",
     "method": "design-system documentation",
-    "source": "ECL 5.2.0 notification component (@ecl/notification@5.2.0; selectors verified against @ecl/preset-eu@5.2.0 dist/styles/ecl-eu.css, build stamp 2026-08-20). The tile previously used the pre-5.x ecl-alert naming; ECL 5.x renamed the component to ecl-notification (1:1 element mapping).",
-    "designSystemVersion": "5.2.0"
+    "source": "ECL 5.2.0 notification component (@ecl/notification@5.2.0; selectors verified against @ecl/preset-eu@5.3.1 dist/styles/ecl-eu.css, build stamp 2026-08-20). The tile previously used the pre-5.x ecl-alert naming; ECL 5.x renamed the component to ecl-notification (1:1 element mapping). The tile previously carried an invented ecl-icon--success modifier; ECL 5.3.1 icon modifiers are size (xs/s/m/l/xl/fluid), color (primary/inverted) and transform only — notification severity comes from the ecl-notification--<severity> modifier.",
+    "designSystemVersion": "5.3.1"
   }
 }</script>
 <style>
@@ -147,7 +148,7 @@ a,.ecl-link{color:#004494;text-decoration:underline}
 </head>
 <body>
 <div class="ecl-notification ecl-notification--success" role="status">
-  <div class="ecl-notification__icon ecl-icon ecl-icon--l ecl-icon--success"></div>
+  <div class="ecl-notification__icon ecl-icon ecl-icon--l"></div>
   <div class="ecl-notification__content">
     <p class="ecl-notification__title">Success</p>
     <p class="ecl-notification__description">Your request has been submitted.</p>

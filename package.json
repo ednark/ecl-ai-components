@@ -14,6 +14,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@ecl/preset-eu": "5.3.1",
     "puppeteer": "^25.11.0"
   }
 }

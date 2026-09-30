@@ -11,9 +11,10 @@
   "tileFetchPattern": "https://raw.githubusercontent.com/ednark/ecl-ai-components/main/infinite/{file}",
   "designSystem": {
     "name": "Europa Component Library (ECL)",
-    "version": "5.2.0",
+    "version": "5.3.1",
     "url": "https://ec.europa.eu/component-library/",
-    "notes": "Verified against @ecl/preset-eu@5.2.0 dist/styles/ecl-eu.css (build stamp 2026-08-20) — the only compiled bundle ECL ships; the 95 per-component packages (@ecl/*) ship SCSS only. npm latest preset is 5.3.1."
+    "package": "@ecl/preset-eu",
+    "notes": "Ground truth: @ecl/preset-eu@5.3.1 dist/styles/ecl-eu.css, installed as an exact devDependency and declared to staticView.classCheck so drift is caught automatically. ECL ships 95 per-component packages as SCSS; the preset is the only compiled bundle. Upgraded 5.2.0 -> 5.3.1 on 2026-09-29 (no tile used any of the 10 classes removed between the versions)."
   },
   "agentMetaId": "ecl-agent-meta",
   "tileDir": "infinite",
@@ -99,12 +100,179 @@
     }
   ],
   "staticView": {
-    "css": [],
+    "css": [
+      "node_modules/@ecl/preset-eu/dist/styles/ecl-eu.css"
+    ],
     "viewport": {
       "width": 1280,
       "height": 4000
     },
-    "note": "Resolved-view generation input (see _base/generate-resolved-view.mjs). Tiles are self-contained; no design-system CSS injection needed."
+    "note": "Resolved-view generation input (see _base/generate-resolved-view.mjs). Tiles are self-contained; no design-system CSS injection needed.",
+    "classCheck": {
+      "prefix": "ecl-",
+      "allowlist": [
+        {
+          "class": "ecl-banner--image",
+          "reason": "Pre-5.x drift: class not defined in ECL 5.3.1. Rework pending against the official twig templates."
+        },
+        {
+          "class": "ecl-banner__button",
+          "reason": "Pre-5.x drift: class not defined in ECL 5.3.1. Rework pending against the official twig templates."
+        },
+        {
+          "class": "ecl-button--ghost",
+          "reason": "Pre-5.x drift: class not defined in ECL 5.3.1. Rework pending against the official twig templates."
+        },
+        {
+          "class": "ecl-card__content",
+          "reason": "Pre-5.x drift: class not defined in ECL 5.3.1. Rework pending against the official twig templates."
+        },
+        {
+          "class": "ecl-card__description",
+          "reason": "Pre-5.x drift: class not defined in ECL 5.3.1. Rework pending against the official twig templates."
+        },
+        {
+          "class": "ecl-card__label",
+          "reason": "Pre-5.x drift: class not defined in ECL 5.3.1. Rework pending against the official twig templates."
+        },
+        {
+          "class": "ecl-card__link",
+          "reason": "Pre-5.x drift: class not defined in ECL 5.3.1. Rework pending against the official twig templates."
+        },
+        {
+          "class": "ecl-card__title",
+          "reason": "Pre-5.x drift: class not defined in ECL 5.3.1. Rework pending against the official twig templates."
+        },
+        {
+          "class": "ecl-checkbox__text",
+          "reason": "Pre-5.x drift: class not defined in ECL 5.3.1. Rework pending against the official twig templates."
+        },
+        {
+          "class": "ecl-content-block__image",
+          "reason": "Pre-5.x drift: class not defined in ECL 5.3.1. Rework pending against the official twig templates."
+        },
+        {
+          "class": "ecl-content-block__info",
+          "reason": "Pre-5.x drift: class not defined in ECL 5.3.1. Rework pending against the official twig templates."
+        },
+        {
+          "class": "ecl-content-block__meta",
+          "reason": "Pre-5.x drift: class not defined in ECL 5.3.1. Rework pending against the official twig templates."
+        },
+        {
+          "class": "ecl-content-block__meta-item",
+          "reason": "Pre-5.x drift: class not defined in ECL 5.3.1. Rework pending against the official twig templates."
+        },
+        {
+          "class": "ecl-file__language",
+          "reason": "Pre-5.x drift: class not defined in ECL 5.3.1. Rework pending against the official twig templates."
+        },
+        {
+          "class": "ecl-file__meta",
+          "reason": "Pre-5.x drift: class not defined in ECL 5.3.1. Rework pending against the official twig templates."
+        },
+        {
+          "class": "ecl-file__size",
+          "reason": "Pre-5.x drift: class not defined in ECL 5.3.1. Rework pending against the official twig templates."
+        },
+        {
+          "class": "ecl-file__title-label",
+          "reason": "Pre-5.x drift: class not defined in ECL 5.3.1. Rework pending against the official twig templates."
+        },
+        {
+          "class": "ecl-file__type",
+          "reason": "Pre-5.x drift: class not defined in ECL 5.3.1. Rework pending against the official twig templates."
+        },
+        {
+          "class": "ecl-form-group--error",
+          "reason": "Pre-5.x drift: class not defined in ECL 5.3.1. Rework pending against the official twig templates."
+        },
+        {
+          "class": "ecl-image",
+          "reason": "Pre-5.x drift: class not defined in ECL 5.3.1. Rework pending against the official twig templates."
+        },
+        {
+          "class": "ecl-language-list",
+          "reason": "Pre-5.x drift: class not defined in ECL 5.3.1. Rework pending against the official twig templates."
+        },
+        {
+          "class": "ecl-language-list__link",
+          "reason": "Pre-5.x drift: class not defined in ECL 5.3.1. Rework pending against the official twig templates."
+        },
+        {
+          "class": "ecl-language-list__list",
+          "reason": "Pre-5.x drift: class not defined in ECL 5.3.1. Rework pending against the official twig templates."
+        },
+        {
+          "class": "ecl-pagination__link--next",
+          "reason": "Pre-5.x drift: class not defined in ECL 5.3.1. Rework pending against the official twig templates."
+        },
+        {
+          "class": "ecl-pagination__link--previous",
+          "reason": "Pre-5.x drift: class not defined in ECL 5.3.1. Rework pending against the official twig templates."
+        },
+        {
+          "class": "ecl-radio__text",
+          "reason": "Pre-5.x drift: class not defined in ECL 5.3.1. Rework pending against the official twig templates."
+        },
+        {
+          "class": "ecl-search-form__textfield",
+          "reason": "Pre-5.x drift: class not defined in ECL 5.3.1. Rework pending against the official twig templates."
+        },
+        {
+          "class": "ecl-search-form__textfield-wrapper",
+          "reason": "Pre-5.x drift: class not defined in ECL 5.3.1. Rework pending against the official twig templates."
+        },
+        {
+          "class": "ecl-site-footer__info",
+          "reason": "Pre-5.x drift: class not defined in ECL 5.3.1. Rework pending against the official twig templates."
+        },
+        {
+          "class": "ecl-site-footer__info-line",
+          "reason": "Pre-5.x drift: class not defined in ECL 5.3.1. Rework pending against the official twig templates."
+        },
+        {
+          "class": "ecl-site-header__content",
+          "reason": "Pre-5.x drift: class not defined in ECL 5.3.1. Rework pending against the official twig templates."
+        },
+        {
+          "class": "ecl-site-header__selector",
+          "reason": "Pre-5.x drift: class not defined in ECL 5.3.1. Rework pending against the official twig templates."
+        },
+        {
+          "class": "ecl-site-header__selector-link",
+          "reason": "Pre-5.x drift: class not defined in ECL 5.3.1. Rework pending against the official twig templates."
+        },
+        {
+          "class": "ecl-table__table",
+          "reason": "Pre-5.x drift: class not defined in ECL 5.3.1. Rework pending against the official twig templates."
+        },
+        {
+          "class": "ecl-tabs__panel",
+          "reason": "Pre-5.x drift: class not defined in ECL 5.3.1. Rework pending against the official twig templates."
+        },
+        {
+          "class": "ecl-tabs__panel--active",
+          "reason": "Pre-5.x drift: class not defined in ECL 5.3.1. Rework pending against the official twig templates."
+        },
+        {
+          "class": "ecl-tabs__tab",
+          "reason": "Pre-5.x drift: class not defined in ECL 5.3.1. Rework pending against the official twig templates."
+        },
+        {
+          "class": "ecl-tabs__tab--active",
+          "reason": "Pre-5.x drift: class not defined in ECL 5.3.1. Rework pending against the official twig templates."
+        },
+        {
+          "class": "ecl-tag-group",
+          "reason": "Pre-5.x drift: class not defined in ECL 5.3.1. Rework pending against the official twig templates."
+        },
+        {
+          "class": "ecl-text-input--error",
+          "reason": "Pre-5.x drift: class not defined in ECL 5.3.1. Rework pending against the official twig templates."
+        }
+      ]
+    }
   },
   "modifierSeparators": [
     "--",

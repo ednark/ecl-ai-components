@@ -3,7 +3,7 @@
   "registry": "ecl-ai-components",
   "designSystem": {
     "name": "Europa Component Library (ECL)",
-    "version": "5.2.0",
+    "version": "5.3.1",
     "url": "https://ec.europa.eu/component-library/"
   },
   "versions": [
@@ -52,6 +52,22 @@
       ],
       "migrationPath": "Fully additive.",
       "notes": "Field-research pass (commission.europa.eu): banner, date-block, content-item, list-illustration, language-list, social-media-follow; provenance.json session log added"
+    },
+    {
+      "version": "0.2.0",
+      "releaseDate": "2026-09-29",
+      "componentCount": 36,
+      "breakingChanges": [
+        "ECL 5.2.0 -> 5.3.1 removes 10 classes (news-ticker prev/next, quiz-card__category*, carousel__container/navigation-item/autoplay, mega-menu__sublist--scrollable/__subitem--current-page); no registry tile used any of them"
+      ],
+      "addedFacets": [],
+      "metadataChanges": [
+        "designSystem.package",
+        "staticView.classCheck (ecl- prefix, 43 documented drift allowlist entries)"
+      ],
+      "migrationPath": "Pin bump only: designSystem.package @ecl/preset-eu pinned to an exact 5.3.1 devDependency and declared to classCheck, so future ECL upgrades are detected mechanically. Re-fetch agents.json and facets.json.",
+      "designSystemVersion": "5.3.1",
+      "notes": "Event-driven upgrade per protocol.md runbook: class diff computed against both versions (1379 -> 1411 classes), 0 tiles affected by removals, 15 verified tiles re-stamped at 5.3.1, 43 drifted classes moved from invisible to a documented classCheck allowlist."
     }
   ],
   "designSystemVersions": [

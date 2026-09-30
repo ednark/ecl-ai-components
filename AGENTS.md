@@ -73,3 +73,24 @@ Registry mandates that act as gates:
 2. `constraints.limitations` — respect
 3. `instruction.agentPrompt` — adapt within boundaries
 4. `constraints.editable` — prefer
+
+## Version Sync
+
+This registry is a faithful snapshot of **ECL 5.3.1** (`designSystem.version` in
+`registry.config.json`). Ground truth is `@ecl/preset-eu` — installed as an
+**exact** devDependency (5.3.1) and declared to `staticView.classCheck`, so
+class drift is caught automatically by `validate-registry.mjs`.
+
+- ECL ships 95 per-component packages as **SCSS only**; the preset is the only
+  compiled bundle and therefore the only class surface that can be verified
+  mechanically.
+- `staticView.classCheck.allowlist` holds the **known drift register** (40
+  entries as of 2026-09-29): classes the tiles use that ECL 5.3.1 does not
+  define — mostly pre-5.x element classes. Each entry carries its rework reason.
+- 18 of 36 tiles are verified and version-stamped; the 18 drifted tiles are
+  deliberately **unstamped** — their rework needs the official twig templates
+  that ship in the component packages, not CSS inference.
+- **Upgrading ECL**: follow the runbook in `_base/protocol.md` ("Design-System
+  Version Sync"). Bump the pin + the exact devDependency, regenerate, read the
+  classCheck errors and the stamp worklist, apply cited corrections through the
+  purity path, then record the event in `versions.json`.
