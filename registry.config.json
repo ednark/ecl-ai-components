@@ -14,7 +14,13 @@
     "version": "5.3.1",
     "url": "https://ec.europa.eu/component-library/",
     "package": "@ecl/preset-eu",
-    "notes": "Ground truth: @ecl/preset-eu@5.3.1 dist/styles/ecl-eu.css, installed as an exact devDependency and declared to staticView.classCheck so drift is caught automatically. ECL ships 95 per-component packages as SCSS; the preset is the only compiled bundle. Upgraded 5.2.0 -> 5.3.1 on 2026-09-29 (no tile used any of the 10 classes removed between the versions)."
+    "notes": "Ground truth: @ecl/preset-eu@5.3.1 dist/styles/ecl-eu.css, installed as an exact devDependency and declared to staticView.classCheck so drift is caught automatically. ECL ships 95 per-component packages as SCSS; the preset is the only compiled bundle. Upgraded 5.2.0 -> 5.3.1 on 2026-09-29 (no tile used any of the 10 classes removed between the versions).",
+    "verification": {
+      "markup": "package-css",
+      "styling": "package-css",
+      "packagePath": "node_modules/@ecl/preset-eu/dist/styles",
+      "groundTruth": "installed-package"
+    }
   },
   "agentMetaId": "ecl-agent-meta",
   "tileDir": "infinite",
