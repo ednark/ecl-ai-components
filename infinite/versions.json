@@ -83,6 +83,22 @@
       "migrationPath": "Re-fetch the 15 reworked tiles. Agents must not preserve the retired element classes (ecl-card__title, ecl-banner__button, ecl-checkbox__text, ecl-file__meta, ecl-pagination__link--previous, ecl-tabs__panel, etc.).",
       "designSystemVersion": "5.3.1",
       "notes": "Drift rework 2026-09-30, 15 tiles corrected against the ECL 5.3.1 class inventory and the component .html.twig templates: card (v5 is a single ecl-card__body), banner (no __button; documented variants only), checkbox/radio (__text -> __label), form-group/error (no form-group modifiers; error is ecl-text-input--invalid + ecl-feedback-message), table (no __table wrapper; div.ecl-table + ecl-table-responsive), tag (ecl-tag-group -> ecl-tag-set), search-form (__textfield -> __text-input, no wrapper), pagination (previous/next are ITEM modifiers), tabs (v5 is a link list — no panels), content-item (no wrapper class; content-block is the article), file (container/info/content structure), site-footer (section structure), site-header (__selector -> __language-selector; __content -> __header/__inner). 3 tiles remain unstamped pending a decision: button/ghost + expandable (ECL ships no ghost button variant) and language-list (a site-header sub-element, not a standalone component). Two classes are canonical-but-unstyled (in the templates, no CSS rules): ecl-banner__title-text, ecl-site-header__language-item."
+    },
+    {
+      "version": "0.2.0",
+      "releaseDate": "2026-09-30",
+      "componentCount": 36,
+      "breakingChanges": [],
+      "addedFacets": [
+        "origin (new value: extension)"
+      ],
+      "metadataChanges": [
+        "discovery.origin = extension on the two non-standard tiles",
+        "tier = observed on the extension tiles"
+      ],
+      "migrationPath": "Agents filtering by origin can now select canon (design-system), observed variants (live-site) and non-standard community extensions (extension) separately. Two tiles changed classification, not markup.",
+      "designSystemVersion": "5.3.1",
+      "notes": "Non-standard classes kept rather than dropped (decision 2026-09-30). button/ghost: ecl-button--ghost is in production on three EU services and in no ECL release — labeled origin: extension, tier: observed, with ecl-button--tertiary named as the canonical alternative and guidance to verify the class exists before use. language-list: labeled origin: extension with the site-header language switcher named as the canonical home. expandable is canon: its demo toggle was moved off the extension onto ecl-button--tertiary. Both extension tiles carry no designSystemVersion stamp — there is nothing in the pin to verify them against, which is itself the signal."
     }
   ],
   "designSystemVersions": [

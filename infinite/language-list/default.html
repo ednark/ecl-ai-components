@@ -30,12 +30,15 @@
       "WCAG 2.1 AA",
       "Directive (EU) 2016/2102"
     ],
-    "tier": "curated",
+    "tier": "observed",
     "tags": [
       "language",
       "multilingual",
       "selector",
-      "24-languages"
+      "24-languages",
+      "extension",
+      "non-standard",
+      "splash"
     ],
     "description": "24-official-language selection list (ecl-language-list).",
     "compliance": {
@@ -52,19 +55,20 @@
       "requiredMinSpacing": "8px",
       "orientationLocked": false,
       "fullscreenSafe": true
-    }
+    },
+    "origin": "extension"
   },
   "selection": {
     "useWhen": [
-      "Selecting one of the 24 official EU languages",
-      "Splash pages and the site-header selector panel"
+      "A standalone language picker (splash pages, a page-level language switcher) where the site-header switcher does not apply",
+      "Matching an existing EU service that uses this standalone pattern"
     ],
     "avoidWhen": [
-      "Single-language sites"
+      "Inside the site header — use the site header language switcher, which is the canonical home of this pattern"
     ]
   },
   "instruction": {
-    "agentPrompt": "Each link carries lang and hreflang attributes matching its target language. The current language is not a link (aria-current). Link text is the language's own name in its own script.",
+    "agentPrompt": "This is a non-standard standalone language list, not an ECL component. Inside a site header use the canonical site-header language switcher instead. Otherwise verify the classes exist in the project stylesheet before use.",
     "relatedComponents": [
       "site-header"
     ]
@@ -90,7 +94,9 @@
       "Target URLs"
     ],
     "limitations": [
-      "All 24 official languages expected on EC/EU sites — omitting one needs a documented reason"
+      "NON-STANDARD: ecl-language-list is not a standalone ECL component. ECL 5.3.1 implements the language switcher as part of the site header (ecl-site-header__language*); the classes used here are observed in the wild on EU splash pages but are not in the ECL stylesheet.",
+      "Canonical alternative: the site header language switcher (ecl-site-header__language-selector / __language-list). See the site-header tile.",
+      "Because these classes are not in the pinned design system, this tile carries no designSystemVersion stamp."
     ],
     "portableInvariants": [
       "lang/hreflang attributes preserved",
@@ -103,7 +109,9 @@
   "file": "language-list/default.html",
   "title": "Language list (default)",
   "provenance": {
-    "source": ""
+    "observed": "2026-09-29",
+    "method": "live-site observation",
+    "source": "ecl-language-list observed on EU splash pages (2026-09-29). NOT in @ecl/preset-eu 5.2.0 or 5.3.1: in ECL the language switcher lives in the site header (ecl-site-header__language*). Captured as a non-standard composable, not a design-system component."
   }
 }</script>
 <style>

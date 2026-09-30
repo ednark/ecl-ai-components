@@ -31,12 +31,15 @@
       "WCAG 2.1 AA",
       "Directive (EU) 2016/2102"
     ],
-    "tier": "curated",
+    "tier": "observed",
     "tags": [
       "button",
       "submit",
       "action",
-      "cta"
+      "cta",
+      "extension",
+      "non-standard",
+      "community"
     ],
     "description": "Primary, secondary, and ghost buttons (ecl-button).",
     "compliance": {
@@ -53,20 +56,30 @@
       "requiredMinSpacing": "8px",
       "orientationLocked": false,
       "fullscreenSafe": true
-    }
+    },
+    "origin": "extension"
   },
   "selection": {
     "useWhen": [
-      "Primary actions (ecl-button--primary), search submit (--call-to-action? use --primary for search)",
-      "Secondary actions via ecl-button--secondary; text-like actions via ecl-button--ghost"
+      "A low-emphasis action where a canonical variant would over-emphasise it — and the project already ships this pattern",
+      "Matching an existing EU service that uses ecl-button--ghost"
     ],
     "avoidWhen": [
-      "Links between pages — use ecl-link",
-      "Multiple primary buttons per view"
+      "Starting a new EU project: ecl-button--ghost is not part of ECL and may never ship"
+    ],
+    "guidance": [
+      {
+        "guidance": false,
+        "description": "Do not treat ecl-button--ghost as an ECL variant — it is not in the ECL 5.3.1 stylesheet or in any release"
+      },
+      {
+        "guidance": true,
+        "description": "Confirm the class exists in the project stylesheet before using it; otherwise use ecl-button--tertiary (the canonical low-emphasis variant)"
+      }
     ]
   },
   "instruction": {
-    "agentPrompt": "Edit the label inside ecl-button__label. Variants: ecl-button--primary / --secondary / --ghost. Keep the ecl-button__container > ecl-button__label structure — ECL icons render through it.",
+    "agentPrompt": "ecl-button--ghost is a community extension, not an ECL variant. Use it only where the project already ships it; otherwise use the canonical ecl-button--tertiary. Keep the ecl-button__container / ecl-button__label wrapper.",
     "relatedComponents": [
       "text-input",
       "notification"
@@ -97,8 +110,9 @@
       "Icon (ecl-icon inside container)"
     ],
     "limitations": [
-      "One primary button per view",
-      "Ghost buttons read as links to users — use only for low-emphasis actions"
+      "NON-STANDARD: ecl-button--ghost is not part of the ECL Design System. It is not in @ecl/preset-eu 5.2.0 or 5.3.1, and no ECL release ships it. It is captured because multiple EU services use it (cordis.europa.eu, data.europa.eu, digital-strategy.ec.europa.eu — observed 2026-09-29).",
+      "Canonical alternative: ecl-button--tertiary is the ECL low-emphasis button. Prefer it for new work.",
+      "Because the class is not in the pinned design system, this tile carries no designSystemVersion stamp — there is nothing to verify it against."
     ],
     "portableInvariants": [
       "Semantic <button> or <a> root element",
@@ -119,7 +133,9 @@
     }
   },
   "provenance": {
-    "source": ""
+    "observed": "2026-09-29",
+    "method": "live-site observation",
+    "source": "ecl-button--ghost observed in production on three EU services (cordis.europa.eu, data.europa.eu, digital-strategy.ec.europa.eu; 2026-09-29). NOT present in @ecl/preset-eu 5.2.0 or 5.3.1, and not in any ECL release — captured as a non-standard community extension, not as a design-system variant."
   }
 }</script>
 <style>

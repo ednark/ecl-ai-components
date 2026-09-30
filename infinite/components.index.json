@@ -197,14 +197,18 @@
         "WCAG 2.1 AA",
         "Directive (EU) 2016/2102"
       ],
-      "tier": "curated",
+      "tier": "observed",
       "tags": [
         "button",
         "submit",
         "action",
-        "cta"
+        "cta",
+        "extension",
+        "non-standard",
+        "community"
       ],
       "description": "Primary, secondary, and ghost buttons (ecl-button).",
+      "origin": "extension",
       "piiHandling": "none",
       "auditTrailCompatible": false,
       "nistControls": [],
@@ -572,6 +576,7 @@
         "content"
       ],
       "description": "Toggle-disclosed content region (ecl-expandable).",
+      "origin": "design-system",
       "piiHandling": "displays_only",
       "auditTrailCompatible": false,
       "nistControls": [],
@@ -963,14 +968,18 @@
         "WCAG 2.1 AA",
         "Directive (EU) 2016/2102"
       ],
-      "tier": "curated",
+      "tier": "observed",
       "tags": [
         "language",
         "multilingual",
         "selector",
-        "24-languages"
+        "24-languages",
+        "extension",
+        "non-standard",
+        "splash"
       ],
       "description": "24-official-language selection list (ecl-language-list).",
+      "origin": "extension",
       "piiHandling": "none",
       "auditTrailCompatible": false,
       "nistControls": [],

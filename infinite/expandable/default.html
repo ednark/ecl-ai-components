@@ -51,7 +51,8 @@
       "requiredMinSpacing": "8px",
       "orientationLocked": false,
       "fullscreenSafe": true
-    }
+    },
+    "origin": "design-system"
   },
   "selection": {
     "useWhen": [
@@ -88,6 +89,7 @@
       "Content"
     ],
     "limitations": [
+      "The toggle button uses a canonical ECL variant (ecl-button--tertiary). The community extension ecl-button--ghost is sometimes used here in the wild; see the button/ghost tile — it is not an ECL class.",
       "Content hidden by default — never essential information"
     ],
     "portableInvariants": [
@@ -100,8 +102,13 @@
   "file": "expandable/default.html",
   "title": "Expandable (default)",
   "provenance": {
-    "source": ""
-  }
+    "observed": "2026-09-29",
+    "method": "design-system documentation",
+    "source": "ECL expandable component, verified against @ecl/preset-eu@5.3.1 (pinned) and @ecl/expandable@5.3.1. Re-verified: the toggle now uses the canonical ecl-button--tertiary; an earlier revision used the non-standard ecl-button--ghost (see the button/ghost tile, origin: extension).",
+    "designSystemVersion": "5.3.1"
+  },
+  "id": "expandable-default",
+  "resolvedView": "expandable/default.resolved.html"
 }</script>
 <style>
 body{font-family:Arial,Helvetica,sans-serif;font-size:1rem;line-height:1.5rem;color:#404040;padding:2rem;background:#fff;margin:0}
@@ -121,7 +128,7 @@ a,.ecl-link{color:#004494;text-decoration:underline}
 </head>
 <body>
 <div class="ecl-expandable" data-ecl-expandable="true">
-  <button class="ecl-button ecl-button--ghost ecl-expandable__toggle" aria-expanded="false" aria-controls="exp-content" data-ecl-expandable-toggle="true">
+  <button class="ecl-button ecl-button--tertiary ecl-expandable__toggle" aria-expanded="false" aria-controls="exp-content" data-ecl-expandable-toggle="true">
     <span class="ecl-button__container"><span class="ecl-button__label">More information</span></span>
   </button>
   <div class="ecl-expandable__content" id="exp-content" hidden>
