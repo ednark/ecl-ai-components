@@ -82,9 +82,9 @@
     {
       "concept": "mega-menu",
       "status": "deferred",
-      "nearestAlternative": "site-header (nav links)",
-      "reason": "ECL mega menu with FEATURED columns is JS-heavy; observed live, deferred in the initial build Doctrine confirmed: ECL documents Navigation menus (ecl-navigation-menus — horizontal menu, first 2 levels of site architecture); the mirror is queued.",
-      "source": "https://ec.europa.eu/component-library/v0.24.3/components/detail/ecl-navigation-menus/"
+      "nearestAlternative": "site-header tile (mega menu composes inside the site header)",
+      "reason": " RESOLVED 2026-09-29: ecl-mega-menu is canon in ECL 5.3.1 (verified in @ecl/preset-eu@5.3.1) and observed live on home-affairs.ec.europa.eu and research-and-innovation.ec.europa.eu — a tile candidate, no longer a blind deferral.",
+      "source": "https://cdn.jsdelivr.net/npm/@ecl/preset-eu@5.3.1/dist/styles/ecl-eu.css (canon verification); live observation home-affairs.ec.europa.eu (2026-09-29)"
     },
     {
       "concept": "combobox",
